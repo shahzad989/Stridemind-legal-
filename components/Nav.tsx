@@ -35,7 +35,9 @@ export default function Nav() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 flex-shrink-0" onClick={() => setOpen(false)}>
-          <span className="text-2xl font-extrabold text-brand tracking-tight">StrideMind</span>
+          <span className="text-lg font-extrabold text-brand tracking-tight leading-tight">
+            Stridemind: Fall Prevention
+          </span>
         </Link>
 
         {/* Desktop nav links */}

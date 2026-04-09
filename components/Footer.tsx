@@ -9,9 +9,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-10">
           {/* Brand */}
           <div className="max-w-xs">
-            <p className="text-2xl font-extrabold text-brand tracking-tight mb-2">StrideMind</p>
-            <p className="text-gray-400 text-base leading-relaxed">
-              Cognitive dual-task training for adults 55+. Walk smarter, live better.
+            <p className="text-xl font-extrabold text-brand tracking-tight mb-1 leading-tight">Stridemind: Fall Prevention</p>
+            <p className="text-gray-400 text-sm mb-3">Train Your Brain While Walking</p>
+            <p className="text-gray-500 text-sm leading-relaxed">
+              Cognitive dual-task training for adults 55+. Clinically backed to improve balance and reduce fall risk.
             </p>
           </div>
 
@@ -57,7 +58,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-500 text-sm">
-            © {year} StrideMind. All rights reserved. Not a medical device. For wellness purposes only.
+            © {year} Stridemind: Fall Prevention. All rights reserved. Not a medical device. For wellness purposes only.
           </p>
         </div>
       </div>
