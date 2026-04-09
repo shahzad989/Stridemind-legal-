@@ -20,12 +20,12 @@ export const metadata: Metadata = {
   title: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
   description:
     'Audio-guided dual-task walking exercises clinically backed to improve balance, cognition, and reduce fall risk in adults 55+.',
-  metadataBase: new URL('https://stridemind-one.vercel.app'),
+  metadataBase: new URL('https://stridemind.app'),
   openGraph: {
     title: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
     description:
       'Cognitive dual-task training designed for adults 55+. Backed by 30+ clinical studies.',
-    url: 'https://stridemind-one.vercel.app',
+    url: 'https://stridemind.app',
     siteName: 'Stridemind: Fall Prevention',
     type: 'website',
     images: [
@@ -50,9 +50,9 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://stridemind-one.vercel.app/#organization',
+      '@id': 'https://stridemind.app/#organization',
       name: 'Stridemind: Fall Prevention',
-      url: 'https://stridemind-one.vercel.app',
+      url: 'https://stridemind.app',
       contactPoint: {
         '@type': 'ContactPoint',
         email: 'appstridemind@gmail.com',
@@ -61,7 +61,7 @@ const jsonLd = {
     },
     {
       '@type': 'MobileApplication',
-      '@id': 'https://stridemind-one.vercel.app/#app',
+      '@id': 'https://stridemind.app/#app',
       name: 'Stridemind: Fall Prevention',
       operatingSystem: 'iOS',
       applicationCategory: 'HealthApplication',

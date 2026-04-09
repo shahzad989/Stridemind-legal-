@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://stridemind-one.vercel.app/sitemap.xml',
+    sitemap: 'https://stridemind.app/sitemap.xml',
   };
 }
