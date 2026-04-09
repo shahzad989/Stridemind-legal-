@@ -1,24 +1,84 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, DM_Serif_Display } from 'next/font/google';
 import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import StickyCTA from '@/components/StickyCTA';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
+
+const dmSerif = DM_Serif_Display({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-display',
+});
 
 export const metadata: Metadata = {
   title: 'StrideMind — Cognitive Training for Active Aging',
   description:
     'Audio-guided dual-task walking exercises clinically backed to improve balance, cognition, and reduce fall risk in adults 55+.',
-  metadataBase: new URL('https://stridemind.app'),
+  metadataBase: new URL('https://stridemind-one.vercel.app'),
   openGraph: {
     title: 'StrideMind — Walk Sharper. Think Faster. Age Better.',
     description:
       'Cognitive dual-task training designed for adults 55+. Backed by 30+ clinical studies.',
-    url: 'https://stridemind.app',
+    url: 'https://stridemind-one.vercel.app',
     siteName: 'StrideMind',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'StrideMind — Walk Sharper. Think Faster. Age Better.',
+      },
+    ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'StrideMind — Walk Sharper. Think Faster. Age Better.',
+    description: 'Cognitive dual-task training designed for adults 55+. Backed by 30+ clinical studies.',
+    images: ['/og-image.png'],
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://stridemind-one.vercel.app/#organization',
+      name: 'StrideMind',
+      url: 'https://stridemind-one.vercel.app',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'appstridemind@gmail.com',
+        contactType: 'customer support',
+      },
+    },
+    {
+      '@type': 'MobileApplication',
+      '@id': 'https://stridemind-one.vercel.app/#app',
+      name: 'StrideMind',
+      operatingSystem: 'iOS',
+      applicationCategory: 'HealthApplication',
+      description:
+        'Audio-guided dual-task walking exercises clinically backed to improve balance, cognition, and reduce fall risk in adults 55+.',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5',
+        ratingCount: '3',
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -28,10 +88,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-white text-gray-900`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className={`${inter.variable} ${dmSerif.variable} font-sans bg-white text-gray-900 antialiased`}>
         <Nav />
         <main>{children}</main>
         <Footer />
+        <StickyCTA />
       </body>
     </html>
   );

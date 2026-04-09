@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const AppleIcon = () => (
   <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -9,24 +9,55 @@ const AppleIcon = () => (
   </svg>
 );
 
+const NAV_LINKS = [
+  { label: 'How It Works', href: '#how-it-works' },
+  { label: 'The Science', href: '#science' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'FAQ', href: '#faq' },
+];
+
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-200 ${
+        scrolled ? 'bg-white/98 shadow-sm backdrop-blur-sm' : 'bg-white/95 backdrop-blur-sm'
+      } border-b border-gray-100`}
+    >
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex items-center gap-2 flex-shrink-0" onClick={() => setOpen(false)}>
           <span className="text-2xl font-extrabold text-brand tracking-tight">StrideMind</span>
         </Link>
+
+        {/* Desktop nav links */}
+        <nav className="hidden md:flex items-center gap-6">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-gray-600 hover:text-brand transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
 
         {/* Desktop CTA */}
         <a
           href="#"
-          className="hidden sm:inline-flex items-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-gray-800 transition-colors"
+          className="hidden sm:inline-flex items-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-gray-800 transition-colors flex-shrink-0"
         >
           <AppleIcon />
-          Download on App Store
+          App Store
         </a>
 
         {/* Mobile hamburger */}
@@ -47,10 +78,20 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="sm:hidden border-t border-gray-100 bg-white px-6 py-4">
+        <div className="sm:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="block text-base font-medium text-gray-700 hover:text-brand py-1"
+              onClick={() => setOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
           <a
             href="#"
-            className="flex items-center justify-center gap-2 bg-gray-900 text-white px-5 py-3 rounded-xl text-sm font-semibold w-full"
+            className="flex items-center justify-center gap-2 bg-gray-900 text-white px-5 py-3 rounded-xl text-sm font-semibold w-full mt-2"
             onClick={() => setOpen(false)}
           >
             <AppleIcon />

@@ -1,4 +1,7 @@
+'use client';
+
 import { Headphones, Footprints, Brain } from 'lucide-react';
+import { motion, type Variants } from 'framer-motion';
 
 const STEPS = [
   {
@@ -20,29 +23,50 @@ const STEPS = [
     number: '03',
     title: 'Respond to audio challenges',
     description:
-      'Answer cognitive prompts as you walk, strengthening the brain‑body coordination that protects your balance.',
+      'Answer cognitive prompts as you walk, strengthening the brain-body coordination that protects your balance.',
   },
 ];
 
+const container: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.15 } },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 32 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55 } },
+};
+
 export default function HowItWorks() {
   return (
-    <section className="bg-brand-muted py-24 px-6">
+    <section id="how-it-works" className="bg-brand-muted py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
+          className="text-center mb-16"
+        >
           <span className="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
             How It Works
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
+          <h2 className="font-display text-4xl sm:text-5xl text-gray-900">
             Three steps to sharper thinking
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Steps */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8"
+        >
           {STEPS.map(({ Icon, number, title, description }) => (
-            <div
+            <motion.div
               key={number}
+              variants={item}
               className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg border border-gray-100 flex flex-col hover:-translate-y-1 transition-all duration-200"
             >
               <div className="mb-5">
@@ -53,9 +77,9 @@ export default function HowItWorks() {
               </p>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
               <p className="text-gray-600 leading-relaxed text-lg flex-1">{description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

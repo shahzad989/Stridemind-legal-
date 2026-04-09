@@ -1,21 +1,28 @@
+'use client';
+
+import { motion, type Variants } from 'framer-motion';
+
 const TESTIMONIALS = [
   {
     quote:
       "I've been using StrideMind for three months and my balance has noticeably improved. I feel so much more confident on my morning walks.",
     name: 'Margaret T.',
     age: 68,
+    location: 'Phoenix, AZ',
   },
   {
     quote:
       "My physical therapist recommended it after my fall last year. Now it's part of my daily routine — and I actually enjoy it.",
     name: 'Robert K.',
     age: 72,
+    location: 'Denver, CO',
   },
   {
     quote:
       "Simple to use, and the science actually checks out. My doctor was genuinely impressed when I showed her the research behind it.",
     name: 'Linda M.',
     age: 61,
+    location: 'Austin, TX',
   },
 ];
 
@@ -25,28 +32,48 @@ const StarIcon = () => (
   </svg>
 );
 
+const container: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.15 } },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 32 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55 } },
+};
+
 export default function Testimonials() {
   return (
     <section className="bg-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
+          className="text-center mb-16"
+        >
           <span className="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
             Testimonials
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
+          <h2 className="font-display text-4xl sm:text-5xl text-gray-900">
             What people are saying
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8"
+        >
           {TESTIMONIALS.map((t) => (
-            <div
+            <motion.div
               key={t.name}
+              variants={item}
               className="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-lg flex flex-col hover:-translate-y-1 transition-all duration-200"
             >
-              {/* Stars */}
               <div className="flex gap-1 mb-6" aria-label="5 out of 5 stars">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <StarIcon key={i} />
@@ -59,11 +86,11 @@ export default function Testimonials() {
 
               <div className="border-t border-gray-200 pt-4">
                 <p className="font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">Age {t.age}</p>
+                <p className="text-sm text-gray-500">Age {t.age} · {t.location}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

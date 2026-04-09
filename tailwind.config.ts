@@ -14,6 +14,10 @@ const config: Config = {
         'brand-light': '#dcfce7',
         'brand-muted': '#f0fdf4',
       },
+      fontFamily: {
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+      },
     },
   },
   plugins: [],
