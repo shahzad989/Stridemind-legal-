@@ -1,0 +1,271 @@
+import type { Metadata } from 'next';
+import LegalLayout, { LegalSection } from '@/components/LegalLayout';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy — StrideMind',
+  description: 'StrideMind privacy policy. Learn what data we collect, how we use it, and your rights.',
+};
+
+export default function PrivacyPolicy() {
+  return (
+    <LegalLayout title="Privacy Policy" lastUpdated="April 8, 2026">
+      <p className="text-lg text-gray-700 leading-relaxed mb-10">
+        StrideMind (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;the app&rdquo;) is a cognitive training app built
+        for active adults. This policy explains what data we collect, how we use it, and your
+        rights around it.
+      </p>
+
+      <LegalSection title="Who We Are">
+        <p>
+          StrideMind is an independently developed app. If you have questions about this policy,
+          contact us at{' '}
+          <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">
+            appstridemind@gmail.com
+          </a>
+          .
+        </p>
+      </LegalSection>
+
+      <LegalSection title="What We Collect">
+        <ul className="list-disc pl-6 space-y-2">
+          <li>
+            <strong>Account information:</strong> your name and email address when you create an account.
+          </li>
+          <li>
+            <strong>Usage data:</strong> the training sessions you complete, their duration, and your
+            activity history within the app.
+          </li>
+          <li>
+            <strong>Subscription status:</strong> whether you have an active premium subscription,
+            managed through RevenueCat.
+          </li>
+        </ul>
+        <p>We do not collect health data, location data, or any device sensor data.</p>
+      </LegalSection>
+
+      <LegalSection title="How We Use Your Data">
+        <ul className="list-disc pl-6 space-y-2">
+          <li>To display your training history and progress inside the app.</li>
+          <li>To calculate your weekly training progress toward your goal.</li>
+          <li>To manage your account and subscription status.</li>
+          <li>
+            To send optional reminders through local notifications on your device (only if you
+            enable them). These notifications are generated locally and do not transmit any data
+            to our servers.
+          </li>
+        </ul>
+        <p>We do not sell your data. We do not use your data for advertising.</p>
+      </LegalSection>
+
+      <LegalSection title="Data Security">
+        <p>
+          All data transmitted between the app and our servers is encrypted in transit using
+          HTTPS/TLS. Your account data is stored securely through Supabase, which maintains its
+          own security certifications and practices.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Third-Party Services">
+        <ul className="list-disc pl-6 space-y-2">
+          <li>
+            <strong>Supabase</strong> — database and authentication. Your account data and session
+            history are stored here.{' '}
+            <a href="https://supabase.com/privacy" className="text-brand-dark hover:text-brand underline" target="_blank" rel="noopener noreferrer">
+              Supabase Privacy Policy
+            </a>
+          </li>
+          <li>
+            <strong>RevenueCat</strong> — subscription management. Purchase and entitlement data is
+            processed here.{' '}
+            <a href="https://www.revenuecat.com/privacy" className="text-brand-dark hover:text-brand underline" target="_blank" rel="noopener noreferrer">
+              RevenueCat Privacy Policy
+            </a>
+          </li>
+          <li>
+            <strong>Expo</strong> — app development platform used to build and deliver the app.{' '}
+            <a href="https://expo.dev/privacy" className="text-brand-dark hover:text-brand underline" target="_blank" rel="noopener noreferrer">
+              Expo Privacy Policy
+            </a>
+          </li>
+          <li>
+            <strong>Apple</strong> — payment processing for in-app subscriptions is handled entirely
+            by Apple. We never see your payment details.
+          </li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection title="International Data Transfers">
+        <p>
+          StrideMind uses Supabase, which stores data on infrastructure hosted in the United States
+          (Amazon Web Services). If you are located outside the United States, your data may be
+          transferred to and processed in the US.
+        </p>
+        <p>
+          Where required by applicable law, we rely on standard contractual clauses or equivalent
+          safeguards to legitimize such transfers. By using the app, you acknowledge that your data
+          may be processed in the United States.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Data Retention">
+        <p>
+          Your data is retained for as long as your account is active. If you delete your account,
+          your personal data is deleted within 30 days.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Your Rights (All Users)">
+        <p>
+          Regardless of where you are located, you can request access to, correction of, or
+          deletion of your personal data at any time by contacting us at{' '}
+          <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">
+            appstridemind@gmail.com
+          </a>
+          . We will respond within 30 days.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="California Residents (CCPA)">
+        <p>If you are a California resident, you have the following rights under the California Consumer Privacy Act:</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li><strong>Right to know</strong> — you can request information about the personal data we collect and how we use it.</li>
+          <li><strong>Right to delete</strong> — you can request that we delete your personal data.</li>
+          <li><strong>Right to opt out of sale</strong> — we do not sell your personal data to third parties.</li>
+          <li><strong>Right to non-discrimination</strong> — we will not treat you differently for exercising any of these rights.</li>
+        </ul>
+        <p>
+          To exercise any of these rights, contact us at{' '}
+          <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">appstridemind@gmail.com</a>.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="EEA and UK Residents (GDPR / UK GDPR)">
+        <p>
+          If you are located in the European Economic Area or the United Kingdom, you have the following rights under the General Data Protection Regulation (GDPR) or equivalent UK law:
+        </p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li><strong>Right of access</strong> — you can request a copy of the personal data we hold about you.</li>
+          <li><strong>Right to rectification</strong> — you can ask us to correct inaccurate or incomplete data.</li>
+          <li><strong>Right to erasure</strong> — you can request that we delete your personal data.</li>
+          <li><strong>Right to restriction</strong> — you can ask us to limit how we use your data in certain circumstances.</li>
+          <li><strong>Right to data portability</strong> — you can request your data in a structured, machine-readable format.</li>
+          <li><strong>Right to object</strong> — you can object to our processing of your data where we rely on legitimate interests as a legal basis.</li>
+        </ul>
+        <p>
+          Our legal basis for processing your data is the performance of our contract with you
+          (providing the app and its features). To exercise any of these rights or to lodge a
+          complaint, contact us at{' '}
+          <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">appstridemind@gmail.com</a>.
+          You also have the right to lodge a complaint with your local data protection authority.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Canadian Residents (PIPEDA / Quebec Law 25)">
+        <p>
+          If you are a Canadian resident, you have rights under the Personal Information Protection
+          and Electronic Documents Act (PIPEDA) and, if you are a Quebec resident, under Quebec
+          Law 25. These include the right to access your personal information, to request
+          corrections, and to withdraw consent to our use of your data (subject to legal and
+          contractual restrictions). To exercise any of these rights, contact us at{' '}
+          <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">appstridemind@gmail.com</a>.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Australian Residents (Privacy Act 1988)">
+        <p>
+          If you are located in Australia, we handle your personal information in accordance with
+          the Australian Privacy Act 1988 and the Australian Privacy Principles (APPs). You have
+          the right to access your personal information and to request corrections. To make a
+          request or raise a privacy concern, contact us at{' '}
+          <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">appstridemind@gmail.com</a>.
+          If we do not resolve your complaint to your satisfaction, you may escalate it to the
+          Office of the Australian Information Commissioner (OAIC).
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Brazilian Residents (LGPD)">
+        <p>
+          If you are located in Brazil, your personal data is processed in accordance with the Lei
+          Geral de Proteção de Dados (LGPD — Federal Law No. 13,709/2018). You have the right to
+          confirm the existence of processing, access your data, correct incomplete or inaccurate
+          data, request anonymization or deletion, request data portability, and revoke consent.
+          To exercise any of these rights, contact us at{' '}
+          <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">appstridemind@gmail.com</a>.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Japanese Residents (APPI)">
+        <p>
+          If you are located in Japan, your personal information is handled in accordance with the
+          Act on the Protection of Personal Information (APPI). You have the right to request
+          disclosure, correction, addition, deletion, or cessation of use of your personal
+          information. To make a request, contact us at{' '}
+          <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">appstridemind@gmail.com</a>.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="South Korean Residents (PIPA)">
+        <p>
+          If you are located in South Korea, your personal information is processed in accordance
+          with the Personal Information Protection Act (PIPA). You have the right to access,
+          correct, delete, and suspend processing of your personal information. To exercise any
+          of these rights, contact us at{' '}
+          <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">appstridemind@gmail.com</a>.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Indian Residents (DPDP Act)">
+        <p>
+          If you are located in India, your personal data is processed in accordance with the
+          Digital Personal Data Protection Act, 2023 (DPDP Act). You have the right to access
+          information about your data, to correct inaccurate data, and to request erasure. To
+          exercise any of these rights, contact us at{' '}
+          <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">appstridemind@gmail.com</a>.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Swiss Residents (nFADP)">
+        <p>
+          If you are located in Switzerland, your personal data is processed in accordance with the
+          revised Federal Act on Data Protection (nFADP), in force since September 1, 2023. You
+          have the right to information about your data, to correction, and to deletion. To exercise
+          any of these rights, contact us at{' '}
+          <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">appstridemind@gmail.com</a>.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Other Jurisdictions">
+        <p>
+          If you are located in a jurisdiction not listed above that grants you privacy rights under
+          applicable law, you may contact us at{' '}
+          <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">appstridemind@gmail.com</a>{' '}
+          to exercise those rights. We will respond within 30 days and will make reasonable efforts
+          to comply with applicable local requirements.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Children">
+        <p>
+          StrideMind is designed for adults 55 and older. We do not knowingly collect data from
+          anyone under the age of 13 (or a higher age if required by your local law).
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Changes to This Policy">
+        <p>
+          If we make material changes to this policy, we will update the date at the top and notify
+          users through the app where appropriate.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Contact">
+        <p>
+          Questions or requests:{' '}
+          <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">
+            appstridemind@gmail.com
+          </a>
+        </p>
+      </LegalSection>
+    </LegalLayout>
+  );
+}
