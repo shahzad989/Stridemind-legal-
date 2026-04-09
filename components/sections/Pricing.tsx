@@ -4,13 +4,13 @@ import { Check, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const FREE_FEATURES = [
-  { text: '3 cognitive walk protocols', included: true },
+  { text: 'A couple of cognitive walk protocols', included: true },
   { text: 'Basic progress tracking', included: true },
   { text: 'Streak counter', included: true },
   { text: 'All 20+ premium protocols', included: false },
   { text: 'Personalized difficulty', included: false },
   { text: 'Detailed session analytics', included: false },
-  { text: 'Offline mode', included: false },
+  { text: 'Offline mode (coming soon)', included: false },
 ];
 
 const PREMIUM_FEATURES = [
@@ -20,7 +20,7 @@ const PREMIUM_FEATURES = [
   { text: 'Personalized difficulty levels', included: true },
   { text: 'Detailed session analytics', included: true },
   { text: 'New protocols added monthly', included: true },
-  { text: 'Offline mode', included: true },
+  { text: 'Offline mode (coming soon)', included: true },
 ];
 
 const AppleIcon = () => (

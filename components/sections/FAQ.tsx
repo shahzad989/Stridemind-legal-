@@ -11,11 +11,11 @@ const FAQS = [
   },
   {
     q: 'Do I need wifi or data during my walk?',
-    a: 'Premium subscribers can download protocols for offline use before heading out. Free users need an internet connection to stream audio during their session.',
+    a: 'Yes — StrideMind streams audio during your session, so you need a data connection or wifi on your walk. Make sure you have signal before heading out.',
   },
   {
     q: 'How long are the sessions?',
-    a: 'Sessions range from 9 to 20 minutes, designed to fit into a regular walk. You can walk longer — the protocol ends and you keep going. Most users aim for 3–5 sessions per week.',
+    a: 'Sessions range from 5 to 15 minutes — short enough to fit into any walk. The protocol ends on its own; you can keep walking as long as you like after. Most people aim for a few sessions per week.',
   },
   {
     q: "I'm not very tech-savvy. Is it hard to use?",
@@ -23,7 +23,7 @@ const FAQS = [
   },
   {
     q: "What's the difference between free and premium?",
-    a: 'Free gives you 3 protocols to try — enough to feel the benefit. Premium unlocks all 20+ protocols, personalized difficulty, full history and analytics, and offline access for $4.99/month or $34.99/year.',
+    a: 'Free gives you a couple of protocols to try — enough to feel the benefit. Premium unlocks the full library, personalized difficulty, complete history and analytics for $4.99/month or $34.99/year.',
   },
   {
     q: 'Is it safe if I have a balance condition or have had a fall?',
