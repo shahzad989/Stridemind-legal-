@@ -19,9 +19,9 @@ export default function TheScience() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand mb-3">
+          <span className="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
             The Science
-          </p>
+          </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Not just a wellness app.{' '}
             <span className="text-brand">Evidence‑backed training.</span>

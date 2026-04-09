@@ -31,9 +31,9 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand mb-3">
+          <span className="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
             Testimonials
-          </p>
+          </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
             What people are saying
           </h2>
@@ -44,7 +44,7 @@ export default function Testimonials() {
           {TESTIMONIALS.map((t) => (
             <div
               key={t.name}
-              className="bg-gray-50 rounded-2xl p-8 border border-gray-100 flex flex-col"
+              className="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-lg flex flex-col hover:-translate-y-1 transition-all duration-200"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-6" aria-label="5 out of 5 stars">

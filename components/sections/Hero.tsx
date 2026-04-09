@@ -4,6 +4,95 @@ const AppleIcon = () => (
   </svg>
 );
 
+const WAVEFORM_HEIGHTS = [28, 48, 36, 60, 44, 72, 52, 40, 64, 32, 56, 44, 36, 52, 40];
+
+function PhoneMockup() {
+  const circumference = 2 * Math.PI * 34;
+  const dashOffset = circumference * 0.25; // 75% filled
+
+  return (
+    <div className="relative flex items-center justify-center">
+      {/* Glow behind phone */}
+      <div
+        className="absolute w-72 h-72 rounded-full pointer-events-none"
+        style={{ background: '#dcfce7', filter: 'blur(48px)', opacity: 0.7 }}
+      />
+
+      {/* Phone outline */}
+      <div className="relative w-60 h-[500px] rounded-[2.75rem] border-4 border-brand bg-white shadow-2xl overflow-hidden flex flex-col">
+        {/* Status bar */}
+        <div className="flex-shrink-0 h-10 bg-brand-muted flex items-center justify-center">
+          <div className="w-20 h-5 bg-gray-900 rounded-full" />
+        </div>
+
+        {/* Screen content */}
+        <div className="flex-1 px-5 py-4 space-y-4 overflow-hidden">
+
+          {/* App label */}
+          <div className="text-center">
+            <p className="text-xs font-bold text-brand uppercase tracking-widest">StrideMind</p>
+          </div>
+
+          {/* Waveform */}
+          <div className="bg-brand-muted rounded-2xl p-3">
+            <p className="text-[10px] text-gray-400 mb-2 font-medium">NOW PLAYING</p>
+            <div className="flex items-end gap-0.5 h-10 justify-center">
+              {WAVEFORM_HEIGHTS.map((h, i) => (
+                <div
+                  key={i}
+                  className="w-2 rounded-sm"
+                  style={{
+                    height: `${h}%`,
+                    backgroundColor: i < 9 ? '#166534' : '#dcfce7',
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Progress ring */}
+          <div className="flex flex-col items-center gap-1">
+            <svg width="80" height="80" viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="40" r="34" fill="none" stroke="#dcfce7" strokeWidth="7" />
+              <circle
+                cx="40" cy="40" r="34"
+                fill="none"
+                stroke="#166534"
+                strokeWidth="7"
+                strokeDasharray={circumference}
+                strokeDashoffset={dashOffset}
+                strokeLinecap="round"
+                transform="rotate(-90 40 40)"
+              />
+              <text x="40" y="45" textAnchor="middle" fontSize="13" fontWeight="700" fill="#166534">
+                75%
+              </text>
+            </svg>
+            <p className="text-[10px] text-gray-400 font-medium">Weekly Goal</p>
+          </div>
+
+          {/* Placeholder text lines */}
+          <div className="space-y-2">
+            <div className="h-2.5 bg-gray-200 rounded-full w-4/5" />
+            <div className="h-2.5 bg-gray-100 rounded-full w-3/5" />
+            <div className="h-2.5 bg-gray-200 rounded-full w-2/3" />
+          </div>
+
+          {/* Start button */}
+          <div className="h-10 bg-brand rounded-2xl w-full flex items-center justify-center">
+            <div className="w-3 h-3 border-l-4 border-t-4 border-b-4 border-transparent border-l-white ml-1" />
+          </div>
+        </div>
+
+        {/* Home indicator */}
+        <div className="flex-shrink-0 h-6 flex items-center justify-center">
+          <div className="w-24 h-1 bg-gray-300 rounded-full" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-white pt-16">
@@ -18,47 +107,57 @@ export default function Hero() {
       />
 
       <div className="relative max-w-6xl mx-auto px-6 py-24 w-full">
-        <div className="max-w-3xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-brand-light text-brand-dark px-4 py-2 rounded-full text-sm font-semibold mb-8 border border-brand-light">
-            <span aria-hidden="true">🧠</span>
-            <span>Backed by 30+ clinical studies</span>
-          </div>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* Headline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-[1.1] tracking-tight mb-6">
-            Walk Sharper.<br />
-            Think Faster.<br />
-            <span className="text-brand">Age Better.</span>
-          </h1>
+          {/* Left — text content */}
+          <div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-brand-light text-brand px-4 py-2 rounded-full text-sm font-semibold mb-8 border border-brand-light">
+              <span aria-hidden="true">🧠</span>
+              <span>Backed by 30+ clinical studies</span>
+            </div>
 
-          {/* Subheadline */}
-          <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed mb-10 max-w-2xl">
-            StrideMind pairs cognitive challenges with your daily walk — clinically‑backed
-            dual‑task training designed for adults 55+.
-          </p>
+            {/* Headline */}
+            <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-900 leading-[1.1] tracking-tight mb-6">
+              Walk Sharper.<br />
+              Think Faster.<br />
+              <span style={{ color: '#166534' }}>Age Better.</span>
+            </h1>
 
-          {/* App Store button */}
-          <a
-            href="#"
-            className="inline-flex items-center gap-4 bg-gray-900 text-white px-8 py-4 rounded-2xl hover:bg-gray-800 transition-colors shadow-lg"
-          >
-            <AppleIcon />
-            <span>
-              <span className="block text-xs text-gray-400 leading-none mb-1">Download on the</span>
-              <span className="block text-xl font-bold leading-none">App Store</span>
-            </span>
-          </a>
+            {/* Subheadline */}
+            <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
+              StrideMind pairs cognitive challenges with your daily walk — clinically‑backed
+              dual‑task training designed for adults 55+.
+            </p>
 
-          {/* Trust indicators */}
-          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-base text-gray-500">
-            {['Free to start', 'No equipment needed', 'iOS app'].map((item) => (
-              <span key={item} className="flex items-center gap-2">
-                <span className="text-brand font-bold">✓</span>
-                {item}
+            {/* App Store button */}
+            <a
+              href="#"
+              className="inline-flex items-center gap-4 bg-gray-900 text-white px-8 py-4 rounded-2xl hover:bg-gray-800 transition-colors shadow-lg"
+            >
+              <AppleIcon />
+              <span>
+                <span className="block text-xs text-gray-400 leading-none mb-1">Download on the</span>
+                <span className="block text-xl font-bold leading-none">App Store</span>
               </span>
-            ))}
+            </a>
+
+            {/* Trust indicators */}
+            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-base text-gray-500">
+              {['Free to start', 'No equipment needed', 'iOS app'].map((item) => (
+                <span key={item} className="flex items-center gap-2">
+                  <span className="font-bold" style={{ color: '#166534' }}>✓</span>
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
+
+          {/* Right — phone mockup */}
+          <div className="hidden lg:flex items-center justify-center">
+            <PhoneMockup />
+          </div>
+
         </div>
       </div>
     </section>
