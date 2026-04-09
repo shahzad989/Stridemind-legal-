@@ -23,7 +23,7 @@ const FAQS = [
   },
   {
     q: "What's the difference between free and premium?",
-    a: 'Free gives you a couple of protocols to try — enough to feel the benefit. Premium unlocks the full library, personalized difficulty, complete history and analytics for $4.99/month or $34.99/year.',
+    a: 'Free gives you a selection of protocols to try — enough to feel the benefit. Premium unlocks the full library, personalized difficulty, and complete history and analytics for $9.99/month or $79.99/year.',
   },
   {
     q: 'Is it safe if I have a balance condition or have had a fall?',

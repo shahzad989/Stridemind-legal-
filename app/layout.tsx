@@ -17,29 +17,29 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'StrideMind — Cognitive Training for Active Aging',
+  title: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
   description:
     'Audio-guided dual-task walking exercises clinically backed to improve balance, cognition, and reduce fall risk in adults 55+.',
   metadataBase: new URL('https://stridemind-one.vercel.app'),
   openGraph: {
-    title: 'StrideMind — Walk Sharper. Think Faster. Age Better.',
+    title: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
     description:
       'Cognitive dual-task training designed for adults 55+. Backed by 30+ clinical studies.',
     url: 'https://stridemind-one.vercel.app',
-    siteName: 'StrideMind',
+    siteName: 'Stridemind: Fall Prevention',
     type: 'website',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'StrideMind — Walk Sharper. Think Faster. Age Better.',
+        alt: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'StrideMind — Walk Sharper. Think Faster. Age Better.',
+    title: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
     description: 'Cognitive dual-task training designed for adults 55+. Backed by 30+ clinical studies.',
     images: ['/og-image.png'],
   },
@@ -51,7 +51,7 @@ const jsonLd = {
     {
       '@type': 'Organization',
       '@id': 'https://stridemind-one.vercel.app/#organization',
-      name: 'StrideMind',
+      name: 'Stridemind: Fall Prevention',
       url: 'https://stridemind-one.vercel.app',
       contactPoint: {
         '@type': 'ContactPoint',
@@ -62,7 +62,7 @@ const jsonLd = {
     {
       '@type': 'MobileApplication',
       '@id': 'https://stridemind-one.vercel.app/#app',
-      name: 'StrideMind',
+      name: 'Stridemind: Fall Prevention',
       operatingSystem: 'iOS',
       applicationCategory: 'HealthApplication',
       description:

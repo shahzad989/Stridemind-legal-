@@ -4,22 +4,22 @@ import { Check, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const FREE_FEATURES = [
-  { text: 'A couple of cognitive walk protocols', included: true },
+  { text: 'Select cognitive walk protocols', included: true },
   { text: 'Basic progress tracking', included: true },
   { text: 'Streak counter', included: true },
-  { text: 'All 20+ premium protocols', included: false },
+  { text: 'Full protocol library', included: false },
   { text: 'Personalized difficulty', included: false },
   { text: 'Detailed session analytics', included: false },
   { text: 'Offline mode (coming soon)', included: false },
 ];
 
 const PREMIUM_FEATURES = [
-  { text: 'All 20+ cognitive walk protocols', included: true },
+  { text: 'Full cognitive walk protocol library', included: true },
   { text: 'Full progress tracking & history', included: true },
   { text: 'Streak counter & weekly goals', included: true },
   { text: 'Personalized difficulty levels', included: true },
   { text: 'Detailed session analytics', included: true },
-  { text: 'New protocols added monthly', included: true },
+  { text: 'New protocols added regularly', included: true },
   { text: 'Offline mode (coming soon)', included: true },
 ];
 
@@ -114,10 +114,10 @@ export default function Pricing() {
                 </span>
               </div>
               <div className="flex items-end gap-2">
-                <span className="text-5xl font-extrabold text-white">$4.99</span>
+                <span className="text-5xl font-extrabold text-white">$9.99</span>
                 <span className="text-green-200 mb-2">/month</span>
               </div>
-              <p className="text-green-200 mt-1 text-sm">or $34.99/year — save 42%</p>
+              <p className="text-green-200 mt-1 text-sm">or $79.99/year — save 33%</p>
             </div>
 
             <ul className="space-y-3 mb-8 flex-1 relative">

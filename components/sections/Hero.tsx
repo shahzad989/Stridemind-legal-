@@ -31,14 +31,19 @@ function PhoneMockup() {
         <div className="absolute inset-0 pt-7">
           <Image
             src="/app-screenshot.png"
-            alt="StrideMind app home screen showing daily walk goals and cognitive training"
+            alt="Stridemind: Fall Prevention app home screen showing daily walk goals and cognitive training"
             fill
             className="object-cover object-top"
             priority
             sizes="256px"
           />
         </div>
-        <div className="absolute bottom-2 left-0 right-0 flex justify-center z-10">
+        {/* Gradient fade at bottom to cleanly hide the screen cutoff */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-28 z-10 pointer-events-none"
+          style={{ background: 'linear-gradient(to bottom, transparent, #07101E)' }}
+        />
+        <div className="absolute bottom-2 left-0 right-0 flex justify-center z-20">
           <div className="w-24 h-1 rounded-full" style={{ background: 'rgba(255,255,255,0.25)' }} />
         </div>
       </div>
