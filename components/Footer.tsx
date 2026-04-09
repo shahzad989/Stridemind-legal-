@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -9,8 +10,19 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-10">
           {/* Brand */}
           <div className="max-w-xs">
-            <p className="text-xl font-extrabold text-brand tracking-tight mb-1 leading-tight">Stridemind: Fall Prevention</p>
-            <p className="text-gray-400 text-sm mb-3">Train Your Brain While Walking</p>
+            <div className="flex items-center gap-3 mb-3">
+              <Image
+                src="/app-icon.png"
+                alt="Stridemind app icon"
+                width={44}
+                height={44}
+                className="rounded-xl flex-shrink-0"
+              />
+              <div>
+                <p className="text-base font-extrabold text-brand tracking-tight leading-tight">Stridemind: Fall Prevention</p>
+                <p className="text-gray-500 text-xs mt-0.5">Train Your Brain While Walking</p>
+              </div>
+            </div>
             <p className="text-gray-500 text-sm leading-relaxed">
               Cognitive dual-task training for adults 55+. Clinically backed to improve balance and reduce fall risk.
             </p>

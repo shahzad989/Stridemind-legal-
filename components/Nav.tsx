@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 const AppleIcon = () => (
@@ -34,7 +35,14 @@ export default function Nav() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 flex-shrink-0" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex items-center gap-2.5 flex-shrink-0" onClick={() => setOpen(false)}>
+          <Image
+            src="/app-icon.png"
+            alt="Stridemind app icon"
+            width={34}
+            height={34}
+            className="rounded-lg"
+          />
           <span className="text-lg font-extrabold text-brand tracking-tight leading-tight">
             Stridemind: Fall Prevention
           </span>
