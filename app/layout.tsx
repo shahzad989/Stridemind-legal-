@@ -5,6 +5,7 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import StickyCTA from '@/components/StickyCTA';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -100,7 +101,8 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <StickyCTA />
-        <Analytics />
+        <Analytics debug={process.env.NODE_ENV !== 'production'} />
+        <SpeedInsights />
       </body>
     </html>
   );
