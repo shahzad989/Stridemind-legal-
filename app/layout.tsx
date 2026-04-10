@@ -4,6 +4,7 @@ import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import StickyCTA from '@/components/StickyCTA';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -99,6 +100,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <StickyCTA />
+        <Analytics />
       </body>
     </html>
   );
