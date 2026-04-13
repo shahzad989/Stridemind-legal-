@@ -7,6 +7,51 @@ import Pricing from '@/components/sections/Pricing';
 import FAQ from '@/components/sections/FAQ';
 import CallToAction from '@/components/sections/CallToAction';
 
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://stridemind.app/#webpage',
+  url: 'https://stridemind.app',
+  name: 'StrideMind: Fall Prevention — Train Your Brain While Walking',
+  isPartOf: { '@id': 'https://stridemind.app/#website' },
+  about: { '@id': 'https://stridemind.app/#app' },
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', '.hero-description', '#faq', '#science'],
+  },
+};
+
+const scholarlyArticleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ScholarlyArticle',
+  '@id': 'https://stridemind.app/#egm-2025-meta-analysis',
+  headline:
+    'Effects of dual-task walking training on fall risk and cognitive function in older adults: a systematic review and meta-analysis',
+  description:
+    'A systematic review and meta-analysis of 28+ randomized controlled trials involving 2,782 participants examining the effects of combined cognitive-motor (dual-task) walking training on fall risk, gait stability, and cognitive function in adults aged 55 and older.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'European Geriatric Medicine',
+  },
+  datePublished: '2025',
+  about: [
+    { '@type': 'Thing', name: 'dual-task walking training' },
+    { '@type': 'Thing', name: 'fall prevention' },
+    { '@type': 'Thing', name: 'cognitive function in older adults' },
+    { '@type': 'Thing', name: 'gait stability' },
+  ],
+  isBasedOn: {
+    '@type': 'MedicalStudy',
+    studyDesign: 'Randomized Controlled Trial',
+    studySubject: {
+      '@type': 'MedicalCondition',
+      name: 'Fall risk in older adults',
+    },
+  },
+  citation:
+    'European Geriatric Medicine, 2025. Meta-analysis of dual-task walking interventions: 28+ RCTs, 2,782 participants.',
+};
+
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -99,6 +144,14 @@ const howToSchema = {
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(scholarlyArticleSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

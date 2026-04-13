@@ -51,6 +51,23 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'WebSite',
+      '@id': 'https://stridemind.app/#website',
+      url: 'https://stridemind.app',
+      name: 'StrideMind: Fall Prevention',
+      description:
+        'Audio-guided dual-task walking training to reduce fall risk and improve cognition in adults 55+.',
+      publisher: { '@id': 'https://stridemind.app/#organization' },
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: 'https://stridemind.app/?q={search_term_string}',
+        },
+        'query-input': 'required name=search_term_string',
+      },
+    },
+    {
       '@type': 'Organization',
       '@id': 'https://stridemind.app/#organization',
       name: 'Stridemind: Fall Prevention',
