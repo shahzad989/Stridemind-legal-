@@ -11,10 +11,10 @@ const AppleIcon = () => (
 );
 
 const NAV_LINKS = [
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'The Science', href: '/science' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'How It Works', href: '#how-it-works', page: false },
+  { label: 'The Science', href: '/science', page: true },
+  { label: 'Pricing', href: '#pricing', page: false },
+  { label: 'FAQ', href: '#faq', page: false },
 ];
 
 export default function Nav() {
@@ -54,9 +54,14 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-gray-600 hover:text-brand transition-colors"
+              className="inline-flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-brand transition-colors"
             >
               {link.label}
+              {link.page && (
+                <svg className="w-3 h-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              )}
             </a>
           ))}
         </nav>
@@ -93,10 +98,15 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="block text-base font-medium text-gray-700 hover:text-brand py-1"
+              className="inline-flex items-center gap-1.5 text-base font-medium text-gray-700 hover:text-brand py-1"
               onClick={() => setOpen(false)}
             >
               {link.label}
+              {link.page && (
+                <svg className="w-3.5 h-3.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              )}
             </a>
           ))}
           <a
