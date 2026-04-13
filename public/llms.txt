@@ -1,0 +1,39 @@
+# StrideMind
+
+## What It Is
+
+StrideMind is an iOS app that uses dual-task walking training to reduce fall risk and improve cognitive function in older adults. The app delivers audio-guided cognitive exercises — number drills, pattern recall, memory challenges — designed to be performed while walking, training the brain and body to work together under real-world conditions.
+
+## Who It's For
+
+StrideMind is built for adults aged 55 and older who want to stay sharp, move confidently, and reduce their risk of falls. It is particularly suited for active agers, older adults in fall prevention programs, and anyone looking to maintain cognitive health through movement-based training.
+
+## The Science
+
+Dual-task walking training — performing a cognitive task while walking — is one of the most studied interventions for fall prevention and cognitive health in older adults.
+
+- 28+ randomized controlled trials (RCTs)
+- 2,782 participants across clinical studies
+- Meta-analysis published in European Geriatric Medicine, 2025
+- Evidence shows significant improvements in gait stability, executive function, and dual-task cost reduction
+
+StrideMind translates this clinical evidence into a practical, audio-first mobile experience that requires no equipment and fits into everyday life.
+
+Learn more: https://stridemind.app/science
+
+## Key Facts
+
+- Platform: iOS only (iPhone)
+- Category: Health & Fitness
+- Pricing:
+  - Monthly: $9.99/month
+  - Annual: $79.99/year (save ~33%)
+- Language: English
+- Requires: iPhone running iOS 16 or later
+
+## Links
+
+- Website: https://stridemind.app
+- App Store: https://apps.apple.com/app/stridemind
+- Science: https://stridemind.app/science
+- FAQ: https://stridemind.app/faq
