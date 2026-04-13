@@ -40,7 +40,7 @@ export default function LegalLayout({ title, lastUpdated, children }: LegalLayou
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to StrideMind
+          Back to Stridemind
         </Link>
 
         <h1 className="text-4xl font-bold text-gray-900 mb-2">{title}</h1>

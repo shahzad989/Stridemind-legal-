@@ -54,7 +54,7 @@ const jsonLd = {
       '@type': 'WebSite',
       '@id': 'https://stridemind.app/#website',
       url: 'https://stridemind.app',
-      name: 'StrideMind: Fall Prevention',
+      name: 'Stridemind: Fall Prevention',
       description:
         'Audio-guided dual-task walking training to reduce fall risk and improve cognition in adults 55+.',
       publisher: { '@id': 'https://stridemind.app/#organization' },
@@ -81,11 +81,11 @@ const jsonLd = {
     {
       '@type': 'MobileApplication',
       '@id': 'https://stridemind.app/#app',
-      name: 'StrideMind: Fall Prevention',
+      name: 'Stridemind: Fall Prevention',
       operatingSystem: 'iOS',
       applicationCategory: 'HealthApplication',
       description:
-        'StrideMind uses dual-task walking training — combining audio-guided cognitive exercises with physical movement — to reduce fall risk and improve cognition in adults 55+. Backed by 28+ randomized controlled trials.',
+        'Stridemind uses dual-task walking training — combining audio-guided cognitive exercises with physical movement — to reduce fall risk and improve cognition in adults 55+. Backed by 28+ randomized controlled trials.',
       offers: [
         {
           '@type': 'Offer',

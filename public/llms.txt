@@ -1,12 +1,12 @@
-# StrideMind
+# Stridemind
 
 ## What It Is
 
-StrideMind is an iOS app that uses dual-task walking training to reduce fall risk and improve cognitive function in older adults. The app delivers audio-guided cognitive exercises — number drills, pattern recall, memory challenges — designed to be performed while walking, training the brain and body to work together under real-world conditions.
+Stridemind is an iOS app that uses dual-task walking training to reduce fall risk and improve cognitive function in older adults. The app delivers audio-guided cognitive exercises — number drills, pattern recall, memory challenges — designed to be performed while walking, training the brain and body to work together under real-world conditions.
 
 ## Who It's For
 
-StrideMind is built for adults aged 55 and older who want to stay sharp, move confidently, and reduce their risk of falls. It is particularly suited for active agers, older adults in fall prevention programs, and anyone looking to maintain cognitive health through movement-based training.
+Stridemind is built for adults aged 55 and older who want to stay sharp, move confidently, and reduce their risk of falls. It is particularly suited for active agers, older adults in fall prevention programs, and anyone looking to maintain cognitive health through movement-based training.
 
 ## The Science
 
@@ -17,7 +17,7 @@ Dual-task walking training — performing a cognitive task while walking — is 
 - Meta-analysis published in European Geriatric Medicine, 2025
 - Evidence shows significant improvements in gait stability, executive function, and dual-task cost reduction
 
-StrideMind translates this clinical evidence into a practical, audio-first mobile experience that requires no equipment and fits into everyday life.
+Stridemind translates this clinical evidence into a practical, audio-first mobile experience that requires no equipment and fits into everyday life.
 
 Learn more: https://stridemind.app/science
 
@@ -33,11 +33,11 @@ Learn more: https://stridemind.app/science
 
 ## Who Built This
 
-StrideMind was built by an independent developer who came across the clinical
+Stridemind was built by an independent developer who came across the clinical
 research on dual-task walking and could not find a practical app that applied it.
 The evidence was clear and replicable across dozens of trials. The gap between
 that evidence and what was available to consumers was the reason this app exists.
-StrideMind is not a medical device. It applies a well-evidenced training method
+Stridemind is not a medical device. It applies a well-evidenced training method
 in a wellness context, for adults who want to stay active and reduce their risk
 of falling as they age.
 

@@ -112,7 +112,7 @@ const MECHANISM = [
   },
 ];
 
-// --- How StrideMind applies it ---
+// --- How Stridemind applies it ---
 
 const APP_FEATURES = [
   { label: 'Audio-first', detail: 'No screen interaction during sessions — eyes up, phone in pocket' },
@@ -139,10 +139,10 @@ export default function ScienceContent() {
               Peer-Reviewed Evidence
             </span>
             <h1 className="font-display text-5xl sm:text-6xl text-gray-900 mb-6 leading-tight">
-              The science behind StrideMind
+              The science behind Stridemind
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              StrideMind is built on one of the most replicated findings in geriatric medicine:
+              Stridemind is built on one of the most replicated findings in geriatric medicine:
               dual-task walking training reduces fall risk and improves cognition in adults 55+.
               Here is the evidence.
             </p>
@@ -406,7 +406,7 @@ export default function ScienceContent() {
         </div>
       </section>
 
-      {/* How StrideMind applies it */}
+      {/* How Stridemind applies it */}
       <section className="bg-white py-20 px-6 border-b border-gray-100">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -417,13 +417,13 @@ export default function ScienceContent() {
             className="mb-8"
           >
             <span className="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-5">
-              How StrideMind Applies This
+              How Stridemind Applies This
             </span>
             <h2 className="font-display text-4xl text-gray-900 mb-5 leading-tight">
               A practical implementation of the clinical evidence
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              StrideMind translates the dual-task training protocol into an audio-first iOS app that
+              Stridemind translates the dual-task training protocol into an audio-first iOS app that
               requires no equipment and fits into everyday walks. Sessions are 5–15 minutes.
               Cognitive challenges are delivered through your earphones so you keep your phone in
               your pocket and eyes ahead.
@@ -481,11 +481,11 @@ export default function ScienceContent() {
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">About this project</p>
           <p className="text-gray-500 text-base leading-relaxed">
-            StrideMind was built by an independent developer who came across the clinical research
+            Stridemind was built by an independent developer who came across the clinical research
             on dual-task walking and could not find a practical, accessible app that applied it.
             The evidence was clear and replicable across dozens of trials. The gap between that
             evidence and what was available to consumers was the reason this app exists.
-            StrideMind is not a medical device. It applies a well-evidenced training method in a
+            Stridemind is not a medical device. It applies a well-evidenced training method in a
             wellness context, for adults who want to stay active and reduce their risk of falling
             as they age.
           </p>

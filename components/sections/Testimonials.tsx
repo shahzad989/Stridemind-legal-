@@ -5,7 +5,7 @@ import { motion, type Variants } from 'framer-motion';
 const TESTIMONIALS = [
   {
     quote:
-      "I've been using StrideMind for three months and my balance has noticeably improved. I feel so much more confident on my morning walks.",
+      "I've been using Stridemind for three months and my balance has noticeably improved. I feel so much more confident on my morning walks.",
     name: 'Margaret T.',
     age: 68,
     location: 'Phoenix, AZ',

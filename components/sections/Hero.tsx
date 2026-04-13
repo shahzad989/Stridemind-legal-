@@ -95,7 +95,7 @@ export default function Hero() {
 
             <FadeUp delay={0.2}>
               <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
-                StrideMind pairs cognitive challenges with your daily walk — clinically-backed
+                Stridemind pairs cognitive challenges with your daily walk — clinically-backed
                 dual-task training designed for adults 55+.
               </p>
             </FadeUp>

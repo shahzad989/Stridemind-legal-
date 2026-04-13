@@ -2,22 +2,22 @@ import type { Metadata } from 'next';
 import LegalLayout, { LegalSection } from '@/components/LegalLayout';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — StrideMind',
-  description: 'StrideMind privacy policy. Learn what data we collect, how we use it, and your rights.',
+  title: 'Privacy Policy — Stridemind',
+  description: 'Stridemind privacy policy. Learn what data we collect, how we use it, and your rights.',
 };
 
 export default function PrivacyPolicy() {
   return (
     <LegalLayout title="Privacy Policy" lastUpdated="April 8, 2026">
       <p className="text-lg text-gray-700 leading-relaxed mb-10">
-        StrideMind (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;the app&rdquo;) is a cognitive training app built
+        Stridemind (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;the app&rdquo;) is a cognitive training app built
         for active adults. This policy explains what data we collect, how we use it, and your
         rights around it.
       </p>
 
       <LegalSection title="Who We Are">
         <p>
-          StrideMind is an independently developed app. If you have questions about this policy,
+          Stridemind is an independently developed app. If you have questions about this policy,
           contact us at{' '}
           <a href="mailto:appstridemind@gmail.com" className="text-brand-dark hover:text-brand underline">
             appstridemind@gmail.com
@@ -96,7 +96,7 @@ export default function PrivacyPolicy() {
 
       <LegalSection title="International Data Transfers">
         <p>
-          StrideMind uses Supabase, which stores data on infrastructure hosted in the United States
+          Stridemind uses Supabase, which stores data on infrastructure hosted in the United States
           (Amazon Web Services). If you are located outside the United States, your data may be
           transferred to and processed in the US.
         </p>
@@ -246,7 +246,7 @@ export default function PrivacyPolicy() {
 
       <LegalSection title="Children">
         <p>
-          StrideMind is designed for adults 55 and older. We do not knowingly collect data from
+          Stridemind is designed for adults 55 and older. We do not knowingly collect data from
           anyone under the age of 13 (or a higher age if required by your local law).
         </p>
       </LegalSection>

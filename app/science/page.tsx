@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import ScienceContent from './ScienceContent';
 
 export const metadata: Metadata = {
-  title: 'The Science — StrideMind: Fall Prevention',
+  title: 'The Science — Stridemind: Fall Prevention',
   description:
-    'Dual-task walking training is backed by 28+ randomized controlled trials and a 2025 meta-analysis in European Geriatric Medicine. Learn the evidence behind StrideMind.',
+    'Dual-task walking training is backed by 28+ randomized controlled trials and a 2025 meta-analysis in European Geriatric Medicine. Learn the evidence behind Stridemind.',
   alternates: { canonical: 'https://stridemind.app/science' },
   openGraph: {
-    title: 'The Science Behind StrideMind',
+    title: 'The Science Behind Stridemind',
     description:
       '28+ RCTs, 2,782 participants, 2025 meta-analysis. The clinical evidence for dual-task walking training as fall prevention in adults 55+.',
     url: 'https://stridemind.app/science',

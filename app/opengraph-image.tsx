@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'StrideMind — Walk Sharper. Think Faster. Age Better.';
+export const alt = 'Stridemind — Walk Sharper. Think Faster. Age Better.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -101,7 +101,7 @@ export default function Image() {
           }}
         >
           <span style={{ color: '#86efac', fontSize: 24, fontWeight: 700, fontFamily: 'sans-serif' }}>
-            StrideMind
+            Stridemind
           </span>
           <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: 24 }}>•</span>
           <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: 20, fontFamily: 'sans-serif' }}>

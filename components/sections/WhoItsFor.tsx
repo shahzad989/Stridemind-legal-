@@ -8,7 +8,7 @@ const AUDIENCES = [
     Icon: Users,
     title: 'Adults 55+',
     description:
-      'Looking to stay sharp and active as you age? StrideMind makes cognitive training a natural part of your daily walk — no gym, no screen time, no stress.',
+      'Looking to stay sharp and active as you age? Stridemind makes cognitive training a natural part of your daily walk — no gym, no screen time, no stress.',
   },
   {
     Icon: ShieldCheck,
@@ -20,7 +20,7 @@ const AUDIENCES = [
     Icon: HeartPulse,
     title: 'Physical Therapy Patients',
     description:
-      'StrideMind complements physical therapy by building cognitive-motor coordination — the brain-body link that protects you during everyday movement.',
+      'Stridemind complements physical therapy by building cognitive-motor coordination — the brain-body link that protects you during everyday movement.',
   },
 ];
 

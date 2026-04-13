@@ -12,7 +12,7 @@ const webPageSchema = {
   '@type': 'WebPage',
   '@id': 'https://stridemind.app/#webpage',
   url: 'https://stridemind.app',
-  name: 'StrideMind: Fall Prevention — Train Your Brain While Walking',
+  name: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
   isPartOf: { '@id': 'https://stridemind.app/#website' },
   about: { '@id': 'https://stridemind.app/#app' },
   speakable: {
@@ -66,18 +66,18 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Can StrideMind really reduce fall risk?',
+      name: 'Can Stridemind really reduce fall risk?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The approach behind StrideMind is backed by 28+ randomized controlled trials involving 2,782 participants, with a meta-analysis published in European Geriatric Medicine in 2025. Evidence consistently shows that dual-task walking training improves gait stability and reduces the cognitive-motor interference that leads to falls.',
+        text: 'Yes. The approach behind Stridemind is backed by 28+ randomized controlled trials involving 2,782 participants, with a meta-analysis published in European Geriatric Medicine in 2025. Evidence consistently shows that dual-task walking training improves gait stability and reduces the cognitive-motor interference that leads to falls.',
       },
     },
     {
       '@type': 'Question',
-      name: 'What cognitive tasks does StrideMind use?',
+      name: 'What cognitive tasks does Stridemind use?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "StrideMind uses audio-delivered cognitive challenges including number drills, pattern recall, memory sequences, and speed-based recall tasks. All exercises are delivered through your earphones so you can keep your phone in your pocket and eyes up while you walk.",
+        text: "Stridemind uses audio-delivered cognitive challenges including number drills, pattern recall, memory sequences, and speed-based recall tasks. All exercises are delivered through your earphones so you can keep your phone in your pocket and eyes up while you walk.",
       },
     },
     {
@@ -90,18 +90,18 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Is StrideMind safe for someone with mild cognitive impairment?',
+      name: 'Is Stridemind safe for someone with mild cognitive impairment?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'StrideMind is a wellness app, not a medical device, and is not intended to diagnose or treat any condition. Many users with mild cognitive concerns use it under physical therapist or physician guidance. If you have a diagnosis, please consult your healthcare provider before starting.',
+        text: 'Stridemind is a wellness app, not a medical device, and is not intended to diagnose or treat any condition. Many users with mild cognitive concerns use it under physical therapist or physician guidance. If you have a diagnosis, please consult your healthcare provider before starting.',
       },
     },
     {
       '@type': 'Question',
-      name: 'What makes StrideMind different from other brain training apps?',
+      name: 'What makes Stridemind different from other brain training apps?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Most brain training apps are screen-based and sedentary. StrideMind is built specifically for movement — the cognitive exercises are designed to be done while walking, which is the only form of training proven to reduce fall risk through dual-task interference. It's audio-first, requires no screen interaction during sessions, and is designed specifically for adults 55+.",
+        text: "Most brain training apps are screen-based and sedentary. Stridemind is built specifically for movement — the cognitive exercises are designed to be done while walking, which is the only form of training proven to reduce fall risk through dual-task interference. It's audio-first, requires no screen interaction during sessions, and is designed specifically for adults 55+.",
       },
     },
   ],
@@ -110,9 +110,9 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: 'How to Do Dual-Task Walking Training with StrideMind',
+  name: 'How to Do Dual-Task Walking Training with Stridemind',
   description:
-    'Dual-task walking training combines a cognitive challenge with physical walking to improve balance and reduce fall risk in adults 55+. Follow these steps to get started with StrideMind.',
+    'Dual-task walking training combines a cognitive challenge with physical walking to improve balance and reduce fall risk in adults 55+. Follow these steps to get started with Stridemind.',
   step: [
     {
       '@type': 'HowToStep',
@@ -123,8 +123,8 @@ const howToSchema = {
     {
       '@type': 'HowToStep',
       position: 2,
-      name: 'Open StrideMind and select a protocol',
-      text: 'Launch the StrideMind app on your iPhone, browse the protocol library, and choose a session that matches your current intensity level. Put your earphones in before you head out.',
+      name: 'Open Stridemind and select a protocol',
+      text: 'Launch the Stridemind app on your iPhone, browse the protocol library, and choose a session that matches your current intensity level. Put your earphones in before you head out.',
     },
     {
       '@type': 'HowToStep',

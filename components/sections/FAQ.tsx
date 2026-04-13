@@ -7,11 +7,11 @@ import { ChevronDown } from 'lucide-react';
 const FAQS = [
   {
     q: 'Does it work on Android?',
-    a: 'StrideMind is currently iOS only (iPhone and iPad). Android is on our roadmap. Join our email list at appstridemind@gmail.com to be notified when it launches.',
+    a: 'Stridemind is currently iOS only (iPhone and iPad). Android is on our roadmap. Join our email list at appstridemind@gmail.com to be notified when it launches.',
   },
   {
     q: 'Do I need wifi or data during my walk?',
-    a: 'Yes — StrideMind streams audio during your session, so you need a data connection or wifi on your walk. Make sure you have signal before heading out.',
+    a: 'Yes — Stridemind streams audio during your session, so you need a data connection or wifi on your walk. Make sure you have signal before heading out.',
   },
   {
     q: 'How long are the sessions?',
@@ -19,7 +19,7 @@ const FAQS = [
   },
   {
     q: "I'm not very tech-savvy. Is it hard to use?",
-    a: "StrideMind was designed specifically for adults 55+. You press play, put your phone in your pocket, and listen. No screens during your walk. If you can use a podcast app, you can use StrideMind.",
+    a: "Stridemind was designed specifically for adults 55+. You press play, put your phone in your pocket, and listen. No screens during your walk. If you can use a podcast app, you can use Stridemind.",
   },
   {
     q: "What's the difference between free and premium?",
@@ -27,7 +27,7 @@ const FAQS = [
   },
   {
     q: 'Is it safe if I have a balance condition or have had a fall?',
-    a: 'StrideMind is a wellness app, not a medical device. If you have a diagnosed balance condition or have recently had a fall, please consult your physician or physical therapist before starting. Many users do use it under PT guidance.',
+    a: 'Stridemind is a wellness app, not a medical device. If you have a diagnosed balance condition or have recently had a fall, please consult your physician or physical therapist before starting. Many users do use it under PT guidance.',
   },
   {
     q: 'Can I cancel my subscription?',
