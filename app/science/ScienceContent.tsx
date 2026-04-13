@@ -392,10 +392,6 @@ export default function ScienceContent() {
                 finding: 'In a multicenter trial of 481 older adults at fall risk, combined motor and cognitive training reduced FES-I fear-of-falling scores from 32.0 to 29.7 immediately after the intervention (p < 0.001), with some persistence at 3-month follow-up. Motor-only training produced a smaller but significant reduction; cognitive-only training did not.',
                 source: 'Barban et al. (I-DONT-FALL trial), Brain Sciences, 2017',
               },
-              {
-                finding: 'Adding computerized cognitive training to a strength-balance programme produced lower fear of falling and fall rates than strength-balance training alone across 182 adults with a mean age of 81.5 years.',
-                source: 'van het Reve & de Bruin, BMC Geriatrics, 2014',
-              },
             ].map((item) => (
               <motion.div
                 key={item.source}
