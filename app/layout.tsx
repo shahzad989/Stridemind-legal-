@@ -64,16 +64,27 @@ const jsonLd = {
     {
       '@type': 'MobileApplication',
       '@id': 'https://stridemind.app/#app',
-      name: 'Stridemind: Fall Prevention',
+      name: 'StrideMind: Fall Prevention',
       operatingSystem: 'iOS',
       applicationCategory: 'HealthApplication',
       description:
-        'Audio-guided dual-task walking exercises clinically backed to improve balance, cognition, and reduce fall risk in adults 55+.',
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'USD',
-      },
+        'StrideMind uses dual-task walking training — combining audio-guided cognitive exercises with physical movement — to reduce fall risk and improve cognition in adults 55+. Backed by 28+ randomized controlled trials.',
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Monthly',
+          price: '9.99',
+          priceCurrency: 'USD',
+          billingIncrement: 'P1M',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Annual',
+          price: '79.99',
+          priceCurrency: 'USD',
+          billingIncrement: 'P1Y',
+        },
+      ],
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '5',
