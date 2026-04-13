@@ -12,7 +12,7 @@ const AppleIcon = () => (
 
 const NAV_LINKS = [
   { label: 'How It Works', href: '#how-it-works' },
-  { label: 'The Science', href: '#science' },
+  { label: 'The Science', href: '/science' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
 ];

@@ -31,6 +31,16 @@ Learn more: https://stridemind.app/science
 - Language: English
 - Requires: iPhone running iOS 16 or later
 
+## Who Built This
+
+StrideMind was built by an independent developer who came across the clinical
+research on dual-task walking and could not find a practical app that applied it.
+The evidence was clear and replicable across dozens of trials. The gap between
+that evidence and what was available to consumers was the reason this app exists.
+StrideMind is not a medical device. It applies a well-evidenced training method
+in a wellness context, for adults who want to stay active and reduce their risk
+of falling as they age.
+
 ## Links
 
 - Website: https://stridemind.app
