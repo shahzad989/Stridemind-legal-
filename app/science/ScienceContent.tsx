@@ -16,9 +16,9 @@ interface StatConfig {
 }
 
 const HEADLINE_STATS: StatConfig[] = [
-  { value: 28, suffix: '+', label: 'Randomized controlled trials', sub: 'European Geriatric Medicine, 2025' },
+  { value: 44, suffix: '', label: 'Randomized controlled trials', sub: 'European Geriatric Medicine, 2025' },
   { value: 2782, suffix: '', label: 'Participants across studies', sub: 'Meta-analysis, 2025' },
-  { value: 76.6, suffix: '%', decimals: 1, label: 'Improved balance and cognition', sub: 'IJERPH, 2022' },
+  { value: 76.6, suffix: '%', decimals: 1, label: 'Of trials reported improved balance', sub: 'IJERPH, 2022' },
 ];
 
 function AnimatedStat({ value, suffix, prefix = '', decimals = 0, label, sub }: StatConfig) {
@@ -75,23 +75,23 @@ const fadeUp: Variants = {
 const CITATIONS = [
   {
     quote:
-      'A 2022 review of 30 randomized controlled trials found that 76.6% of participants in dual-task training showed improved balance and cognitive performance simultaneously.',
-    source: 'Int. J. Environ. Res. Public Health, 2022, 19, 16890',
+      'A 2022 systematic review of 30 randomized and pilot randomized trials found that 23 of 30 studies (76.6%) reported improvements in balance after dual-task training, and 5 reported a reduction in fall incidence in older adults.',
+    source: 'Int. J. Environ. Res. Public Health, 2022, 19, 16890 — Khan et al.',
   },
   {
     quote:
-      'Dual-task training — combining physical movement with simultaneous cognitive challenge — consistently outperforms exercise-only interventions for fall prevention in older adults.',
-    source: 'Cochrane Database of Systematic Reviews, 2019',
+      'Exercise programmes — especially those targeting balance and functional tasks — reduce fall rates in older adults by about 23% compared with non-exercise controls, across 108 trials and 23,407 participants.',
+    source: 'Cochrane Database of Systematic Reviews, 2019 — Sherrington et al.',
   },
   {
     quote:
-      'Cognitive-motor dual-task training leads to significant improvements in gait stability, reaction time, and attentional control — all key predictors of fall risk.',
-    source: 'Age and Ageing, Oxford Academic, 2021',
+      'Adding computerized cognitive training to strength-balance exercise significantly reduced dual-task gait costs, improved reaction time, executive function, and divided attention, and lowered fear of falling and fall rates compared with strength-balance training alone.',
+    source: 'BMC Geriatrics, 2014 — van het Reve & de Bruin',
   },
   {
     quote:
-      'A 2025 meta-analysis of 28+ randomized controlled trials covering 2,782 participants confirmed that dual-task walking interventions produce statistically significant reductions in fall incidence and dual-task cost in adults aged 55 and older.',
-    source: 'European Geriatric Medicine, 2025',
+      'A 2025 systematic review and meta-analysis of 44 randomized trials involving 2,782 older adults found that dual-task exercise programmes significantly improved balance and functional mobility and reduced fall frequency compared with single-task or no exercise.',
+    source: 'European Geriatric Medicine, 2025 — Khan et al.',
   },
 ];
 
@@ -108,7 +108,7 @@ const MECHANISM = [
   },
   {
     label: 'Why exercise alone is not enough',
-    body: 'Standard exercise programs improve strength and balance in controlled settings but do not train the cognitive dimension of fall risk. Cochrane reviews consistently show dual-task training outperforms exercise-only interventions for fall prevention precisely because it addresses both components simultaneously.',
+    body: 'Standard exercise programs improve strength and balance in controlled settings but do not train the cognitive dimension of fall risk. Direct head-to-head trials show that adding a cognitive layer to an otherwise identical exercise program produces significantly larger reductions in falls — the physical movement is necessary but not sufficient on its own.',
   },
 ];
 
@@ -269,6 +269,141 @@ export default function ScienceContent() {
               >
                 <p className="text-gray-700 text-lg leading-relaxed mb-3">&ldquo;{c.quote}&rdquo;</p>
                 <p className="text-sm text-gray-400 italic">{c.source}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* V-TIME — same walk, different outcome */}
+      <section className="bg-gray-900 py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+            className="mb-10"
+          >
+            <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-5 border border-white/20">
+              Head-to-Head Evidence
+            </span>
+            <h2 className="font-display text-4xl sm:text-5xl text-white mb-5 leading-tight">
+              Same walk. Dramatically different outcome.
+            </h2>
+            <p className="text-xl text-gray-400 leading-relaxed">
+              In a landmark trial published in <em>The Lancet</em>, researchers split 302 high-risk
+              older adults into two groups. Both walked on a treadmill for 45 minutes, three times
+              a week, for six weeks. One group walked alone. The other walked while navigating
+              cognitive challenges — obstacles, path choices, distractors.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 gap-5 mb-10">
+            {[
+              {
+                label: 'Treadmill only',
+                stat: 'No significant reduction',
+                detail: 'Fall rate: 10.7 → 8.3 falls per 6 months (not statistically significant)',
+                muted: true,
+              },
+              {
+                label: 'Treadmill + cognitive challenges',
+                stat: '42% fewer falls',
+                detail: 'Fall rate dropped significantly vs treadmill alone (IRR 0.58, 95% CI 0.36–0.96)',
+                muted: false,
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55 }}
+                className={`rounded-2xl p-7 border ${item.muted ? 'bg-white/5 border-white/10' : 'bg-brand/20 border-brand/40'}`}
+              >
+                <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${item.muted ? 'text-gray-500' : 'text-green-400'}`}>
+                  {item.label}
+                </p>
+                <p className={`text-3xl font-extrabold mb-2 ${item.muted ? 'text-gray-400' : 'text-white'}`}>
+                  {item.stat}
+                </p>
+                <p className="text-gray-400 text-sm leading-relaxed">{item.detail}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, delay: 0.1 }}
+            className="bg-white/5 border border-white/10 rounded-2xl p-7"
+          >
+            <p className="text-gray-300 text-lg leading-relaxed">
+              The two groups did the same physical exercise for the same duration. The only
+              difference was the cognitive layer. That layer produced a{' '}
+              <strong className="text-white">42% lower fall rate</strong> over the following six months.
+            </p>
+            <p className="text-sm text-gray-500 italic mt-4">
+              Mirelman et al., The Lancet, 2016 — V-TIME trial (302 participants, 5 centres)
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Fear of falling */}
+      <section className="bg-white py-20 px-6 border-b border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+            className="mb-10"
+          >
+            <span className="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-5">
+              Beyond the Physical
+            </span>
+            <h2 className="font-display text-4xl sm:text-5xl text-gray-900 mb-5 leading-tight">
+              Training also reduces fear of falling.
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              After a first fall, many older adults develop a persistent fear of falling that leads
+              to reduced activity, social withdrawal, and accelerated physical decline — sometimes
+              more damaging than the fall itself. Randomized trials show dual-task training directly
+              addresses this.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="space-y-5"
+          >
+            {[
+              {
+                finding: 'In 95 community-dwelling older adults with concern about falling, 12 weekly sessions of dual-task balance training significantly reduced Falls Efficacy Scale scores (FES-I) and increased step length and gait confidence compared with controls.',
+                source: 'Wollesen et al., BMC Geriatrics, 2017',
+              },
+              {
+                finding: 'In a multicenter trial of 481 older adults at fall risk, combined motor and cognitive training reduced FES-I fear-of-falling scores from 32.0 to 29.7 immediately after the intervention (p < 0.001), with some persistence at 3-month follow-up. Motor-only training produced a smaller but significant reduction; cognitive-only training did not.',
+                source: 'Barban et al. (I-DONT-FALL trial), Brain Sciences, 2017',
+              },
+              {
+                finding: 'Adding computerized cognitive training to a strength-balance programme produced lower fear of falling and fall rates than strength-balance training alone across 182 adults with a mean age of 81.5 years.',
+                source: 'van het Reve & de Bruin, BMC Geriatrics, 2014',
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.source}
+                variants={fadeUp}
+                className="bg-brand-muted rounded-2xl p-7 border border-brand-light"
+              >
+                <p className="text-gray-700 text-base leading-relaxed mb-3">{item.finding}</p>
+                <p className="text-sm text-gray-400 italic">{item.source}</p>
               </motion.div>
             ))}
           </motion.div>
