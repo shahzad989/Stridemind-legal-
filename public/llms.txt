@@ -46,4 +46,4 @@ of falling as they age.
 - Website: https://stridemind.app
 - App Store: https://apps.apple.com/app/stridemind
 - Science: https://stridemind.app/science
-- FAQ: https://stridemind.app/faq
+- FAQ: https://stridemind.app/#faq
