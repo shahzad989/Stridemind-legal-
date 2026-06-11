@@ -85,7 +85,7 @@ const jsonLd = {
       operatingSystem: 'iOS',
       applicationCategory: 'HealthApplication',
       description:
-        'Stridemind uses dual-task walking training — combining audio-guided cognitive exercises with physical movement — to reduce fall risk and improve cognition in adults 55+. Backed by 28+ randomized controlled trials.',
+        'Stridemind uses dual-task walking training, combining audio-guided cognitive exercises with physical movement, to support balance and cognition in adults 55+. Backed by a 2025 meta-analysis of 44 studies with 2,782 participants.',
       offers: [
         {
           '@type': 'Offer',

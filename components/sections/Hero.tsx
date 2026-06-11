@@ -132,13 +132,14 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <FadeUp delay={0}>
-              {/* "28+" matches the verified EGM 2025 meta-analysis cited in TheScience,
-                  the FAQ, and the JSON-LD schemas; the old "30+" badge contradicted them. */}
+              {/* "44 studies" is verbatim from the verified Khan et al. 2025
+                  EGM meta-analysis (44 studies, 2,782 participants) cited on
+                  /science; earlier "30+" and "28+" badge counts were wrong. */}
               <div className="inline-flex items-center gap-2 bg-brand-light text-brand px-4 py-2 rounded-full text-sm font-semibold mb-8 border border-brand-light">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
-                <span>Backed by 28+ randomized trials</span>
+                <span>Backed by a 44-study meta-analysis</span>
               </div>
             </FadeUp>
 

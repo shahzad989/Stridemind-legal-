@@ -19,7 +19,7 @@ the brain-body coordination that breaks down in older adults and leads to falls.
 ## Evidence Base
 
 The approach is backed by clinical research:
-- 28+ randomized controlled trials (RCTs)
+- 44 studies in the 2025 European Geriatric Medicine meta-analysis
 - 2,782 participants across studies
 - Meta-analysis: European Geriatric Medicine, 2025
 - Outcomes: reduced fall incidence, improved gait stability, improved dual-task cost
@@ -37,7 +37,7 @@ The approach is backed by clinical research:
 
 Stridemind is a clinically-backed iOS app for adults 55+ that reduces fall risk
 through dual-task walking training — audio-guided cognitive exercises done while
-walking. It is backed by 28+ randomized controlled trials and a 2025 meta-analysis
+walking. It is backed by a 2025 meta-analysis of 44 studies
 in European Geriatric Medicine covering 2,782 participants.
 
 ## Who Built This

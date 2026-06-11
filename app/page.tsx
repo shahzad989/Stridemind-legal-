@@ -21,35 +21,43 @@ const webPageSchema = {
   },
 };
 
+// Verified against the published paper (Khan et al., Eur Geriatr Med 2025,
+// doi:10.1007/s41999-025-01328-3): exact title below, 44 studies, 2,782
+// participants. An earlier version of this schema carried an invented title
+// and a wrong "28+" trial count; never restate this citation from memory.
 const scholarlyArticleSchema = {
   '@context': 'https://schema.org',
   '@type': 'ScholarlyArticle',
   '@id': 'https://stridemind.app/#egm-2025-meta-analysis',
   headline:
-    'Effects of dual-task walking training on fall risk and cognitive function in older adults: a systematic review and meta-analysis',
+    'Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression',
   description:
-    'A systematic review and meta-analysis of 28+ randomized controlled trials involving 2,782 participants examining the effects of combined cognitive-motor (dual-task) walking training on fall risk, gait stability, and cognitive function in adults aged 55 and older.',
+    'A systematic review with meta-analysis and meta-regression of 44 studies involving 2,782 older adults, finding that dual-task training significantly improves dynamic balance and functional mobility and reduces fall frequency.',
+  author: {
+    '@type': 'Person',
+    name: 'Mohammad Jobair Khan',
+  },
   publisher: {
     '@type': 'Organization',
     name: 'European Geriatric Medicine',
   },
   datePublished: '2025',
   about: [
-    { '@type': 'Thing', name: 'dual-task walking training' },
+    { '@type': 'Thing', name: 'dual-task training' },
     { '@type': 'Thing', name: 'fall prevention' },
-    { '@type': 'Thing', name: 'cognitive function in older adults' },
-    { '@type': 'Thing', name: 'gait stability' },
+    { '@type': 'Thing', name: 'balance in older adults' },
+    { '@type': 'Thing', name: 'functional mobility' },
   ],
   isBasedOn: {
     '@type': 'MedicalStudy',
-    studyDesign: 'Randomized Controlled Trial',
+    studyDesign: 'Systematic review with meta-analysis and meta-regression',
     studySubject: {
       '@type': 'MedicalCondition',
       name: 'Fall risk in older adults',
     },
   },
   citation:
-    'European Geriatric Medicine, 2025. Meta-analysis of dual-task walking interventions: 28+ RCTs, 2,782 participants.',
+    'Khan et al. "Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression." European Geriatric Medicine, 2025. 44 studies, 2,782 participants.',
 };
 
 const faqSchema = {
@@ -69,7 +77,7 @@ const faqSchema = {
       name: 'Can Stridemind really reduce fall risk?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The approach behind Stridemind is backed by 28+ randomized controlled trials involving 2,782 participants, with a meta-analysis published in European Geriatric Medicine in 2025. Evidence consistently shows that dual-task walking training improves gait stability and reduces the cognitive-motor interference that leads to falls.',
+        text: 'The approach behind Stridemind is supported by a 2025 meta-analysis in European Geriatric Medicine covering 44 studies and 2,782 older adults, which found that dual-task training significantly improves dynamic balance and functional mobility and reduces fall frequency. Stridemind itself is a wellness app, not a medical device, and individual results vary.',
       },
     },
     {

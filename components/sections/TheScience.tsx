@@ -136,7 +136,7 @@ export default function TheScience() {
           {/* Two headline stats */}
           <div className="grid sm:grid-cols-2 gap-6 mb-10">
             {[
-              { value: '28+', label: 'Randomized controlled trials', sub: 'European Geriatric Medicine, 2025' },
+              { value: '44', label: 'Studies in the 2025 meta-analysis', sub: 'European Geriatric Medicine, 2025' },
               { value: '76.6%', label: 'Of participants improved balance and cognition', sub: 'IJERPH, 2022' },
             ].map((stat, i) => (
               <motion.div

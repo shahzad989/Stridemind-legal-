@@ -12,7 +12,7 @@ Stridemind is built for adults aged 55 and older who want to stay sharp, move co
 
 Dual-task walking training — performing a cognitive task while walking — is one of the most studied interventions for fall prevention and cognitive health in older adults.
 
-- 28+ randomized controlled trials (RCTs)
+- 44 studies in the 2025 European Geriatric Medicine meta-analysis
 - 2,782 participants across clinical studies
 - Meta-analysis published in European Geriatric Medicine, 2025
 - Evidence shows significant improvements in gait stability, executive function, and dual-task cost reduction

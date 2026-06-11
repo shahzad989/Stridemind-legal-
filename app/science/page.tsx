@@ -4,31 +4,33 @@ import ScienceContent from './ScienceContent';
 export const metadata: Metadata = {
   title: 'The Science — Stridemind: Fall Prevention',
   description:
-    'Dual-task walking training is backed by 28+ randomized controlled trials and a 2025 meta-analysis in European Geriatric Medicine. Learn the evidence behind Stridemind.',
+    'Dual-task training is backed by a 2025 meta-analysis of 44 studies in European Geriatric Medicine. Learn the evidence behind Stridemind.',
   alternates: { canonical: 'https://stridemind.app/science' },
   openGraph: {
     title: 'The Science Behind Stridemind',
     description:
-      '28+ RCTs, 2,782 participants, 2025 meta-analysis. The clinical evidence for dual-task walking training as fall prevention in adults 55+.',
+      '44 studies, 2,782 participants, a 2025 meta-analysis. The clinical evidence for dual-task training as fall prevention in adults 55+.',
     url: 'https://stridemind.app/science',
   },
 };
 
+// Citation verified against the published paper (Khan et al., Eur Geriatr Med
+// 2025, doi:10.1007/s41999-025-01328-3); never restate it from memory.
 const scholarlyArticles = [
   {
     '@context': 'https://schema.org',
     '@type': 'ScholarlyArticle',
     headline:
-      'Effects of dual-task walking training on fall risk and cognitive function in older adults: a systematic review and meta-analysis',
+      'Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression',
     publisher: { '@type': 'Organization', name: 'European Geriatric Medicine' },
     datePublished: '2025',
     description:
-      'Systematic review and meta-analysis of 28+ randomized controlled trials (2,782 participants) demonstrating that dual-task walking training significantly reduces fall risk, improves gait stability, and improves cognitive performance in adults 55+.',
+      'Systematic review with meta-analysis and meta-regression of 44 studies (2,782 older adults) finding that dual-task training significantly improves dynamic balance and functional mobility and reduces fall frequency.',
     about: [
-      { '@type': 'Thing', name: 'dual-task walking training' },
+      { '@type': 'Thing', name: 'dual-task training' },
       { '@type': 'Thing', name: 'fall prevention in older adults' },
-      { '@type': 'Thing', name: 'gait stability' },
-      { '@type': 'Thing', name: 'cognitive-motor interference' },
+      { '@type': 'Thing', name: 'dynamic balance' },
+      { '@type': 'Thing', name: 'functional mobility' },
     ],
   },
   {
