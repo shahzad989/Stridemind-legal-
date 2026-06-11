@@ -35,11 +35,11 @@ export default function CallToAction() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-display text-4xl sm:text-5xl text-white mb-6 leading-tight">
-            Start training your brain while you walk
+            Your next walk can be your first session.
           </h2>
           <p className="text-xl text-green-100 mb-10 leading-relaxed max-w-2xl mx-auto">
-            The first step toward sharper thinking and better balance starts with a walk.
-            No gym. No equipment. Just you and your earbuds.
+            There is no gym and no equipment beyond the earbuds you already own. You download
+            the app, put them in, and go for a walk.
           </p>
 
           <a
@@ -54,7 +54,7 @@ export default function CallToAction() {
           </a>
 
           <p className="mt-8 text-green-200 text-sm">
-            Free to start — no credit card required
+            The app is free to download, and the first strides are free to try.
           </p>
         </motion.div>
       </div>

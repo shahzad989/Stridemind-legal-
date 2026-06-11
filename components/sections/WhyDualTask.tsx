@@ -58,8 +58,8 @@ export default function WhyDualTask() {
             Walking alone isn&apos;t enough.
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Falls happen when you&apos;re distracted — not when you&apos;re focused on walking.
-            Training your brain and body together is what changes the outcome.
+            Falls tend to happen when your attention is divided, not when you are focused on
+            walking. Training your brain and body together is what changes the outcome.
           </p>
         </motion.div>
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function TermsOfService() {
   return (
-    <LegalLayout title="Terms of Service" lastUpdated="April 8, 2026">
+    <LegalLayout title="Terms of Service" lastUpdated="June 11, 2026">
       <p className="text-lg text-gray-700 leading-relaxed mb-10">
         These Terms of Service govern your use of Stridemind. By creating an account or using
         the app, you agree to these terms. If you do not agree, do not use the app.
@@ -35,6 +35,13 @@ export default function TermsOfService() {
           The cognitive training content in Stridemind is based on published research into
           dual-task walking exercises. Results vary between individuals. We make no guarantee of
           specific outcomes.
+        </p>
+        <p>
+          The app also includes short, optional check-ins that show how your own results change
+          over time. These check-ins are not medical or diagnostic tests, their results are not
+          medical advice, and they are not a substitute for an evaluation by a healthcare
+          professional. If you have concerns about your memory, thinking, or balance, speak with
+          your doctor.
         </p>
       </LegalSection>
 

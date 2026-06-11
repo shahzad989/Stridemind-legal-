@@ -3,27 +3,30 @@
 import { Headphones, Footprints, Brain } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 
+// Step 3 deliberately describes thinking along, not tapping or answering prompts.
+// The app's strides are hands-in-pocket listening sessions; "respond to challenges"
+// was the old, inaccurate framing (tapping on tracks was rejected as a product decision).
 const STEPS = [
   {
     Icon: Headphones,
     number: '01',
     title: 'Put in your earbuds',
     description:
-      'Grab your regular earbuds or headphones — no special equipment required.',
+      'Any earbuds or headphones you already own will do. There is no equipment to buy.',
   },
   {
     Icon: Footprints,
     number: '02',
-    title: 'Start your walk',
+    title: 'Walk somewhere familiar',
     description:
-      'Head outside, to a park, or onto your treadmill. Any walk of any length works.',
+      'A level path you know well is ideal, indoors or out. You walk at your own comfortable pace, and your phone stays in your pocket.',
   },
   {
     Icon: Brain,
     number: '03',
-    title: 'Respond to audio challenges',
+    title: 'Think along as you walk',
     description:
-      'Answer cognitive prompts as you walk, strengthening the brain-body coordination that protects your balance.',
+      'Each stride gives your mind something to do while you move. It might be counting patterns, quick arithmetic, or recalling what you just noticed, all set over calm natural sound.',
   },
 ];
 

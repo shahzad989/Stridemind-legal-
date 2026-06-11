@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const AppleIcon = () => (
@@ -9,6 +8,13 @@ const AppleIcon = () => (
   </svg>
 );
 
+// The mockup is a hand-built copy of the app's real Cockpit screen
+// (app/cockpit.tsx in the app repo): dark background, track title header, cue
+// line, live steps and distance, scrubber with elapsed/remaining, and round
+// playback controls. The previous version embedded a raw screenshot of an
+// empty account (0 minutes, 0% goal, 0 day streak, "Notes" back-chip in the
+// status bar), which made the app itself look unused; keep this hand-built and
+// keep it truthful if the Cockpit changes.
 function PhoneMockup() {
   return (
     <div className="relative flex items-center justify-center">
@@ -17,34 +23,81 @@ function PhoneMockup() {
         style={{ background: '#dcfce7', filter: 'blur(56px)', opacity: 0.6 }}
       />
       <div
-        className="relative w-64 h-[540px] rounded-[2.75rem] overflow-hidden shadow-2xl"
+        className="relative w-64 h-[540px] rounded-[2.75rem] overflow-hidden shadow-2xl bg-cockpit flex flex-col"
         style={{
-          background: '#07101E',
           border: '3px solid #1a2e45',
           boxShadow: '0 32px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.06)',
         }}
       >
-        <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 z-10 w-28 h-7 rounded-b-2xl"
-          style={{ background: '#07101E' }}
-        />
-        <div className="absolute inset-0 pt-7">
-          <Image
-            src="/app-screenshot.png"
-            alt="Stridemind: Fall Prevention app home screen showing daily walk goals and cognitive training"
-            fill
-            className="object-cover object-top"
-            priority
-            sizes="256px"
-          />
+        {/* Notch */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 w-28 h-7 rounded-b-2xl bg-black" />
+
+        {/* Header: back, title, menu */}
+        <div className="flex items-center justify-between px-4 pt-12">
+          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          <p className="text-white text-sm font-semibold">The Calibration Walk</p>
+          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="5" r="1.8" />
+            <circle cx="12" cy="12" r="1.8" />
+            <circle cx="12" cy="19" r="1.8" />
+          </svg>
         </div>
-        {/* Gradient fade at bottom to cleanly hide the screen cutoff */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-28 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(to bottom, transparent, #07101E)' }}
-        />
+
+        {/* Cue line */}
+        <p className="text-cockpit-muted text-xs text-center mt-10 px-6">
+          Walk at a steady, comfortable pace
+        </p>
+
+        {/* Live activity cluster */}
+        <div className="flex items-center justify-center gap-6 mt-10">
+          <div className="text-center">
+            <p className="text-white text-3xl font-bold leading-none">1,248</p>
+            <p className="text-cockpit-muted text-[11px] mt-1.5">steps</p>
+          </div>
+          <div className="w-px h-9 bg-white/15" />
+          <div className="text-center">
+            <p className="text-white text-3xl font-bold leading-none">964</p>
+            <p className="text-cockpit-muted text-[11px] mt-1.5">meters</p>
+          </div>
+        </div>
+
+        {/* Scrubber */}
+        <div className="mt-auto px-6">
+          <div className="relative h-1 rounded-full bg-white/20">
+            <div className="absolute left-0 top-0 h-1 w-3/5 rounded-full bg-sage" />
+            <div className="absolute top-1/2 left-[60%] -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-sage" />
+          </div>
+          <div className="flex justify-between mt-2">
+            <span className="text-cockpit-muted text-[11px]">12:04</span>
+            <span className="text-cockpit-muted text-[11px]">-7:56</span>
+          </div>
+        </div>
+
+        {/* Playback controls: skip back, pause, skip forward */}
+        <div className="flex items-center justify-center gap-7 mt-5 mb-8">
+          <div className="w-11 h-11 rounded-full border border-white/25 flex items-center justify-center">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 11a9 9 0 1 1 3 6.7" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 6v5h5" />
+            </svg>
+          </div>
+          <div className="w-[68px] h-[68px] rounded-full bg-sage flex items-center justify-center gap-1.5 shadow-lg">
+            <span className="w-1.5 h-6 rounded-full bg-white" />
+            <span className="w-1.5 h-6 rounded-full bg-white" />
+          </div>
+          <div className="w-11 h-11 rounded-full border border-white/25 flex items-center justify-center">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 11a9 9 0 1 0-3 6.7" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 6v5h-5" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Home indicator */}
         <div className="absolute bottom-2 left-0 right-0 flex justify-center z-20">
-          <div className="w-24 h-1 rounded-full" style={{ background: 'rgba(255,255,255,0.25)' }} />
+          <div className="w-24 h-1 rounded-full bg-white/25" />
         </div>
       </div>
     </div>
@@ -79,24 +132,31 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <FadeUp delay={0}>
+              {/* "28+" matches the verified EGM 2025 meta-analysis cited in TheScience,
+                  the FAQ, and the JSON-LD schemas; the old "30+" badge contradicted them. */}
               <div className="inline-flex items-center gap-2 bg-brand-light text-brand px-4 py-2 rounded-full text-sm font-semibold mb-8 border border-brand-light">
-                <span aria-hidden="true">🧠</span>
-                <span>Backed by 30+ clinical studies</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span>Backed by 28+ randomized trials</span>
               </div>
             </FadeUp>
 
             <FadeUp delay={0.1}>
+              {/* A complete sentence, per design/voice.md; the line break keeps
+                  hero scale without resorting to fragment copy. */}
               <h1 className="font-display text-5xl sm:text-6xl text-gray-900 leading-[1.1] tracking-tight mb-6">
-                Walk Sharper.<br />
-                Think Faster.<br />
-                <span style={{ color: '#166534' }}>Age Better.</span>
+                Your daily walk<br />
+                can train{' '}
+                <span style={{ color: '#166534' }}>your brain.</span>
               </h1>
             </FadeUp>
 
             <FadeUp delay={0.2}>
               <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
-                Stridemind pairs cognitive challenges with your daily walk — clinically-backed
-                dual-task training designed for adults 55+.
+                Stridemind gives your mind something to work on while you walk, and a short
+                monthly check-in shows you the progress. It is built on peer-reviewed dual-task
+                research and designed for adults 55 and over.
               </p>
             </FadeUp>
 
@@ -115,9 +175,11 @@ export default function Hero() {
 
             <FadeUp delay={0.4}>
               <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-base text-gray-500">
-                {['Free to start', 'No equipment needed', 'iOS app'].map((item) => (
+                {['The first strides are free', 'No equipment beyond earbuds', 'Made for iPhone'].map((item) => (
                   <span key={item} className="flex items-center gap-2">
-                    <span className="font-bold" style={{ color: '#166534' }}>✓</span>
+                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="#166534" strokeWidth={3} viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
                     {item}
                   </span>
                 ))}

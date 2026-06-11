@@ -37,7 +37,7 @@ export default function StickyCTA() {
             <span className="text-base font-bold leading-none">App Store</span>
           </span>
         </a>
-        <p className="text-center text-xs text-gray-400 mt-2">Free to start — no credit card required</p>
+        <p className="text-center text-xs text-gray-400 mt-2">Free to download, and the first strides are free to try.</p>
       </div>
     </div>
   );

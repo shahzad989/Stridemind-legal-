@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <LegalLayout title="Privacy Policy" lastUpdated="April 8, 2026">
+    <LegalLayout title="Privacy Policy" lastUpdated="June 11, 2026">
       <p className="text-lg text-gray-700 leading-relaxed mb-10">
         Stridemind (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;the app&rdquo;) is a cognitive training app built
         for active adults. This policy explains what data we collect, how we use it, and your
@@ -32,21 +32,34 @@ export default function PrivacyPolicy() {
             <strong>Account information:</strong> your name and email address when you create an account.
           </li>
           <li>
-            <strong>Usage data:</strong> the training sessions you complete, their duration, and your
-            activity history within the app.
+            <strong>Usage data:</strong> the training sessions you complete, their duration, your
+            activity history within the app, and the weekly goal you set.
+          </li>
+          <li>
+            <strong>Check-in results:</strong> if you take the optional cognitive check-ins, we store
+            your results, such as scores and reaction times, so the app can show you how they change
+            over time. These results are not a medical assessment and we do not treat them as one.
+          </li>
+          <li>
+            <strong>Motion data during sessions:</strong> with your permission, the app reads step
+            counts from your phone&apos;s built-in motion sensors while a session or check-in is
+            running, to confirm you were walking and to measure your walking pace. A summary, such
+            as steps per minute, may be stored with your check-in results. The app does not read
+            motion data outside of an active session or check-in.
           </li>
           <li>
             <strong>Subscription status:</strong> whether you have an active premium subscription,
             managed through RevenueCat.
           </li>
         </ul>
-        <p>We do not collect health data, location data, or any device sensor data.</p>
+        <p>We do not collect your location. We do not sell your data, and we do not use it for advertising.</p>
       </LegalSection>
 
       <LegalSection title="How We Use Your Data">
         <ul className="list-disc pl-6 space-y-2">
           <li>To display your training history and progress inside the app.</li>
           <li>To calculate your weekly training progress toward your goal.</li>
+          <li>To show how your check-in results change over time on your Progress screen.</li>
           <li>To manage your account and subscription status.</li>
           <li>
             To send optional reminders through local notifications on your device (only if you

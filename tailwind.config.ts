@@ -13,6 +13,11 @@ const config: Config = {
         'brand-dark': '#14532d',
         'brand-light': '#dcfce7',
         'brand-muted': '#f0fdf4',
+        // Lifted from the app's constants/colors.ts so the hero phone mockup
+        // shows the Cockpit in its true colors.
+        cockpit: '#07101E',
+        'cockpit-muted': '#8FA8C8',
+        sage: '#3D6B35',
       },
       fontFamily: {
         display: ['var(--font-display)', 'Georgia', 'serif'],

@@ -3,24 +3,26 @@
 import { Users, ShieldCheck, HeartPulse } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 
+// The falls claim wording is deliberate and matches the app ("leading cause of
+// unintentional injury among older adults", per CDC). Do not strengthen it.
 const AUDIENCES = [
   {
     Icon: Users,
-    title: 'Adults 55+',
+    title: 'Adults 55 and over',
     description:
-      'Looking to stay sharp and active as you age? Stridemind makes cognitive training a natural part of your daily walk — no gym, no screen time, no stress.',
+      'Stridemind makes cognitive training a natural part of your daily walk. There is no gym, no screen to watch while you move, and no pressure to perform.',
   },
   {
     Icon: ShieldCheck,
-    title: 'Concerned About Falls',
+    title: 'Anyone thinking about balance',
     description:
-      'Falls are the leading cause of injury in older adults. Dual-task walking has been clinically shown to improve balance and reduce fall risk.',
+      'Falls are the leading cause of unintentional injury among older adults, and balance is trainable. Practicing thinking while walking is one of the best-studied ways to work on it.',
   },
   {
     Icon: HeartPulse,
-    title: 'Physical Therapy Patients',
+    title: 'People working with a therapist',
     description:
-      'Stridemind complements physical therapy by building cognitive-motor coordination — the brain-body link that protects you during everyday movement.',
+      'Stridemind can sit alongside physical therapy as gentle, regular practice between visits. If a condition affects your balance or movement, a quick word with your doctor or therapist first is the right place to start.',
   },
 ];
 

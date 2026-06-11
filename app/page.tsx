@@ -123,8 +123,8 @@ const howToSchema = {
     {
       '@type': 'HowToStep',
       position: 2,
-      name: 'Open Stridemind and select a protocol',
-      text: 'Launch the Stridemind app on your iPhone, browse the protocol library, and choose a session that matches your current intensity level. Put your earphones in before you head out.',
+      name: 'Open Stridemind and select a stride',
+      text: 'Launch the Stridemind app on your iPhone, browse the stride library, and choose a session that matches your current intensity level. Put your earphones in before you head out.',
     },
     {
       '@type': 'HowToStep',
@@ -136,7 +136,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       name: 'Complete the cognitive challenge while walking',
-      text: "Respond to the audio prompts — recalling numbers, identifying patterns, or completing memory tasks — without stopping or slowing your walk. This simultaneous demand is the training stimulus that builds fall resistance and cognitive resilience.",
+      text: 'Think along with the audio, recalling numbers, spotting patterns, or doing quick arithmetic, without stopping or slowing your walk. This simultaneous demand is the training stimulus that builds fall resistance and cognitive resilience.',
     },
   ],
 };

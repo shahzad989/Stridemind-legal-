@@ -4,34 +4,36 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
+// Answers are constrained by the app: iPhone-only (no iPad build), strides not
+// protocols, no free trial, and the check-in/Progress/history features are free.
 const FAQS = [
   {
     q: 'Does it work on Android?',
-    a: 'Stridemind is currently iOS only (iPhone and iPad). Android is on our roadmap. Join our email list at appstridemind@gmail.com to be notified when it launches.',
+    a: 'Stridemind is currently built for iPhone. Android is on our roadmap. Email us at appstridemind@gmail.com and we will let you know when it launches.',
   },
   {
     q: 'Do I need wifi or data during my walk?',
-    a: 'Yes — Stridemind streams audio during your session, so you need a data connection or wifi on your walk. Make sure you have signal before heading out.',
+    a: 'Yes. Stridemind streams audio during your session, so you need a data connection or wifi on your walk. Make sure you have signal before heading out.',
   },
   {
     q: 'How long are the sessions?',
-    a: 'Sessions range from 5 to 15 minutes — short enough to fit into any walk. The protocol ends on its own; you can keep walking as long as you like after. Most people aim for a few sessions per week.',
+    a: 'Sessions range from 5 to 15 minutes, short enough to fit into any walk. The stride ends on its own, and you can keep walking as long as you like afterward. Most people aim for a few sessions per week.',
   },
   {
     q: "I'm not very tech-savvy. Is it hard to use?",
-    a: "Stridemind was designed specifically for adults 55+. You press play, put your phone in your pocket, and listen. No screens during your walk. If you can use a podcast app, you can use Stridemind.",
+    a: 'Stridemind was designed specifically for adults 55 and over. You press play, put your phone in your pocket, and listen. There is no screen to watch during your walk. If you can use a podcast app, you can use Stridemind.',
   },
   {
     q: "What's the difference between free and premium?",
-    a: 'Free gives you a selection of protocols to try — enough to feel the benefit. Premium unlocks the full library, personalized difficulty, and complete history and analytics for $9.99/month or $79.99/year.',
+    a: 'Free gives you a set of strides to train with, plus the monthly check-in, your Progress screen, your history, and your weekly goal. Premium unlocks the full stride library and the new programs added every month, for $9.99 per month or $79.99 per year. There is no free trial, so nothing starts billing without you choosing it.',
   },
   {
     q: 'Is it safe if I have a balance condition or have had a fall?',
-    a: 'Stridemind is a wellness app, not a medical device. If you have a diagnosed balance condition or have recently had a fall, please consult your physician or physical therapist before starting. Many users do use it under PT guidance.',
+    a: 'Stridemind is a wellness app, not a medical device. If you have a diagnosed balance condition or have recently had a fall, please talk with your physician or physical therapist before starting. Many people use it alongside physical therapy.',
   },
   {
     q: 'Can I cancel my subscription?',
-    a: 'Yes — you can cancel anytime through your iPhone Settings → Apple ID → Subscriptions. Your access continues until the end of your billing period.',
+    a: 'Yes. You can cancel anytime through your iPhone Settings, under your Apple ID and Subscriptions. Your access continues until the end of your billing period.',
   },
 ];
 

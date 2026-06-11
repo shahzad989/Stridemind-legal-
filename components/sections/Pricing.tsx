@@ -3,24 +3,28 @@
 import { Check, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+// Every claim here is constrained by what the app actually ships:
+// - The monthly check-in, Progress screen, history, and weekly goal are FREE
+//   (deliberate product decision; the paywall never gates measurement).
+// - There is NO free trial (the app's paywall says "Subscribe Now" on purpose).
+// - "Personalized difficulty", "session analytics", and "offline mode" are not
+//   app features and were removed; do not reintroduce features the app lacks.
+// - Prices match StrideMind.storekit in the app repo ($9.99/mo, $79.99/yr).
+//   If App Store pricing changes, this file must change with it.
+// - The app calls sessions "strides", never "protocols".
+
 const FREE_FEATURES = [
-  { text: 'Select cognitive walk protocols', included: true },
-  { text: 'Basic progress tracking', included: true },
-  { text: 'Streak counter', included: true },
-  { text: 'Full protocol library', included: false },
-  { text: 'Personalized difficulty', included: false },
-  { text: 'Detailed session analytics', included: false },
-  { text: 'Offline mode (coming soon)', included: false },
+  { text: 'A set of strides to train with', included: true },
+  { text: 'The monthly check-in and your whole Progress screen', included: true },
+  { text: 'Weekly goal, streaks, and session history', included: true },
+  { text: 'The full stride library', included: false },
+  { text: 'New programs added every month', included: false },
 ];
 
 const PREMIUM_FEATURES = [
-  { text: 'Full cognitive walk protocol library', included: true },
-  { text: 'Full progress tracking & history', included: true },
-  { text: 'Streak counter & weekly goals', included: true },
-  { text: 'Personalized difficulty levels', included: true },
-  { text: 'Detailed session analytics', included: true },
-  { text: 'New protocols added regularly', included: true },
-  { text: 'Offline mode (coming soon)', included: true },
+  { text: 'Everything in Free', included: true },
+  { text: 'The full stride library, across every intensity', included: true },
+  { text: 'New programs added every month, so the training never repeats itself', included: true },
 ];
 
 const AppleIcon = () => (
@@ -44,10 +48,11 @@ export default function Pricing() {
             Pricing
           </span>
           <h2 className="font-display text-4xl sm:text-5xl text-gray-900 mb-4">
-            Start free, upgrade anytime
+            Start free, and upgrade whenever you like.
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            No credit card required to download. No tricks. Just choose what works for you.
+            The app is free to download, with no credit card needed. You can train, check in,
+            and watch your progress without paying anything.
           </p>
         </motion.div>
 
@@ -65,7 +70,7 @@ export default function Pricing() {
               <div className="flex items-end gap-2">
                 <span className="text-5xl font-extrabold text-gray-900">$0</span>
               </div>
-              <p className="text-gray-500 mt-1 text-sm">Forever free, no expiry</p>
+              <p className="text-gray-500 mt-1 text-sm">Free for as long as you like</p>
             </div>
 
             <ul className="space-y-3 mb-8 flex-1">
@@ -107,17 +112,12 @@ export default function Pricing() {
             />
 
             <div className="relative mb-6">
-              <div className="flex items-center gap-2 mb-2">
-                <p className="text-xs font-bold text-green-200 uppercase tracking-widest">Premium</p>
-                <span className="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
-                  Most Popular
-                </span>
-              </div>
+              <p className="text-xs font-bold text-green-200 uppercase tracking-widest mb-2">Premium</p>
               <div className="flex items-end gap-2">
                 <span className="text-5xl font-extrabold text-white">$9.99</span>
                 <span className="text-green-200 mb-2">/month</span>
               </div>
-              <p className="text-green-200 mt-1 text-sm">or $79.99/year — save 33%</p>
+              <p className="text-green-200 mt-1 text-sm">or $79.99 per year, which saves 33%</p>
             </div>
 
             <ul className="space-y-3 mb-8 flex-1 relative">
@@ -134,11 +134,25 @@ export default function Pricing() {
               className="relative flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-white text-brand font-bold hover:bg-green-50 transition-colors text-base shadow-lg"
             >
               <AppleIcon />
-              Start Free Trial
+              Download on the App Store
             </a>
-            <p className="text-center text-green-200 text-xs mt-3">7-day free trial · Cancel anytime</p>
+            <p className="text-center text-green-200 text-xs mt-3">
+              Billed through your Apple ID. Cancel anytime in your settings.
+            </p>
           </motion.div>
         </div>
+
+        {/* The no-trial framing is honest and deliberate: there is no trial to forget about. */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55, delay: 0.25 }}
+          className="text-center text-gray-500 text-base mt-10 max-w-2xl mx-auto leading-relaxed"
+        >
+          There is no free trial and nothing to remember to cancel. You train with the free
+          strides for as long as you like, and you subscribe only if you want more.
+        </motion.p>
       </div>
     </section>
   );
