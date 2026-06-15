@@ -155,7 +155,7 @@ export default function Hero() {
             <FadeUp delay={0.2}>
               <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
                 Put in your earbuds and walk, and Stridemind keeps your mind working the whole
-                way. A short monthly check-in shows your progress. It is built on peer-reviewed
+                way. A short monthly check-in shows your progress. Built on peer-reviewed
                 dual-task research and made for adults 55 and over.
               </p>
             </FadeUp>
