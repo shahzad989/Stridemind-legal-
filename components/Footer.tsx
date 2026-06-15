@@ -24,7 +24,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed">
-              Cognitive dual-task training for adults 55+. Clinically backed to improve balance and reduce fall risk.
+              Cognitive dual-task training for adults 55+. Built on clinical research linking dual-task training to better balance and lower fall risk.
             </p>
           </div>
 

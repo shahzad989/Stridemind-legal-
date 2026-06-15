@@ -73,6 +73,17 @@ const scholarlyArticles = [
     '@context': 'https://schema.org',
     '@type': 'ScholarlyArticle',
     headline:
+      'Combined physical and cognitive training for older adults with and without cognitive impairment: a systematic review and network meta-analysis of randomized controlled trials',
+    publisher: { '@type': 'Organization', name: 'Ageing Research Reviews' },
+    datePublished: '2021',
+    author: { '@type': 'Person', name: 'Gavelin et al.' },
+    description:
+      'Network meta-analysis finding that simultaneous combined cognitive and physical training was the most efficacious approach for cognition in older adults, outperforming sequential combinations, cognitive training alone, and physical exercise alone (overall cognition Hedges g = 0.22).',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ScholarlyArticle',
+    headline:
       'Addition of a non-immersive virtual reality component to treadmill training to reduce fall risk in older adults (V-TIME)',
     publisher: { '@type': 'Organization', name: 'The Lancet' },
     datePublished: '2016',

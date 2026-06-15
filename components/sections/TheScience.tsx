@@ -123,8 +123,8 @@ export default function TheScience() {
               The Solution
             </span>
             <h2 className="font-display text-4xl sm:text-5xl text-gray-900 mb-6 leading-tight">
-              Not just a wellness app.{' '}
-              <span className="text-brand">Evidence-backed fall prevention.</span>
+              More than a walk.{' '}
+              <span className="text-brand">Built on fall-prevention research.</span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               Dual-task walking training — performing a cognitive challenge while walking — is one
@@ -137,7 +137,7 @@ export default function TheScience() {
           <div className="grid sm:grid-cols-2 gap-6 mb-10">
             {[
               { value: '44', label: 'Studies in the 2025 meta-analysis', sub: 'European Geriatric Medicine, 2025' },
-              { value: '76.6%', label: 'Of participants improved balance and cognition', sub: 'IJERPH, 2022' },
+              { value: '76.6%', label: 'Of trials reported improved balance', sub: 'IJERPH, 2022' },
             ].map((stat, i) => (
               <motion.div
                 key={stat.value}
@@ -163,11 +163,10 @@ export default function TheScience() {
             className="bg-gray-50 rounded-2xl p-7 border-l-4 border-brand mb-10"
           >
             <p className="text-gray-700 text-lg leading-relaxed mb-3">
-              &ldquo;Dual-task training — combining physical movement with simultaneous cognitive
-              challenge — consistently outperforms exercise-only interventions for fall prevention
-              in older adults.&rdquo;
+              &ldquo;Older adults who added cognitive challenges to their treadmill walking had a
+              42% lower fall rate than those who did the identical walk without them.&rdquo;
             </p>
-            <p className="text-sm text-gray-400 italic">Cochrane Database of Systematic Reviews, 2019</p>
+            <p className="text-sm text-gray-400 italic">Mirelman et al., The Lancet, 2016 — V-TIME trial</p>
           </motion.div>
 
           {/* CTA to /science */}

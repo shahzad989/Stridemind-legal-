@@ -93,7 +93,7 @@ const faqSchema = {
       name: 'How long until I see results?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Clinical studies show measurable improvements in gait and dual-task performance within 6–8 weeks of consistent training. Most users report feeling more confident and mentally sharp during walks within the first few sessions. Consistency — a few sessions per week — matters more than session length.',
+        text: 'Clinical studies show measurable improvements in gait and dual-task performance within 6 to 8 weeks of consistent training. Many people feel more focused and confident on their walks early on, though that varies from person to person. Consistency, a few sessions per week, matters more than session length.',
       },
     },
     {
@@ -109,7 +109,7 @@ const faqSchema = {
       name: 'What makes Stridemind different from other brain training apps?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Most brain training apps are screen-based and sedentary. Stridemind is built specifically for movement — the cognitive exercises are designed to be done while walking, which is the only form of training proven to reduce fall risk through dual-task interference. It's audio-first, requires no screen interaction during sessions, and is designed specifically for adults 55+.",
+        text: "Most brain training apps are screen-based and sedentary. Stridemind is built for movement, so the cognitive exercises are done while you walk. This dual-task approach targets the attention-and-movement interference that drives many falls, an approach research links to better balance and lower fall risk. It is audio-first, requires no screen interaction during sessions, and is designed for adults 55+.",
       },
     },
   ],

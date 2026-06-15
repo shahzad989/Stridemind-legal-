@@ -90,6 +90,11 @@ const CITATIONS = [
   },
   {
     quote:
+      'A 2021 network meta-analysis found that doing cognitive and physical training at the same time, rather than separately, was the most effective approach for improving overall cognition in older adults, and significantly better than physical exercise alone.',
+    source: 'Ageing Research Reviews, 2021 — Gavelin et al.',
+  },
+  {
+    quote:
       'A 2025 systematic review and meta-analysis of 44 randomized trials involving 2,782 older adults found that dual-task exercise programmes significantly improved balance and functional mobility and reduced fall frequency compared with single-task or no exercise.',
     source: 'European Geriatric Medicine, 2025 — Khan et al.',
   },

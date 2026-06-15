@@ -21,7 +21,7 @@ const dmSerif = DM_Serif_Display({
 export const metadata: Metadata = {
   title: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
   description:
-    'Audio-guided dual-task walking exercises clinically backed to improve balance, cognition, and reduce fall risk in adults 55+.',
+    'Audio-guided dual-task walking for adults 55+. Built on clinical research linking dual-task training to better balance and lower fall risk, with the mind kept engaged off the screen.',
   metadataBase: new URL('https://stridemind.app'),
   openGraph: {
     title: 'Stridemind: Fall Prevention — Train Your Brain While Walking',

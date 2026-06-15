@@ -6,12 +6,12 @@ import { Check, X, Minus } from 'lucide-react';
 const ROWS = [
   { label: 'Cardiovascular benefit',         walking: true,  brainGames: false, stridemind: true },
   { label: 'Trains balance & gait',           walking: false, brainGames: false, stridemind: true },
-  { label: 'Clinically shown to reduce fall risk', walking: false, brainGames: false, stridemind: true },
+  { label: 'Built on clinically studied dual-task training', walking: false, brainGames: false, stridemind: true },
   { label: 'Cognitive training',              walking: false, brainGames: true,  stridemind: true },
   { label: 'Works during real-world movement',walking: true,  brainGames: false, stridemind: true },
   { label: 'No screen time during session',   walking: true,  brainGames: false, stridemind: true },
   { label: 'Trains brain-body coordination',  walking: false, brainGames: false, stridemind: true },
-  { label: 'Evidence-backed for fall prevention', walking: null,  brainGames: false, stridemind: true },
+  { label: 'Grounded in fall-prevention research', walking: null,  brainGames: false, stridemind: true },
 ];
 
 function Cell({ value }: { value: boolean | null }) {
@@ -59,7 +59,9 @@ export default function WhyDualTask() {
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Falls tend to happen when your attention is divided, not when you are focused on
-            walking. Training your brain and body together is what changes the outcome.
+            walking. Stridemind trains your body and mind together on the same walk, real
+            cognitive work done with your eyes up and your phone in your pocket. It is something
+            neither an ordinary walk nor a screen-based brain game can do on its own.
           </p>
         </motion.div>
 
