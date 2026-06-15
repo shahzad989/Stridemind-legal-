@@ -147,16 +147,16 @@ export default function Hero() {
               {/* A complete sentence, per design/voice.md; the line break keeps
                   hero scale without resorting to fragment copy. */}
               <h1 className="font-display text-5xl sm:text-6xl text-gray-900 leading-[1.1] tracking-tight mb-6">
-                Your walk can train your brain,<br />
-                <span style={{ color: '#166534' }}>off the screen.</span>
+                Train your body and your mind<br />
+                <span style={{ color: '#166534' }}>on the same walk.</span>
               </h1>
             </FadeUp>
 
             <FadeUp delay={0.2}>
               <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
-                Stridemind gives your mind real work to do while you move, with your eyes up and
-                your phone in your pocket. A short monthly check-in shows how it is adding up. It is
-                built on peer-reviewed dual-task research and made for adults 55 and over.
+                Put in your earbuds and walk, and Stridemind keeps your mind working the whole
+                way. A short monthly check-in shows your progress. It is built on peer-reviewed
+                dual-task research and made for adults 55 and over.
               </p>
             </FadeUp>
 
