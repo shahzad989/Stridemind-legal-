@@ -1,6 +1,6 @@
 'use client';
 
-import { Users, ShieldCheck, HeartPulse } from 'lucide-react';
+import { Users, ShieldCheck, Brain } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 
 // The falls claim wording is deliberate and matches the app ("leading cause of
@@ -19,10 +19,10 @@ const AUDIENCES = [
       'Falls are the leading cause of unintentional injury among older adults, and balance is trainable. Practicing thinking while walking is one of the best-studied ways to work on it.',
   },
   {
-    Icon: HeartPulse,
-    title: 'People working with a therapist',
+    Icon: Brain,
+    title: 'People who want to keep their mind active',
     description:
-      'Stridemind can sit alongside physical therapy as gentle, regular practice between visits. If a condition affects your balance or movement, a quick word with your doctor or therapist first is the right place to start.',
+      'Stridemind gives your mind real work to do while you walk, the same kind of challenge as a brain game, but out in the world with your eyes up and your phone in your pocket.',
   },
 ];
 
