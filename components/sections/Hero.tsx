@@ -162,7 +162,9 @@ export default function Hero() {
 
             <FadeUp delay={0.3}>
               <a
-                href="#"
+                href="https://apps.apple.com/app/id6761288997"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-4 bg-gray-900 text-white px-8 py-4 rounded-2xl hover:bg-gray-800 transition-colors shadow-lg"
               >
                 <AppleIcon />

@@ -28,7 +28,9 @@ export default function StickyCTA() {
     >
       <div className="bg-white border-t border-gray-200 px-4 py-3 shadow-[0_-4px_24px_rgba(0,0,0,0.10)]">
         <a
-          href="#"
+          href="https://apps.apple.com/app/id6761288997"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center justify-center gap-3 bg-gray-900 text-white w-full py-3.5 rounded-2xl font-semibold text-base"
         >
           <AppleIcon />

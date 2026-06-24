@@ -68,7 +68,9 @@ export default function Nav() {
 
         {/* Desktop CTA */}
         <a
-          href="#"
+          href="https://apps.apple.com/app/id6761288997"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden sm:inline-flex items-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-gray-800 transition-colors flex-shrink-0"
         >
           <AppleIcon />
@@ -110,7 +112,9 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#"
+            href="https://apps.apple.com/app/id6761288997"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 bg-gray-900 text-white px-5 py-3 rounded-xl text-sm font-semibold w-full mt-2"
             onClick={() => setOpen(false)}
           >

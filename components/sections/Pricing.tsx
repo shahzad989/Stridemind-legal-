@@ -89,7 +89,9 @@ export default function Pricing() {
             </ul>
 
             <a
-              href="#"
+              href="https://apps.apple.com/app/id6761288997"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl border-2 border-gray-300 text-gray-700 font-semibold hover:border-gray-400 transition-colors text-base"
             >
               <AppleIcon />
@@ -130,7 +132,9 @@ export default function Pricing() {
             </ul>
 
             <a
-              href="#"
+              href="https://apps.apple.com/app/id6761288997"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-white text-brand font-bold hover:bg-green-50 transition-colors text-base shadow-lg"
             >
               <AppleIcon />

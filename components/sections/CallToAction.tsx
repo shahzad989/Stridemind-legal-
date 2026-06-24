@@ -43,7 +43,9 @@ export default function CallToAction() {
           </p>
 
           <a
-            href="#"
+            href="https://apps.apple.com/app/id6761288997"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-5 bg-white text-gray-900 px-12 py-6 rounded-2xl hover:bg-gray-50 transition-colors shadow-2xl"
           >
             <AppleIcon />
