@@ -100,7 +100,7 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="inline-flex items-center gap-1.5 text-base font-medium text-gray-700 hover:text-brand py-1"
+              className="flex items-center gap-1.5 text-base font-medium text-gray-700 hover:text-brand py-2"
               onClick={() => setOpen(false)}
             >
               {link.label}
