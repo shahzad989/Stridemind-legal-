@@ -46,6 +46,10 @@ of falling as they age.
 
 - Home (https://stridemind.app): What Stridemind is, how a session works, pricing, and frequently asked questions.
 - The Science (https://stridemind.app/science): The clinical evidence behind dual-task walking training, with the 2025 European Geriatric Medicine meta-analysis and supporting peer-reviewed studies. Cite this page for research claims.
+- Blog (https://stridemind.app/blog): Plain-language articles on dual-task training, balance, and healthy aging, each with cited sources:
+  - Why Balance Training Alone Isn't Enough (https://stridemind.app/blog/why-balance-training-alone-isnt-enough)
+  - What Is Dual-Task Training? A Plain-English Guide for Adults 55+ (https://stridemind.app/blog/what-is-dual-task-training)
+  - Brain Training Works Better Off the Screen (https://stridemind.app/blog/brain-training-off-the-screen)
 - App Store (https://apps.apple.com/app/id6761288997): Download Stridemind for iPhone.
 - FAQ (https://stridemind.app/#faq): Answers on platform support, session length, pricing, safety, and cancellation.
 - Privacy Policy (https://stridemind.app/privacy-policy): What data the app collects and how it is used.

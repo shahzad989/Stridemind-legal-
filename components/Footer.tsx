@@ -46,6 +46,14 @@ export default function Footer() {
                     The Science
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/blog"
+                    className="text-gray-400 hover:text-white transition-colors text-base"
+                  >
+                    Blog
+                  </Link>
+                </li>
               </ul>
             </div>
 

@@ -42,6 +42,11 @@ app/
   robots.ts / sitemap.ts
   science/page.tsx          → /science — evidence page (4 verified citations + EGM 2025 meta-analysis)
   science/ScienceContent.tsx
+  blog/page.tsx             → /blog — post index (newest first) + Blog JSON-LD
+  blog/[slug]/page.tsx      → post template — BlogPosting JSON-LD, CTA, more-posts links
+  blog/posts/shared.tsx     → BlogPost type + shared article typography (P, H2, Finding, Sources…)
+  blog/posts/index.ts       → post registry; add new posts here AND they appear in sitemap
+  blog/posts/*.tsx          → one file per post (metadata + Content component, plain TSX, no MDX)
   privacy-policy/page.tsx   → Privacy policy (uses LegalLayout)
   terms-of-service/page.tsx → Terms of service (uses LegalLayout)
 
@@ -116,4 +121,10 @@ The short version (the file is canonical): calm, kind, explanatory narrator. Com
   use this exact URL, never a vanity slug like `/app/stridemind` (that form 404s).
 - Hero phone mockup mirrors the app's real Cockpit screen — keep it truthful if the
   Cockpit changes, and never swap in raw screenshots of empty accounts.
+- Blog posts: every research claim must restate the verified citations recorded in
+  /science (never from memory). The 2022 review's primary finding is balance
+  improvement (23/30 studies, 76.6%); falls reduction is the downstream consequence.
+  NEVER quote the 17.8% falls figure as an effect size — it is a vote count of 5/30
+  studies. Posts end with a visible Sources list. New posts register in
+  app/blog/posts/index.ts (that feeds the sitemap) and follow design/voice.md.
 - When making a non-obvious decision, add a brief `//` comment explaining WHY.
