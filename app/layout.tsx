@@ -24,6 +24,12 @@ export const metadata: Metadata = {
   description:
     'Audio-guided dual-task walking for adults 55 and over, built on clinical research linking dual-task training to better balance and lower fall risk.',
   metadataBase: new URL('https://stridemind.app'),
+  // Child pages that set alternates.canonical replace this whole object
+  // (Next merges metadata shallowly), so the blog pages redeclare the feed
+  // alongside their canonicals.
+  alternates: {
+    types: { 'application/rss+xml': 'https://stridemind.app/feed.xml' },
+  },
   // No explicit image URLs here: a hardcoded /og-image.png used to 404 (the
   // file never existed). app/opengraph-image.tsx generates the real og:image,
   // and X/Twitter falls back to og:image when twitter:image is absent.

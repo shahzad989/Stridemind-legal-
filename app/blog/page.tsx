@@ -7,7 +7,10 @@ export const metadata: Metadata = {
   title: 'Blog — Stridemind: Fall Prevention',
   description:
     'Plain-language articles on dual-task training, walking, balance, and staying sharp after 55, grounded in peer-reviewed research.',
-  alternates: { canonical: 'https://stridemind.app/blog' },
+  alternates: {
+    canonical: 'https://stridemind.app/blog',
+    types: { 'application/rss+xml': 'https://stridemind.app/feed.xml' },
+  },
   openGraph: {
     title: 'The Stridemind Blog',
     description:

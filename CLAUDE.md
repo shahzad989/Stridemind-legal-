@@ -43,7 +43,10 @@ app/
   science/page.tsx          → /science — evidence page (4 verified citations + EGM 2025 meta-analysis)
   science/ScienceContent.tsx
   blog/page.tsx             → /blog — post index (newest first) + Blog JSON-LD
-  blog/[slug]/page.tsx      → post template — BlogPosting JSON-LD, CTA, more-posts links
+  blog/[slug]/page.tsx      → post template — BlogPosting JSON-LD (Person author:
+                              Ibrahim Shahzad), CTA, more-posts links
+  blog/[slug]/opengraph-image.tsx → per-post OG image (brand green, serif title)
+  feed.xml/route.ts         → RSS 2.0 feed built from the post registry (force-static)
   blog/posts/shared.tsx     → BlogPost type + shared article typography (P, H2, Finding, Sources…)
   blog/posts/index.ts       → post registry; add new posts here AND they appear in sitemap
   blog/posts/*.tsx          → one file per post (metadata + Content component, plain TSX, no MDX)

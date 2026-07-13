@@ -22,7 +22,10 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title: `${post.title} — Stridemind`,
     description: post.description,
-    alternates: { canonical: `https://stridemind.app/blog/${post.slug}` },
+    alternates: {
+      canonical: `https://stridemind.app/blog/${post.slug}`,
+      types: { 'application/rss+xml': 'https://stridemind.app/feed.xml' },
+    },
     openGraph: {
       title: post.title,
       description: post.description,
@@ -30,6 +33,7 @@ export function generateMetadata({ params }: Props): Metadata {
       type: 'article',
       publishedTime: post.datePublished,
       modifiedTime: post.dateModified,
+      authors: ['Ibrahim Shahzad'],
     },
   };
 }
@@ -40,10 +44,9 @@ export default function BlogPostPage({ params }: Props) {
 
   const otherPosts = sortedPosts().filter((p) => p.slug !== post.slug);
 
-  // Author is the organization rather than a named person because the site
-  // deliberately keeps the founder unnamed ("built by an independent
-  // developer"). If a public byline is ever adopted, switch this to a Person
-  // node for stronger authorship signals.
+  // Named Person authorship, adopted at the owner's say-so on 2026-07-13
+  // (it was an anonymous Organization at launch). A real human author is a
+  // stronger authorship signal for search and answer engines than an org.
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -53,9 +56,10 @@ export default function BlogPostPage({ params }: Props) {
     datePublished: post.datePublished,
     dateModified: post.dateModified,
     author: {
-      '@type': 'Organization',
-      name: 'Stridemind',
+      '@type': 'Person',
+      name: 'Ibrahim Shahzad',
       url: 'https://stridemind.app',
+      jobTitle: 'Founder, Stridemind',
     },
     publisher: { '@id': 'https://stridemind.app/#organization' },
     image: 'https://stridemind.app/app-icon.png',
@@ -83,12 +87,9 @@ export default function BlogPostPage({ params }: Props) {
               </svg>
               All articles
             </Link>
-            {/* "Maker of", not "team": the site is honest that this is an
-                independent developer, and the founder note on /science says
-                so in as many words. */}
             <p className="text-sm text-gray-400 mb-4">
-              {formatPostDate(post.datePublished)} · {post.readingMinutes} minute read · By the
-              maker of Stridemind
+              {formatPostDate(post.datePublished)} · {post.readingMinutes} minute read · By
+              Ibrahim Shahzad, maker of Stridemind
             </p>
             <h1 className="font-display text-4xl sm:text-5xl text-gray-900 leading-tight">
               {post.title}
