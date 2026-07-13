@@ -153,7 +153,9 @@ export default function Hero() {
             </FadeUp>
 
             <FadeUp delay={0.2}>
-              <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
+              {/* hero-description is a marker class referenced by the speakable
+                  schema selector in app/page.tsx; keep them in sync. */}
+              <p className="hero-description text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
                 Put in your earbuds and walk, and Stridemind keeps your mind working the whole
                 way. A short monthly check-in shows your progress. Built on peer-reviewed
                 dual-task research and made for adults 55 and over.

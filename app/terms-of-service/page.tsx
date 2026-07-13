@@ -4,6 +4,7 @@ import LegalLayout, { LegalSection } from '@/components/LegalLayout';
 export const metadata: Metadata = {
   title: 'Terms of Service — Stridemind',
   description: 'Stridemind terms of service. Read the terms that govern your use of the app.',
+  alternates: { canonical: 'https://stridemind.app/terms-of-service' },
 };
 
 export default function TermsOfService() {

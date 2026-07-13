@@ -110,8 +110,10 @@ The short version (the file is canonical): calm, kind, explanatory narrator. Com
   `.html` copies. The privacy policy must reflect the app's real data flows: Supabase
   account/usage data, cognitive check-in results, session motion (pedometer) data,
   RevenueCat subscription status. These are App Store compliance documents.
-- App Store download links are `href="#"` placeholders until the app is live — when the
-  real URL exists, update Nav, Hero, StickyCTA, Pricing (both cards), and CallToAction.
+- The live App Store URL is `https://apps.apple.com/app/id6761288997`. Every download
+  link on the site uses it: Nav, Hero, StickyCTA, Pricing, CallToAction, the /science
+  CTA, llms.txt, ai.txt, and the JSON-LD in `app/layout.tsx`. New download links must
+  use this exact URL, never a vanity slug like `/app/stridemind` (that form 404s).
 - Hero phone mockup mirrors the app's real Cockpit screen — keep it truthful if the
   Cockpit changes, and never swap in raw screenshots of empty accounts.
 - When making a non-obvious decision, add a brief `//` comment explaining WHY.

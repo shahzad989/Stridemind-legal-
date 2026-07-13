@@ -30,6 +30,25 @@ export default function Footer() {
 
           {/* Links */}
           <div className="flex flex-col sm:flex-row gap-10">
+            {/* /science was near-orphaned (one in-page link, absent from the
+                sitemap until 2026-07); a persistent footer link gives crawlers
+                a path to it from every page. */}
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4">
+                Learn
+              </p>
+              <ul className="space-y-3">
+                <li>
+                  <Link
+                    href="/science"
+                    className="text-gray-400 hover:text-white transition-colors text-base"
+                  >
+                    The Science
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4">
                 Legal

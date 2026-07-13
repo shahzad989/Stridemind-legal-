@@ -470,7 +470,7 @@ export default function ScienceContent() {
             Free to start. No equipment. Works on any walk.
           </p>
           <a
-            href="https://apps.apple.com/app/stridemind"
+            href="https://apps.apple.com/app/id6761288997"
             className="inline-flex items-center gap-2 bg-gray-900 text-white px-7 py-3.5 rounded-xl text-sm font-semibold hover:bg-gray-800 transition-colors"
           >
             <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

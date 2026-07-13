@@ -54,5 +54,6 @@ of falling as they age.
 
 support: appstridemind@gmail.com
 website: https://stridemind.app
+app store: https://apps.apple.com/app/id6761288997
 science: https://stridemind.app/science
 faq: https://stridemind.app/#faq

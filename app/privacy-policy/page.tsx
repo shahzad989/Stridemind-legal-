@@ -4,6 +4,7 @@ import LegalLayout, { LegalSection } from '@/components/LegalLayout';
 export const metadata: Metadata = {
   title: 'Privacy Policy — Stridemind',
   description: 'Stridemind privacy policy. Learn what data we collect, how we use it, and your rights.',
+  alternates: { canonical: 'https://stridemind.app/privacy-policy' },
 };
 
 export default function PrivacyPolicy() {

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import HowItWorks from '@/components/sections/HowItWorks';
 import WhyDualTask from '@/components/sections/WhyDualTask';
@@ -5,7 +6,15 @@ import TheScience from '@/components/sections/TheScience';
 import WhoItsFor from '@/components/sections/WhoItsFor';
 import Pricing from '@/components/sections/Pricing';
 import FAQ from '@/components/sections/FAQ';
+import { FAQS } from '@/components/sections/faq-data';
 import CallToAction from '@/components/sections/CallToAction';
+
+// Canonical is set per page (not in layout metadata) because layout metadata
+// inherits: a layout-level canonical would stamp the homepage URL onto every
+// page that forgets to override it.
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://stridemind.app' },
+};
 
 const webPageSchema = {
   '@context': 'https://schema.org',
@@ -17,6 +26,8 @@ const webPageSchema = {
   about: { '@id': 'https://stridemind.app/#app' },
   speakable: {
     '@type': 'SpeakableSpecification',
+    // These selectors must exist in the rendered DOM; .hero-description is a
+    // marker class carried by the hero paragraph for exactly this purpose.
     cssSelector: ['h1', '.hero-description', '#faq', '#science'],
   },
 };
@@ -60,59 +71,18 @@ const scholarlyArticleSchema = {
     'Khan et al. "Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression." European Geriatric Medicine, 2025. 44 studies, 2,782 participants.',
 };
 
+// Built from the exact Q&A list the FAQ section renders. Google's guidelines
+// require every marked-up question to be visible on the page; an earlier
+// version of this schema carried six questions that never appeared in the UI,
+// so deriving it from the rendered array keeps the two permanently in sync.
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is dual-task walking training?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Dual-task walking training means performing a cognitive task — such as number recall, pattern recognition, or memory challenges — while walking at the same time. This combination trains the brain and body to coordinate under real-world conditions, which is exactly the challenge older adults face when navigating everyday environments.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can Stridemind really reduce fall risk?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'The approach behind Stridemind is supported by a 2025 meta-analysis in European Geriatric Medicine covering 44 studies and 2,782 older adults, which found that dual-task training significantly improves dynamic balance and functional mobility and reduces fall frequency. Stridemind itself is a wellness app, not a medical device, and individual results vary.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What cognitive tasks does Stridemind use?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: "Stridemind uses audio-delivered cognitive challenges including number drills, pattern recall, memory sequences, and speed-based recall tasks. All exercises are delivered through your earphones so you can keep your phone in your pocket and eyes up while you walk.",
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How long until I see results?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Clinical studies show measurable improvements in gait and dual-task performance within 6 to 8 weeks of consistent training. Many people feel more focused and confident on their walks early on, though that varies from person to person. Consistency, a few sessions per week, matters more than session length.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Is Stridemind safe for someone with mild cognitive impairment?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Stridemind is a wellness app, not a medical device, and is not intended to diagnose or treat any condition. Many users with mild cognitive concerns use it under physical therapist or physician guidance. If you have a diagnosis, please consult your healthcare provider before starting.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What makes Stridemind different from other brain training apps?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: "Most brain training apps are screen-based and sedentary. Stridemind is built for movement, so the cognitive exercises are done while you walk. This dual-task approach targets the attention-and-movement interference that drives many falls, an approach research links to better balance and lower fall risk. It is audio-first, requires no screen interaction during sessions, and is designed for adults 55+.",
-      },
-    },
-  ],
+  mainEntity: FAQS.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
 };
 
 const howToSchema = {

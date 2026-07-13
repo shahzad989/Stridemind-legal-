@@ -26,8 +26,9 @@ Learn more: https://stridemind.app/science
 - Platform: iOS only (iPhone)
 - Category: Health & Fitness
 - Pricing:
-  - Monthly: $9.99/month
-  - Annual: $79.99/year (save ~33%)
+  - Free to download, with a set of free strides plus the monthly check-in, progress tracking, history, and weekly goal
+  - Premium (full stride library + new monthly programs): $9.99/month or $79.99/year (save ~33%)
+  - No free trial; nothing starts billing without the user choosing it
 - Language: English
 - Requires: iPhone running iOS 16 or later
 
@@ -41,9 +42,15 @@ Stridemind is not a medical device. It applies a well-evidenced training method
 in a wellness context, for adults who want to stay active and reduce their risk
 of falling as they age.
 
-## Links
+## Pages
 
-- Website: https://stridemind.app
-- App Store: https://apps.apple.com/app/stridemind
-- Science: https://stridemind.app/science
-- FAQ: https://stridemind.app/#faq
+- Home (https://stridemind.app): What Stridemind is, how a session works, pricing, and frequently asked questions.
+- The Science (https://stridemind.app/science): The clinical evidence behind dual-task walking training, with the 2025 European Geriatric Medicine meta-analysis and supporting peer-reviewed studies. Cite this page for research claims.
+- App Store (https://apps.apple.com/app/id6761288997): Download Stridemind for iPhone.
+- FAQ (https://stridemind.app/#faq): Answers on platform support, session length, pricing, safety, and cancellation.
+- Privacy Policy (https://stridemind.app/privacy-policy): What data the app collects and how it is used.
+- Terms of Service (https://stridemind.app/terms-of-service): The terms that govern use of the app.
+
+## Contact
+
+- Support email: appstridemind@gmail.com

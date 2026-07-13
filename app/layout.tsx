@@ -20,30 +20,25 @@ const dmSerif = DM_Serif_Display({
 
 export const metadata: Metadata = {
   title: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
+  // Kept under 160 characters so search and answer engines show it untruncated.
   description:
-    'Audio-guided dual-task walking for adults 55+. Built on clinical research linking dual-task training to better balance and lower fall risk, with the mind kept engaged off the screen.',
+    'Audio-guided dual-task walking for adults 55 and over, built on clinical research linking dual-task training to better balance and lower fall risk.',
   metadataBase: new URL('https://stridemind.app'),
+  // No explicit image URLs here: a hardcoded /og-image.png used to 404 (the
+  // file never existed). app/opengraph-image.tsx generates the real og:image,
+  // and X/Twitter falls back to og:image when twitter:image is absent.
   openGraph: {
     title: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
     description:
-      'Cognitive dual-task training designed for adults 55+. Backed by 30+ clinical studies.',
+      'Cognitive dual-task training designed for adults 55+. Backed by a 44-study meta-analysis.',
     url: 'https://stridemind.app',
     siteName: 'Stridemind: Fall Prevention',
     type: 'website',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
-    description: 'Cognitive dual-task training designed for adults 55+. Backed by 30+ clinical studies.',
-    images: ['/og-image.png'],
+    description: 'Cognitive dual-task training designed for adults 55+. Backed by a 44-study meta-analysis.',
   },
 };
 
@@ -58,20 +53,21 @@ const jsonLd = {
       description:
         'Audio-guided dual-task walking training to reduce fall risk and improve cognition in adults 55+.',
       publisher: { '@id': 'https://stridemind.app/#organization' },
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: {
-          '@type': 'EntryPoint',
-          urlTemplate: 'https://stridemind.app/?q={search_term_string}',
-        },
-        'query-input': 'required name=search_term_string',
-      },
+      // No SearchAction here on purpose: the site has no search, and schema
+      // pointing at a nonexistent search endpoint is a structured-data error.
     },
     {
       '@type': 'Organization',
       '@id': 'https://stridemind.app/#organization',
-      name: 'Stridemind: Fall Prevention',
+      // The organization is "Stridemind" the maker; the ": Fall Prevention"
+      // suffix is the App Store listing title and belongs on the app node only.
+      name: 'Stridemind',
       url: 'https://stridemind.app',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://stridemind.app/app-icon.png',
+      },
+      sameAs: ['https://apps.apple.com/app/id6761288997'],
       contactPoint: {
         '@type': 'ContactPoint',
         email: 'appstridemind@gmail.com',
@@ -84,29 +80,40 @@ const jsonLd = {
       name: 'Stridemind: Fall Prevention',
       operatingSystem: 'iOS',
       applicationCategory: 'HealthApplication',
+      author: { '@id': 'https://stridemind.app/#organization' },
+      installUrl: 'https://apps.apple.com/app/id6761288997',
       description:
         'Stridemind uses dual-task walking training, combining audio-guided cognitive exercises with physical movement, to support balance and cognition in adults 55+. Backed by a 2025 meta-analysis of 44 studies with 2,782 participants.',
+      // The download itself is free (freemium with a premium subscription), so
+      // a price-0 offer leads; the paid offers mirror StrideMind.storekit and
+      // Pricing.tsx and must change in the same breath as App Store pricing.
       offers: [
         {
           '@type': 'Offer',
-          name: 'Monthly',
+          name: 'Free download',
+          price: '0',
+          priceCurrency: 'USD',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Premium Monthly',
           price: '9.99',
           priceCurrency: 'USD',
           billingIncrement: 'P1M',
         },
         {
           '@type': 'Offer',
-          name: 'Annual',
+          name: 'Premium Annual',
           price: '79.99',
           priceCurrency: 'USD',
           billingIncrement: 'P1Y',
         },
       ],
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '5',
-        ratingCount: '3',
-      },
+      // No aggregateRating on purpose: the site's hard rule bans social proof
+      // that is not visible and verifiable on the page, and Google treats
+      // schema ratings with no on-page evidence as structured-data spam. If
+      // real App Store ratings are ever surfaced on the page itself, the
+      // rating can return alongside that visible block.
     },
   ],
 };
