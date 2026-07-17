@@ -11,6 +11,10 @@ export const metadata: Metadata = {
     description:
       '44 studies, 2,782 participants, a 2025 meta-analysis. The clinical evidence for dual-task training as fall prevention in adults 55+.',
     url: 'https://stridemind.app/science',
+    // The file-convention OG image only attaches to the homepage segment, so
+    // every non-blog page must reference the generated image explicitly or
+    // link previews render with no image at all.
+    images: [{ url: 'https://stridemind.app/opengraph-image', width: 1200, height: 630 }],
   },
 };
 

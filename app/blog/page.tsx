@@ -16,6 +16,8 @@ export const metadata: Metadata = {
     description:
       'Plain-language articles on dual-task training, walking, balance, and staying sharp after 55.',
     url: 'https://stridemind.app/blog',
+    // See app/science/page.tsx: the root OG image does not cascade here.
+    images: [{ url: 'https://stridemind.app/opengraph-image', width: 1200, height: 630 }],
   },
 };
 

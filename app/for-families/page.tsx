@@ -13,6 +13,8 @@ export const metadata: Metadata = {
     description:
       "What actually lowers a parent's fall risk, why constant caution backfires, and how to help without taking over.",
     url: 'https://stridemind.app/for-families',
+    // See app/science/page.tsx: the root OG image does not cascade here.
+    images: [{ url: 'https://stridemind.app/opengraph-image', width: 1200, height: 630 }],
   },
 };
 

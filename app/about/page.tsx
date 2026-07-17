@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     description:
       'Who builds Stridemind, why it exists, and the rules we follow when we make claims.',
     url: 'https://stridemind.app/about',
+    // See app/science/page.tsx: the root OG image does not cascade here.
+    images: [{ url: 'https://stridemind.app/opengraph-image', width: 1200, height: 630 }],
   },
 };
 
