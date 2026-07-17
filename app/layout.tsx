@@ -41,10 +41,13 @@ export const metadata: Metadata = {
     siteName: 'Stridemind: Fall Prevention',
     type: 'website',
   },
+  // Card type only, no title/description: child pages inherit the layout's
+  // twitter object wholesale (Next merges metadata shallowly), and X prefers
+  // twitter:title over og:title, so a hardcoded homepage title here used to
+  // stamp itself onto every blog post and /science share. With only the card
+  // type set, X falls back to each page's own og:title/description/image.
   twitter: {
     card: 'summary_large_image',
-    title: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
-    description: 'Cognitive dual-task training designed for adults 55+. Backed by a 44-study meta-analysis.',
   },
 };
 

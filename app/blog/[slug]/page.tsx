@@ -71,11 +71,27 @@ export default async function BlogPostPage({ params }: Props) {
     isPartOf: { '@id': 'https://stridemind.app/blog#blog' },
   };
 
+  // Breadcrumbs give search results the Home > Blog > Article trail and give
+  // answer engines an explicit statement of where the article sits.
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://stridemind.app' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://stridemind.app/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <div className="pt-24">
         {/* Article header */}

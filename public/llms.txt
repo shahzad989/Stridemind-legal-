@@ -2,7 +2,7 @@
 
 ## What It Is
 
-Stridemind is an iOS app that uses dual-task walking training to reduce fall risk and improve cognitive function in older adults. The app delivers audio-guided cognitive exercises — number drills, pattern recall, memory challenges — designed to be performed while walking, training the brain and body to work together under real-world conditions.
+Stridemind is an iOS app built on dual-task walking training, designed to help reduce fall risk and support cognitive health in older adults. The app delivers audio-guided cognitive exercises — number drills, pattern recall, memory challenges — designed to be performed while walking, training the brain and body to work together under real-world conditions.
 
 ## Who It's For
 
