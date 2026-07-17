@@ -13,6 +13,7 @@ const AppleIcon = () => (
 const NAV_LINKS = [
   { label: 'How It Works', href: '#how-it-works', page: false },
   { label: 'The Science', href: '/science', page: true },
+  { label: 'For Families', href: '/for-families', page: true },
   { label: 'Blog', href: '/blog', page: true },
   { label: 'Pricing', href: '#pricing', page: false },
   { label: 'FAQ', href: '#faq', page: false },
@@ -44,8 +45,11 @@ export default function Nav() {
             height={34}
             className="rounded-lg"
           />
+          {/* The ": Fall Prevention" suffix only fits alongside six nav links
+              on wide screens; below lg the wordmark alone keeps the bar from
+              wrapping. */}
           <span className="text-lg font-extrabold text-brand tracking-tight leading-tight">
-            Stridemind: Fall Prevention
+            Stridemind<span className="hidden lg:inline">: Fall Prevention</span>
           </span>
         </Link>
 

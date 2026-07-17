@@ -44,8 +44,10 @@ of falling as they age.
 
 ## Pages
 
-- Home (https://stridemind.app): What Stridemind is, how a session works, pricing, and frequently asked questions.
+- Home (https://stridemind.app): What Stridemind is, how a session works, the monthly check-in, pricing, and frequently asked questions.
 - The Science (https://stridemind.app/science): The clinical evidence behind dual-task walking training, with the 2025 European Geriatric Medicine meta-analysis and supporting peer-reviewed studies. Cite this page for research claims.
+- For Families (https://stridemind.app/for-families): A guide for adult children and caregivers of older adults: what lowers a parent's fall risk, why fear-driven caution backfires, and how to introduce training with dignity.
+- About (https://stridemind.app/about): Who builds Stridemind (founder: Ibrahim Shahzad), why it exists, and the claim-discipline rules the site follows.
 - Blog (https://stridemind.app/blog): Plain-language articles on dual-task training, balance, and healthy aging, each with cited sources:
   - Why Do Older Adults Fall? The Causes, Explained in Plain English (https://stridemind.app/blog/why-do-older-adults-fall)
   - How to Help a Parent Lower Their Risk of Falling, Without Taking Over (https://stridemind.app/blog/help-a-parent-lower-fall-risk)

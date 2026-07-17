@@ -6,9 +6,11 @@ import { POSTS, sortedPosts } from './blog/posts';
 // page had just changed; a signal that is always "today" carries no
 // information and erodes trust in the sitemap. Bump the matching constant
 // when a page's content meaningfully changes.
-const HOME_UPDATED = '2026-07-13'; // blog wired into nav/footer
+const HOME_UPDATED = '2026-07-17'; // monthly check-in section added
 const SCIENCE_UPDATED = '2026-06-15'; // citation verification pass
 const LEGAL_UPDATED = '2026-06-11'; // privacy policy sensor-data disclosure
+const FAMILIES_UPDATED = '2026-07-17'; // page launched
+const ABOUT_UPDATED = '2026-07-17'; // page launched
 
 function utc(date: string): Date {
   return new Date(`${date}T00:00:00Z`);
@@ -30,6 +32,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: utc(SCIENCE_UPDATED),
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: 'https://stridemind.app/for-families',
+      lastModified: utc(FAMILIES_UPDATED),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://stridemind.app/about',
+      lastModified: utc(ABOUT_UPDATED),
+      changeFrequency: 'yearly',
+      priority: 0.5,
     },
     {
       url: 'https://stridemind.app/blog',

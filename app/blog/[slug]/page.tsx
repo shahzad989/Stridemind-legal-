@@ -60,8 +60,11 @@ export default async function BlogPostPage({ params }: Props) {
     dateModified: post.dateModified,
     author: {
       '@type': 'Person',
+      // Same @id as the Person node on /about, so consumers can merge the
+      // byline with the fuller author page.
+      '@id': 'https://stridemind.app/about#founder',
       name: 'Ibrahim Shahzad',
-      url: 'https://stridemind.app',
+      url: 'https://stridemind.app/about',
       jobTitle: 'Founder, Stridemind',
     },
     publisher: { '@id': 'https://stridemind.app/#organization' },

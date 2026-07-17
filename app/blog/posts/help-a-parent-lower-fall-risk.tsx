@@ -99,7 +99,8 @@ function Content() {
         diagnosed balance condition or a recent fall behind them, the right first step is a
         conversation with their physician or physical therapist, and many people use the app
         alongside that care. You can read every study behind this article on our{' '}
-        <TextLink href="/science">science page</TextLink>, or start with{' '}
+        <TextLink href="/science">science page</TextLink>, see the family-focused overview on our{' '}
+        <TextLink href="/for-families">For Families page</TextLink>, or start with{' '}
         <TextLink href="/blog/why-do-older-adults-fall">
           Why Do Older Adults Fall?
         </TextLink>{' '}

@@ -48,10 +48,26 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
+                    href="/for-families"
+                    className="text-gray-400 hover:text-white transition-colors text-base"
+                  >
+                    For Families
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/blog"
                     className="text-gray-400 hover:text-white transition-colors text-base"
                   >
                     Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-gray-400 hover:text-white transition-colors text-base"
+                  >
+                    About
                   </Link>
                 </li>
               </ul>

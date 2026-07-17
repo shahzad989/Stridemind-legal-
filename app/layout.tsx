@@ -78,6 +78,12 @@ const jsonLd = {
       // suffix is the App Store listing title and belongs on the app node only.
       name: 'Stridemind',
       url: 'https://stridemind.app',
+      // Full Person node lives on /about; the @id ties them together.
+      founder: {
+        '@type': 'Person',
+        '@id': 'https://stridemind.app/about#founder',
+        name: 'Ibrahim Shahzad',
+      },
       logo: {
         '@type': 'ImageObject',
         url: 'https://stridemind.app/app-icon.png',

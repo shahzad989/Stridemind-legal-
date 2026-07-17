@@ -4,6 +4,7 @@ import HowItWorks from '@/components/sections/HowItWorks';
 import WhyDualTask from '@/components/sections/WhyDualTask';
 import TheScience from '@/components/sections/TheScience';
 import WhoItsFor from '@/components/sections/WhoItsFor';
+import MonthlyCheckin from '@/components/sections/MonthlyCheckin';
 import Pricing from '@/components/sections/Pricing';
 import FAQ from '@/components/sections/FAQ';
 import { FAQS } from '@/components/sections/faq-data';
@@ -143,6 +144,10 @@ export default function Home() {
       <WhyDualTask />
       <TheScience />
       <WhoItsFor />
+      {/* The check-in sits right before Pricing on purpose: it is the "and
+          you can verify it is working" beat, and its measurement features
+          are free, which defuses the paywall question Pricing then answers. */}
+      <MonthlyCheckin />
       <Pricing />
       <FAQ />
       <CallToAction />
