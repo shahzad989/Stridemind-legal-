@@ -101,12 +101,24 @@ export default function Footer() {
               <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-4">
                 Contact
               </p>
-              <a
-                href="mailto:appstridemind@gmail.com"
-                className="text-gray-400 hover:text-white transition-colors text-base"
-              >
-                appstridemind@gmail.com
-              </a>
+              <ul className="space-y-3">
+                <li>
+                  <Link
+                    href="/support"
+                    className="text-gray-400 hover:text-white transition-colors text-base"
+                  >
+                    Support
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="mailto:appstridemind@gmail.com"
+                    className="text-gray-400 hover:text-white transition-colors text-base"
+                  >
+                    appstridemind@gmail.com
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

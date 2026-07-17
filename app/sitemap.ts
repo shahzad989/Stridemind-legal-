@@ -11,6 +11,7 @@ const SCIENCE_UPDATED = '2026-06-15'; // citation verification pass
 const LEGAL_UPDATED = '2026-06-11'; // privacy policy sensor-data disclosure
 const FAMILIES_UPDATED = '2026-07-17'; // page launched
 const ABOUT_UPDATED = '2026-07-17'; // page launched
+const SUPPORT_UPDATED = '2026-07-17'; // page launched
 
 function utc(date: string): Date {
   return new Date(`${date}T00:00:00Z`);
@@ -43,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://stridemind.app/about',
       lastModified: utc(ABOUT_UPDATED),
       changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: 'https://stridemind.app/support',
+      lastModified: utc(SUPPORT_UPDATED),
+      changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
