@@ -1,6 +1,5 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
 export const alt = 'Stridemind — Walk Sharper. Think Faster. Age Better.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
@@ -56,14 +55,23 @@ export default function Image() {
             marginBottom: 40,
           }}
         >
+          {/* "44-study meta-analysis" is the verified Khan et al. 2025 EGM
+              figure used across the site; the old "30+ clinical studies" badge
+              here was a stale leftover the hero already corrected. */}
           <span style={{ color: '#dcfce7', fontSize: 18, fontFamily: 'sans-serif' }}>
-            🧠 Backed by 30+ clinical studies
+            🧠 Backed by a 44-study meta-analysis
           </span>
         </div>
 
-        {/* Headline */}
+        {/* Headline. Satori (next/og) refuses divs with multiple children and
+            no explicit display, which is why this image failed to prerender
+            under Next 16; an explicit flex column of one span per line is the
+            supported way to stack the three lines. */}
         <div
           style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
             fontSize: 80,
             fontWeight: 700,
             color: 'white',
@@ -72,7 +80,8 @@ export default function Image() {
             marginBottom: 32,
           }}
         >
-          Walk Sharper.{'\n'}Think Faster.{'\n'}
+          <span>Walk Sharper.</span>
+          <span>Think Faster.</span>
           <span style={{ color: '#86efac' }}>Age Better.</span>
         </div>
 

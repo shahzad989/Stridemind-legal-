@@ -4,8 +4,9 @@ import { notFound } from 'next/navigation';
 import { getPost, sortedPosts, POSTS } from '../posts';
 import { formatPostDate } from '../posts/shared';
 
+// Next 15+ delivers params as a Promise; both consumers below await it.
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 // All posts are known at build time; anything else is a real 404 rather
@@ -16,8 +17,9 @@ export function generateStaticParams() {
   return POSTS.map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const post = getPost(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPost(slug);
   if (!post) return {};
   return {
     title: `${post.title} — Stridemind`,
@@ -38,8 +40,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = getPost(params.slug);
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = getPost(slug);
   if (!post) notFound();
 
   const otherPosts = sortedPosts().filter((p) => p.slug !== post.slug);

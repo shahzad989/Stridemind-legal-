@@ -2,7 +2,6 @@ import { ImageResponse } from 'next/og';
 import { getPost } from '../posts';
 import { formatPostDate } from '../posts/shared';
 
-export const runtime = 'edge';
 export const alt = 'Stridemind blog article';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
@@ -10,8 +9,9 @@ export const contentType = 'image/png';
 // Visual language mirrors the site-wide app/opengraph-image.tsx (brand green,
 // soft circles, serif headline, bottom brand row) so shares from any page of
 // the site look like one family.
-export default function Image({ params }: { params: { slug: string } }) {
-  const post = getPost(params.slug);
+export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPost(slug);
   // dynamicParams=false on the page means this should never miss, but a
   // fallback beats a broken share image if that ever changes.
   const title = post?.title ?? 'The Stridemind Blog';
