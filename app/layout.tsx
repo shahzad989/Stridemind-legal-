@@ -4,6 +4,7 @@ import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import StickyCTA from '@/components/StickyCTA';
+import MotionProvider from '@/components/MotionProvider';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -142,8 +143,18 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${dmSerif.variable} font-sans bg-white text-gray-900 antialiased`}>
+        {/* Keyboard users get a way past the fixed nav on every page; the
+            link is invisible until focused. */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-white focus:text-brand focus:font-semibold focus:px-4 focus:py-3 focus:rounded-xl focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <Nav />
-        <main>{children}</main>
+        <MotionProvider>
+          <main id="main-content">{children}</main>
+        </MotionProvider>
         <Footer />
         <StickyCTA />
         <Analytics debug={process.env.NODE_ENV !== 'production'} />

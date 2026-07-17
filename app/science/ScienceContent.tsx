@@ -53,7 +53,7 @@ function AnimatedStat({ value, suffix, prefix = '', decimals = 0, label, sub }: 
         {prefix}{count.toFixed(decimals)}{suffix}
       </p>
       <p className="text-gray-700 font-medium leading-snug">{label}</p>
-      <p className="text-xs text-gray-400 mt-2 italic">{sub}</p>
+      <p className="text-xs text-gray-500 mt-2 italic">{sub}</p>
     </motion.div>
   );
 }
@@ -273,7 +273,7 @@ export default function ScienceContent() {
                 className="bg-white rounded-2xl p-7 border-l-4 border-brand shadow-sm"
               >
                 <p className="text-gray-700 text-lg leading-relaxed mb-3">&ldquo;{c.quote}&rdquo;</p>
-                <p className="text-sm text-gray-400 italic">{c.source}</p>
+                <p className="text-sm text-gray-500 italic">{c.source}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -350,7 +350,7 @@ export default function ScienceContent() {
               difference was the cognitive layer. That layer produced a{' '}
               <strong className="text-white">42% lower fall rate</strong> over the following six months.
             </p>
-            <p className="text-sm text-gray-500 italic mt-4">
+            <p className="text-sm text-gray-400 italic mt-4">
               Mirelman et al., The Lancet, 2016 — V-TIME trial (302 participants, 5 centres)
             </p>
           </motion.div>
@@ -404,7 +404,7 @@ export default function ScienceContent() {
                 className="bg-brand-muted rounded-2xl p-7 border border-brand-light"
               >
                 <p className="text-gray-700 text-base leading-relaxed mb-3">{item.finding}</p>
-                <p className="text-sm text-gray-400 italic">{item.source}</p>
+                <p className="text-sm text-gray-500 italic">{item.source}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -484,8 +484,8 @@ export default function ScienceContent() {
       {/* Founder note — honest, unobtrusive */}
       <section className="bg-gray-50 py-14 px-6 border-t border-gray-200">
         <div className="max-w-3xl mx-auto">
-          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">About this project</p>
-          <p className="text-gray-500 text-base leading-relaxed">
+          <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">About this project</p>
+          <p className="text-gray-600 text-base leading-relaxed">
             Stridemind was built by an independent developer who came across the clinical research
             on dual-task walking and could not find a practical, accessible app that applied it.
             The evidence was clear and replicable across dozens of trials. The gap between that

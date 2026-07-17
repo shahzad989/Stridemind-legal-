@@ -78,11 +78,14 @@ export default function Nav() {
           App Store
         </a>
 
-        {/* Mobile hamburger */}
+        {/* Mobile hamburger. md:hidden, not sm:hidden: the desktop links only
+            appear at md, so an sm breakpoint here left 640-767px wide screens
+            with no navigation at all. */}
         <button
-          className="sm:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+          className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {open ? (
@@ -96,7 +99,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="sm:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
+        <div className="md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}

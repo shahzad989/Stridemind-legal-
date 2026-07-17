@@ -81,7 +81,7 @@ export default function Pricing() {
                   ) : (
                     <X size={18} className="text-gray-300 flex-shrink-0 mt-0.5" />
                   )}
-                  <span className={`text-base ${f.included ? 'text-gray-700' : 'text-gray-400'}`}>
+                  <span className={`text-base ${f.included ? 'text-gray-700' : 'text-gray-500'}`}>
                     {f.text}
                   </span>
                 </li>

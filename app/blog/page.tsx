@@ -80,7 +80,7 @@ export default function BlogIndexPage() {
                 href={`/blog/${post.slug}`}
                 className="block bg-white rounded-2xl border border-brand-light shadow-sm p-8 hover:shadow-md hover:border-brand/30 transition-all"
               >
-                <p className="text-sm text-gray-400 mb-3">
+                <p className="text-sm text-gray-500 mb-3">
                   {formatPostDate(post.datePublished)} · {post.readingMinutes} minute read
                 </p>
                 <h2 className="font-display text-2xl sm:text-3xl text-gray-900 leading-snug mb-3">

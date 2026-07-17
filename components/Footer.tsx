@@ -20,10 +20,10 @@ export default function Footer() {
               />
               <div>
                 <p className="text-base font-extrabold text-brand tracking-tight leading-tight">Stridemind: Fall Prevention</p>
-                <p className="text-gray-500 text-xs mt-0.5">Train Your Brain While Walking</p>
+                <p className="text-gray-400 text-xs mt-0.5">Train Your Brain While Walking</p>
               </div>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed">
+            <p className="text-gray-400 text-sm leading-relaxed">
               Cognitive dual-task training for adults 55+. Built on clinical research linking dual-task training to better balance and lower fall risk.
             </p>
           </div>
@@ -34,7 +34,7 @@ export default function Footer() {
                 sitemap until 2026-07); a persistent footer link gives crawlers
                 a path to it from every page. */}
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4">
+              <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-4">
                 Learn
               </p>
               <ul className="space-y-3">
@@ -58,7 +58,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4">
+              <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-4">
                 Legal
               </p>
               <ul className="space-y-3">
@@ -82,7 +82,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4">
+              <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-4">
                 Contact
               </p>
               <a
@@ -96,7 +96,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-400 text-sm">
             © {year} Stridemind: Fall Prevention. All rights reserved. Not a medical device. For wellness purposes only.
           </p>
         </div>

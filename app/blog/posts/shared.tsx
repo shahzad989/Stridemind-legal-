@@ -62,7 +62,7 @@ export function Finding({ children, source }: { children: ReactNode; source: str
   return (
     <div className="bg-brand-muted rounded-2xl p-6 border-l-4 border-brand my-8">
       <p className="text-lg text-gray-700 leading-relaxed mb-3">{children}</p>
-      <p className="text-sm text-gray-400 italic">{source}</p>
+      <p className="text-sm text-gray-500 italic">{source}</p>
     </div>
   );
 }

@@ -5,6 +5,17 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* The fixed 64px header would otherwise cover anchor targets
+       (#faq, #pricing, #how-it-works) when they scroll into view. */
+    scroll-padding-top: 5rem;
+  }
+
+  /* Smooth scrolling is itself motion; honor the OS setting. framer-motion
+     animations are handled separately by MotionProvider (reducedMotion="user"). */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 
   body {

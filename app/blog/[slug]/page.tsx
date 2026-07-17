@@ -106,7 +106,7 @@ export default async function BlogPostPage({ params }: Props) {
               </svg>
               All articles
             </Link>
-            <p className="text-sm text-gray-400 mb-4">
+            <p className="text-sm text-gray-500 mb-4">
               {formatPostDate(post.datePublished)} · {post.readingMinutes} minute read · By
               Ibrahim Shahzad, maker of Stridemind
             </p>
@@ -167,7 +167,7 @@ export default async function BlogPostPage({ params }: Props) {
                       <p className="font-display text-xl text-gray-900 group-hover:text-brand transition-colors leading-snug">
                         {p.title}
                       </p>
-                      <p className="text-sm text-gray-400 mt-1">
+                      <p className="text-sm text-gray-500 mt-1">
                         {formatPostDate(p.datePublished)} · {p.readingMinutes} minute read
                       </p>
                     </Link>

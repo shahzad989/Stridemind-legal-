@@ -68,7 +68,7 @@ function FallStat({ value, suffix, prefix = '', decimals = 0, label, sublabel }:
         {prefix}{count.toFixed(decimals)}{suffix}
       </p>
       <p className="text-red-100 text-lg leading-snug flex-1">{label}</p>
-      {sublabel && <p className="text-xs text-red-200/60 mt-3 italic">{sublabel}</p>}
+      {sublabel && <p className="text-xs text-red-200/80 mt-3 italic">{sublabel}</p>}
     </motion.div>
   );
 }
@@ -149,7 +149,7 @@ export default function TheScience() {
               >
                 <p className="text-5xl font-extrabold text-brand mb-2">{stat.value}</p>
                 <p className="text-gray-700 text-lg leading-snug">{stat.label}</p>
-                <p className="text-xs text-gray-400 mt-2 italic">{stat.sub}</p>
+                <p className="text-xs text-gray-500 mt-2 italic">{stat.sub}</p>
               </motion.div>
             ))}
           </div>
@@ -166,7 +166,7 @@ export default function TheScience() {
               &ldquo;Older adults who added cognitive challenges to their treadmill walking had a
               42% lower fall rate than those who did the identical walk without them.&rdquo;
             </p>
-            <p className="text-sm text-gray-400 italic">Mirelman et al., The Lancet, 2016 — V-TIME trial</p>
+            <p className="text-sm text-gray-500 italic">Mirelman et al., The Lancet, 2016 — V-TIME trial</p>
           </motion.div>
 
           {/* CTA to /science */}

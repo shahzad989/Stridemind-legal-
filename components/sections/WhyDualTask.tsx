@@ -14,12 +14,15 @@ const ROWS = [
   { label: 'Grounded in fall-prevention research', walking: null,  brainGames: false, stridemind: true },
 ];
 
+// Icons are aria-hidden and each cell carries sr-only text, so a screen
+// reader hears "Yes" / "No" / "Limited or mixed evidence" instead of nothing.
 function Cell({ value }: { value: boolean | null }) {
   if (value === true)
     return (
       <div className="flex justify-center">
         <div className="w-7 h-7 rounded-full bg-brand/10 flex items-center justify-center">
-          <Check size={16} className="text-brand" strokeWidth={2.5} />
+          <Check size={16} className="text-brand" strokeWidth={2.5} aria-hidden="true" />
+          <span className="sr-only">Yes</span>
         </div>
       </div>
     );
@@ -27,14 +30,16 @@ function Cell({ value }: { value: boolean | null }) {
     return (
       <div className="flex justify-center">
         <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center">
-          <Minus size={14} className="text-gray-400" />
+          <Minus size={14} className="text-gray-400" aria-hidden="true" />
+          <span className="sr-only">Limited or mixed evidence</span>
         </div>
       </div>
     );
   return (
     <div className="flex justify-center">
       <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center">
-        <X size={14} className="text-gray-400" strokeWidth={2.5} />
+        <X size={14} className="text-gray-400" strokeWidth={2.5} aria-hidden="true" />
+        <span className="sr-only">No</span>
       </div>
     </div>
   );
@@ -72,46 +77,55 @@ export default function WhyDualTask() {
           transition={{ duration: 0.55, delay: 0.1 }}
           className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden"
         >
-          {/* Header row */}
-          <div className="grid grid-cols-4 border-b border-gray-100">
-            <div className="p-5 col-span-1" />
-            <div className="p-5 text-center border-l border-gray-100">
-              <p className="text-sm font-semibold text-gray-500">Regular Walking</p>
-            </div>
-            <div className="p-5 text-center border-l border-gray-100">
-              <p className="text-sm font-semibold text-gray-500">Brain Games</p>
-              <p className="text-xs text-gray-400">(e.g. Lumosity)</p>
-            </div>
-            <div className="p-5 text-center border-l border-gray-100 bg-brand-muted">
-              <p className="text-sm font-bold text-brand">Stridemind</p>
-              <p className="text-xs text-brand/70">Dual-task training</p>
-            </div>
-          </div>
-
-          {/* Data rows */}
-          {ROWS.map((row, i) => (
-            <div
-              key={row.label}
-              className={`grid grid-cols-4 border-b border-gray-50 ${i % 2 === 1 ? 'bg-gray-50/50' : ''}`}
-            >
-              <div className="p-4 pl-5 flex items-center">
-                <p className="text-sm text-gray-700 font-medium leading-snug">{row.label}</p>
-              </div>
-              <div className="p-4 flex items-center border-l border-gray-100">
-                <Cell value={row.walking} />
-              </div>
-              <div className="p-4 flex items-center border-l border-gray-100">
-                <Cell value={row.brainGames} />
-              </div>
-              <div className="p-4 flex items-center border-l border-gray-100 bg-brand-muted/40">
-                <Cell value={row.stridemind} />
-              </div>
-            </div>
-          ))}
+          {/* A real table, not a div grid: screen readers can only associate a
+              Yes/No cell with "Brain Games" and "Trains balance & gait" when
+              the markup declares row and column headers. Visuals are unchanged. */}
+          <table className="w-full border-collapse">
+            <caption className="sr-only">
+              Comparison of regular walking, screen-based brain games, and Stridemind dual-task training
+            </caption>
+            <thead>
+              <tr className="border-b border-gray-100">
+                <td className="p-5 w-[34%]" />
+                <th scope="col" className="p-5 text-center border-l border-gray-100">
+                  <p className="text-sm font-semibold text-gray-500">Regular Walking</p>
+                </th>
+                <th scope="col" className="p-5 text-center border-l border-gray-100">
+                  <p className="text-sm font-semibold text-gray-500">Brain Games</p>
+                  <p className="text-xs text-gray-500 font-normal">(e.g. Lumosity)</p>
+                </th>
+                <th scope="col" className="p-5 text-center border-l border-gray-100 bg-brand-muted">
+                  <p className="text-sm font-bold text-brand">Stridemind</p>
+                  <p className="text-xs text-brand/70 font-normal">Dual-task training</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {ROWS.map((row, i) => (
+                <tr
+                  key={row.label}
+                  className={`border-b border-gray-50 ${i % 2 === 1 ? 'bg-gray-50/50' : ''}`}
+                >
+                  <th scope="row" className="p-4 pl-5 text-left font-medium">
+                    <p className="text-sm text-gray-700 leading-snug">{row.label}</p>
+                  </th>
+                  <td className="p-4 border-l border-gray-100">
+                    <Cell value={row.walking} />
+                  </td>
+                  <td className="p-4 border-l border-gray-100">
+                    <Cell value={row.brainGames} />
+                  </td>
+                  <td className="p-4 border-l border-gray-100 bg-brand-muted/40">
+                    <Cell value={row.stridemind} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
 
           {/* Footer note */}
           <div className="px-5 py-4 bg-gray-50 border-t border-gray-100">
-            <p className="text-xs text-gray-400 italic">
+            <p className="text-sm text-gray-500 italic">
               ─ indicates limited or mixed evidence. Comparison based on published clinical literature on dual-task walking interventions.
             </p>
           </div>
