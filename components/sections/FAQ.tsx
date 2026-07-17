@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 // Q&A content lives in faq-data.ts so the server-rendered JSON-LD in
@@ -9,12 +9,15 @@ import { FAQS } from './faq-data';
 
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
+  // Ties the toggle button to the panel it controls for assistive tech.
+  const panelId = useId();
   return (
     <div className="border-b border-gray-200">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex justify-between items-center py-5 text-left gap-4"
         aria-expanded={open}
+        aria-controls={panelId}
       >
         <span className="text-lg font-semibold text-gray-900">{q}</span>
         <motion.div
@@ -31,6 +34,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
           never click, so conditionally rendered answers were invisible to
           them. initial={false} keeps SSR/hydration from animating on load. */}
       <motion.div
+        id={panelId}
         initial={false}
         animate={{ height: open ? 'auto' : 0, opacity: open ? 1 : 0 }}
         transition={{ duration: 0.25, ease: 'easeInOut' }}

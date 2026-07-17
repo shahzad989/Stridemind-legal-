@@ -36,7 +36,10 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-200 ${
-        scrolled ? 'bg-white/98 shadow-sm backdrop-blur-sm' : 'bg-white/95 backdrop-blur-sm'
+        // Solid white when scrolled: the old bg-white/98 was not a real
+        // Tailwind opacity step, compiled to nothing, and left the scrolled
+        // header transparent with only the blur holding it together.
+        scrolled ? 'bg-white shadow-sm' : 'bg-white/95 backdrop-blur-sm'
       } border-b border-gray-100`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-8">
