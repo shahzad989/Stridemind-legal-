@@ -10,13 +10,17 @@ const AppleIcon = () => (
   </svg>
 );
 
+// Section links are rooted at the homepage ('/#faq', not '#faq') because the
+// nav renders on every page: a bare '#faq' on /blog pointed at an anchor that
+// does not exist there, so those nav items silently did nothing anywhere but
+// the homepage.
 const NAV_LINKS = [
-  { label: 'How It Works', href: '#how-it-works', page: false },
+  { label: 'How It Works', href: '/#how-it-works', page: false },
   { label: 'The Science', href: '/science', page: true },
   { label: 'For Families', href: '/for-families', page: true },
   { label: 'Blog', href: '/blog', page: true },
-  { label: 'Pricing', href: '#pricing', page: false },
-  { label: 'FAQ', href: '#faq', page: false },
+  { label: 'Pricing', href: '/#pricing', page: false },
+  { label: 'FAQ', href: '/#faq', page: false },
 ];
 
 export default function Nav() {
@@ -56,7 +60,7 @@ export default function Nav() {
         {/* Desktop nav links */}
         <nav className="hidden md:flex items-center gap-6">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="inline-flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-brand transition-colors"
@@ -67,7 +71,7 @@ export default function Nav() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               )}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -105,7 +109,7 @@ export default function Nav() {
       {open && (
         <div className="md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="flex items-center gap-1.5 text-base font-medium text-gray-700 hover:text-brand py-2"
@@ -117,7 +121,7 @@ export default function Nav() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               )}
-            </a>
+            </Link>
           ))}
           <a
             href="https://apps.apple.com/app/id6761288997"
