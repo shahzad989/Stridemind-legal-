@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, DM_Serif_Display } from 'next/font/google';
 import './globals.css';
 import Nav from '@/components/Nav';
@@ -18,6 +18,11 @@ const dmSerif = DM_Serif_Display({
   weight: '400',
   variable: '--font-display',
 });
+
+// Brand green browser chrome on mobile instead of default gray.
+export const viewport: Viewport = {
+  themeColor: '#166534',
+};
 
 export const metadata: Metadata = {
   title: 'Stridemind: Fall Prevention — Train Your Brain While Walking',
