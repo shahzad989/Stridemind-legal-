@@ -113,8 +113,8 @@ function Content() {
 
       <Sources
         items={[
-          'Khan A, et al. A Systematic Review Exploring the Theories Underlying the Improvement of Balance and Reduction in Falls Following Dual-Task Training among Older Adults. International Journal of Environmental Research and Public Health, 2022, 19, 16890.',
-          'Khan A, et al. Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression. European Geriatric Medicine, 2025.',
+          'Khan MJ, et al. A Systematic Review Exploring the Theories Underlying the Improvement of Balance and Reduction in Falls Following Dual-Task Training among Older Adults. International Journal of Environmental Research and Public Health, 2022, 19, 16890.',
+          'Khan MJ, et al. Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression. European Geriatric Medicine, 2025.',
           'Mirelman A, et al. Addition of a non-immersive virtual reality component to treadmill training to reduce fall risk in older adults (V-TIME): a randomised controlled trial. The Lancet, 2016.',
         ]}
       />

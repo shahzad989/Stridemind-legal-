@@ -137,7 +137,7 @@ export default function TheScience() {
           <div className="grid sm:grid-cols-2 gap-6 mb-10">
             {[
               { value: '44', label: 'Studies in the 2025 meta-analysis', sub: 'European Geriatric Medicine, 2025' },
-              { value: '76.6%', label: 'Of trials reported improved balance', sub: 'IJERPH, 2022' },
+              { value: '76.6%', label: 'Of a separate 30-trial review reported better balance', sub: 'IJERPH, 2022' },
             ].map((stat, i) => (
               <motion.div
                 key={stat.value}

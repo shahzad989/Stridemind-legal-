@@ -1,16 +1,24 @@
 import type { Metadata } from 'next';
 import ScienceContent from './ScienceContent';
+import { SCIENCE_QA } from './qa';
+import { ALL_CITATIONS, EVIDENCE_LAST_VERIFIED } from '@/lib/citations';
 
+// The title used to be "The Science — Stridemind: Fall Prevention", which only
+// matches a search by someone who already knows the brand. People and answer
+// engines ask whether the method works, so the title is now that question. The
+// brand still appears, just after the thing being asked about.
 export const metadata: Metadata = {
-  title: 'The Science — Stridemind: Fall Prevention',
+  title: 'Does Dual-Task Training Prevent Falls? What 44 Trials Found | Stridemind',
   description:
-    'Dual-task training is backed by a 2025 meta-analysis of 44 studies in European Geriatric Medicine. Learn the evidence behind Stridemind.',
+    'A 2025 meta-analysis of 44 randomised trials found dual-task training improves balance and mobility in older adults. Here is the evidence, the effect sizes, and where it runs out.',
   alternates: { canonical: 'https://stridemind.app/science' },
   openGraph: {
-    title: 'The Science Behind Stridemind',
+    title: 'Does Dual-Task Training Prevent Falls? What 44 Trials Found',
     description:
-      '44 studies, 2,782 participants, a 2025 meta-analysis. The clinical evidence for dual-task training as fall prevention in adults 55+.',
+      '44 trials, 2,782 participants, and an honest account of where the evidence is weaker. The research behind dual-task training for adults 55+.',
     url: 'https://stridemind.app/science',
+    type: 'article',
+    modifiedTime: EVIDENCE_LAST_VERIFIED,
     // The file-convention OG image only attaches to the homepage segment, so
     // every non-blog page must reference the generated image explicitly or
     // link previews render with no image at all.
@@ -18,93 +26,69 @@ export const metadata: Metadata = {
   },
 };
 
-// Citation verified against the published paper (Khan et al., Eur Geriatr Med
-// 2025, doi:10.1007/s41999-025-01328-3); never restate it from memory.
-const scholarlyArticles = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ScholarlyArticle',
-    headline:
-      'Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression',
-    publisher: { '@type': 'Organization', name: 'European Geriatric Medicine' },
-    datePublished: '2025',
-    description:
-      'Systematic review with meta-analysis and meta-regression of 44 studies (2,782 older adults) finding that dual-task training significantly improves dynamic balance and functional mobility and reduces fall frequency.',
-    about: [
-      { '@type': 'Thing', name: 'dual-task training' },
-      { '@type': 'Thing', name: 'fall prevention in older adults' },
-      { '@type': 'Thing', name: 'dynamic balance' },
-      { '@type': 'Thing', name: 'functional mobility' },
-    ],
+// All six ScholarlyArticle nodes are generated from lib/citations.ts rather
+// than retyped here. The descriptions below used to be a second hand-written
+// copy of every figure on the page, and they drifted: the Cochrane node
+// repeated the same wrong denominator the visible copy had, and the Gavelin
+// node attached a pooled effect size to the wrong comparison. Generating them
+// makes that class of bug impossible.
+const scholarlyArticles = ALL_CITATIONS.map((c) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ScholarlyArticle',
+  headline: c.title,
+  author: { '@type': 'Person', name: c.authors },
+  publisher: { '@type': 'Organization', name: c.journal },
+  datePublished: c.year,
+  ...(c.doi ? { identifier: `https://doi.org/${c.doi}` } : {}),
+  url: c.url,
+  description: `${c.finding} ${c.basis}`,
+  about: [
+    { '@type': 'Thing', name: 'dual-task training' },
+    { '@type': 'Thing', name: 'fall prevention in older adults' },
+  ],
+}));
+
+// Article schema carries dateModified, which is the freshness signal that
+// actually gets read. It points at the evidence verification date rather than
+// the build date, so it only moves when the citations are genuinely rechecked.
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://stridemind.app/science#article',
+  headline: 'Does Dual-Task Training Prevent Falls? What 44 Trials Found',
+  description:
+    'The clinical evidence for dual-task walking training as fall prevention in adults 55+, with the effect sizes, the study counts behind each figure, and the limits of the research.',
+  mainEntityOfPage: 'https://stridemind.app/science',
+  dateModified: EVIDENCE_LAST_VERIFIED,
+  author: {
+    '@type': 'Person',
+    '@id': 'https://stridemind.app/about#founder',
+    name: 'Ibrahim Shahzad',
   },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ScholarlyArticle',
-    headline:
-      'A Systematic Review Exploring the Theories Underlying the Improvement of Balance and Reduction in Falls Following Dual-Task Training among Older Adults',
-    publisher: {
-      '@type': 'Organization',
-      name: 'International Journal of Environmental Research and Public Health',
-    },
-    datePublished: '2022',
-    identifier: 'Int. J. Environ. Res. Public Health, 2022, 19, 16890',
-    author: { '@type': 'Person', name: 'Khan et al.' },
-    description:
-      '23 of 30 studies (76.6%) reported improvements in balance after dual-task training in older adults; 5 of 30 reported a reduction in fall incidence.',
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ScholarlyArticle',
-    headline: 'Exercise for preventing falls in older people living in the community',
-    publisher: { '@type': 'Organization', name: 'Cochrane Database of Systematic Reviews' },
-    datePublished: '2019',
-    author: { '@type': 'Person', name: 'Sherrington et al.' },
-    description:
-      'Meta-analysis of 108 trials (23,407 participants) found that exercise programmes — especially balance and functional training — reduce fall rates by ~23% and the proportion of people who fall by ~15% versus non-exercise controls.',
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ScholarlyArticle',
-    headline:
-      'Strength-balance supplemented with computerized cognitive training to improve dual task gait and divided attention in older adults: a multicenter randomized-controlled trial',
-    publisher: { '@type': 'Organization', name: 'BMC Geriatrics' },
-    datePublished: '2014',
-    author: { '@type': 'Person', name: 'van het Reve & de Bruin' },
-    description:
-      'Adding cognitive training to strength-balance exercise improved dual-task gait, reaction time, executive function, divided attention, fear of falling, and fall rates compared with strength-balance alone in 182 older adults (mean age 81.5).',
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ScholarlyArticle',
-    headline:
-      'Combined physical and cognitive training for older adults with and without cognitive impairment: a systematic review and network meta-analysis of randomized controlled trials',
-    publisher: { '@type': 'Organization', name: 'Ageing Research Reviews' },
-    datePublished: '2021',
-    author: { '@type': 'Person', name: 'Gavelin et al.' },
-    description:
-      'Network meta-analysis finding that simultaneous combined cognitive and physical training was the most efficacious approach for cognition in older adults, outperforming sequential combinations, cognitive training alone, and physical exercise alone (overall cognition Hedges g = 0.22).',
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ScholarlyArticle',
-    headline:
-      'Addition of a non-immersive virtual reality component to treadmill training to reduce fall risk in older adults (V-TIME)',
-    publisher: { '@type': 'Organization', name: 'The Lancet' },
-    datePublished: '2016',
-    author: { '@type': 'Person', name: 'Mirelman et al.' },
-    description:
-      'In 302 high-risk older adults, treadmill training plus a cognitive VR layer (obstacles, distractors, path choices) produced a 42% lower fall rate over 6 months versus treadmill training alone (IRR 0.58, 95% CI 0.36–0.96).',
-  },
-];
+  publisher: { '@id': 'https://stridemind.app/#organization' },
+  citation: ALL_CITATIONS.map((c) => c.reference),
+};
+
+// Derived from the same array the page renders, so every marked-up question is
+// visible on the page as Google requires, and the two can never drift.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: SCIENCE_QA.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
 
 export default function SciencePage() {
   return (
     <>
-      {scholarlyArticles.map((article, i) => (
+      {[...scholarlyArticles, articleSchema, faqSchema].map((schema, i) => (
         <script
           key={i}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}
       <ScienceContent />

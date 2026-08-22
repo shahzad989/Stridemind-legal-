@@ -24,10 +24,10 @@ function Content() {
       <H2>Falls are common, and worth taking seriously</H2>
       <P>
         The scale surprises most families. According to the CDC, about one in four adults over 65
-        falls each year, falls are the leading cause of injury death in that age group, and the
-        annual medical cost of falls in the United States exceeds fifty billion dollars. None of
-        that is said to alarm you. It is said because the causes are more fixable than the
-        numbers suggest.
+        falls each year, which is more than fourteen million people. Falls are the leading cause
+        of injury death in that age group, and the annual health care cost of non-fatal falls in
+        the United States is around eighty billion dollars. None of that is said to alarm you. It
+        is said because the causes are more fixable than the numbers suggest.
       </P>
 
       <H2>The familiar causes</H2>
@@ -68,10 +68,10 @@ function Content() {
 
       <H2>The encouraging part: this is trainable</H2>
       <P>
-        Exercise in general helps. A Cochrane review of 108 trials with 23,407 participants found
-        that exercise programmes, especially those focused on balance and functional movement,
-        reduce fall rates in older adults by about 23 percent. That alone is a strong reason to
-        keep moving.
+        Exercise in general helps. A Cochrane review that gathered 108 trials of fall-prevention
+        exercise found that programmes focused on balance and functional movement reduce fall
+        rates in older adults by about 24 percent, a result pooled from 39 studies with 7,920
+        participants. That alone is a strong reason to keep moving.
       </P>
       <P>
         Training the attention side adds something more specific. Dual-task training, which means
@@ -116,10 +116,10 @@ function Content() {
 
       <Sources
         items={[
-          'Centers for Disease Control and Prevention. Older Adult Falls Data. CDC, 2023.',
-          'Sherrington C, et al. Exercise for preventing falls in older people living in the community. Cochrane Database of Systematic Reviews, 2019.',
-          'Khan A, et al. A Systematic Review Exploring the Theories Underlying the Improvement of Balance and Reduction in Falls Following Dual-Task Training among Older Adults. International Journal of Environmental Research and Public Health, 2022, 19, 16890.',
-          'Khan A, et al. Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression. European Geriatric Medicine, 2025.',
+          'Centers for Disease Control and Prevention. Facts About Falls, older adult fall prevention. Figures checked August 2026.',
+          'Sherrington C, et al. Exercise for preventing falls in older people living in the community. Cochrane Database of Systematic Reviews, 2019. Balance and functional exercise: rate ratio 0.76 (39 studies, 7,920 participants).',
+          'Khan MJ, et al. A Systematic Review Exploring the Theories Underlying the Improvement of Balance and Reduction in Falls Following Dual-Task Training among Older Adults. International Journal of Environmental Research and Public Health, 2022, 19, 16890.',
+          'Khan MJ, et al. Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression. European Geriatric Medicine, 2025.',
           'Mirelman A, et al. Addition of a non-immersive virtual reality component to treadmill training to reduce fall risk in older adults (V-TIME): a randomised controlled trial. The Lancet, 2016.',
         ]}
       />
@@ -133,7 +133,7 @@ export const post: BlogPost = {
   description:
     'Most falls happen when attention runs short, not when legs give out. A plain explanation of why older adults fall and what the research says helps.',
   datePublished: '2026-07-17',
-  dateModified: '2026-07-17',
+  dateModified: '2026-08-22',
   readingMinutes: 6,
   Content,
 };

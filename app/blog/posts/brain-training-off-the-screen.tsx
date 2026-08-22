@@ -52,15 +52,18 @@ function Content() {
         and physical exercise alone.
       </Finding>
       <P>
-        Head-to-head trials point the same way. In a 2014 multicenter randomized trial, older
-        adults who added computerized cognitive training to a strength and balance program improved
-        their reaction time, executive function, and divided attention more than a group doing the
-        identical physical program alone, and their fear of falling and fall rates improved too.
+        A head-to-head trial points the same way, and it is worth being precise about what it
+        showed. In a 2014 multicenter randomized trial, older adults who added computerized
+        cognitive training to a strength and balance program improved more than the group doing
+        the identical physical program alone on three specific things: walking while thinking,
+        starting to walk, and dividing their attention. Fear of falling and fall rates improved
+        markedly in both groups, with no measurable gap between them, so the credit for those
+        belongs to the strength and balance work rather than to the cognitive layer.
       </P>
       <Finding source="van het Reve & de Bruin, BMC Geriatrics, 2014. 182 older adults, mean age 81.5.">
-        Adding cognitive training to strength-balance exercise improved dual-task gait, reaction
-        time, executive function, divided attention, fear of falling, and fall rates compared with
-        the same exercise program alone.
+        Adding cognitive training to strength-balance exercise produced further gains in dual-task
+        walking, gait initiation, and divided attention beyond the exercise alone. Falls fell by
+        more than 80 percent during the training period, in both groups equally.
       </Finding>
 
       <H2>Why walking is the natural place to do this</H2>
@@ -108,7 +111,7 @@ export const post: BlogPost = {
   description:
     'Seated brain games mostly improve the game itself. Research suggests thinking and moving at the same time works better. Here is the evidence.',
   datePublished: '2026-07-13',
-  dateModified: '2026-07-13',
+  dateModified: '2026-08-22',
   readingMinutes: 5,
   Content,
 };

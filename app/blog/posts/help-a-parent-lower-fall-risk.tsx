@@ -21,10 +21,11 @@ function Content() {
 
       <H2>Start with what the evidence says works</H2>
       <P>
-        The single best-supported answer is movement. A Cochrane review of 108 trials with 23,407
-        participants found that exercise programmes, especially those that challenge balance,
-        reduce fall rates in older adults by about 23 percent. Not a gadget, not a rail on every
-        wall. Movement, done regularly.
+        The single best-supported answer is movement. A Cochrane review that gathered 108 trials
+        of fall-prevention exercise found that programmes challenging balance and everyday
+        movement reduce fall rates in older adults by about 24 percent, a figure pooled from 39
+        studies with 7,920 participants. Not a gadget, not a rail on every wall. Movement, done
+        regularly.
       </P>
       <P>
         More recent research goes a step further. Many falls happen not from weakness but from
@@ -48,8 +49,9 @@ function Content() {
       <Finding source="Barban et al. (I-DONT-FALL trial), Brain Sciences, 2017. 481 older adults at fall risk.">
         In a multicenter trial of 481 older adults at fall risk, combined motor and cognitive
         training significantly reduced fear-of-falling scores. Motor-only training helped less,
-        and cognitive-only training did not reduce the fear at all. Confidence came back through
-        training, not through caution.
+        and cognitive-only training did not reduce the fear at all. Three months after the
+        training stopped, the scores had drifted back, so what restores confidence is a habit
+        rather than a course. Confidence came back through training, not through caution.
       </Finding>
       <P>
         The lesson for families is gentle but firm. Protection that shrinks a parent&rsquo;s
@@ -109,10 +111,10 @@ function Content() {
 
       <Sources
         items={[
-          'Sherrington C, et al. Exercise for preventing falls in older people living in the community. Cochrane Database of Systematic Reviews, 2019.',
-          'Khan A, et al. Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression. European Geriatric Medicine, 2025.',
+          'Sherrington C, et al. Exercise for preventing falls in older people living in the community. Cochrane Database of Systematic Reviews, 2019. Balance and functional exercise: rate ratio 0.76 (39 studies, 7,920 participants).',
+          'Khan MJ, et al. Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression. European Geriatric Medicine, 2025.',
           'Barban F, et al. (I-DONT-FALL trial). Brain Sciences, 2017. Combined motor and cognitive training reduced fear-of-falling (FES-I) scores in 481 older adults at fall risk.',
-          'Wollesen B, et al. BMC Geriatrics, 2017. Dual-task balance training reduced fear-of-falling scores and increased gait confidence in 95 community-dwelling older adults.',
+          'Wollesen B, Schulz S, Seydell L, Delbaere K. Does dual task training improve walking performance of older adults with concern of falling? BMC Geriatrics, 2017. Twelve weeks of dual-task training lengthened stride in 95 older adults, with and without concern about falling.',
         ]}
       />
     </>
@@ -125,7 +127,7 @@ export const post: BlogPost = {
   description:
     'For adult children who noticed a parent slowing down: what actually lowers fall risk, why constant caution backfires, and how to help with dignity.',
   datePublished: '2026-07-17',
-  dateModified: '2026-07-17',
+  dateModified: '2026-08-22',
   readingMinutes: 6,
   Content,
 };

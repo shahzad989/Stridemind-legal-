@@ -2,7 +2,16 @@
 
 import { motion, useInView, type Variants } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import {
+  ALL_CITATIONS,
+  BARBAN_2017,
+  CDC_FALLS,
+  EVIDENCE_LAST_VERIFIED,
+  VAN_HET_REVE_2014,
+  VTIME_2016,
+  WOLLESEN_2017,
+} from '@/lib/citations';
+import { SCIENCE_QA } from './qa';
 
 // --- Animated counter ---
 
@@ -17,8 +26,8 @@ interface StatConfig {
 
 const HEADLINE_STATS: StatConfig[] = [
   { value: 44, suffix: '', label: 'Randomized controlled trials', sub: 'European Geriatric Medicine, 2025' },
-  { value: 2782, suffix: '', label: 'Participants across studies', sub: 'Meta-analysis, 2025' },
-  { value: 76.6, suffix: '%', decimals: 1, label: 'Of trials reported improved balance', sub: 'IJERPH, 2022' },
+  { value: 2782, suffix: '', label: 'Participants across those trials', sub: 'Meta-analysis, 2025' },
+  { value: 76.6, suffix: '%', decimals: 1, label: 'Of a separate 30-trial review reported better balance', sub: 'IJERPH, 2022' },
 ];
 
 function AnimatedStat({ value, suffix, prefix = '', decimals = 0, label, sub }: StatConfig) {
@@ -70,60 +79,38 @@ const fadeUp: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.55 } },
 };
 
-// --- Citation data ---
-
-const CITATIONS = [
-  {
-    quote:
-      'A 2022 systematic review of 30 randomized and pilot randomized trials found that 23 of 30 studies (76.6%) reported improvements in balance after dual-task training, and 5 reported a reduction in fall incidence in older adults.',
-    source: 'Int. J. Environ. Res. Public Health, 2022, 19, 16890 — Khan et al.',
-  },
-  {
-    quote:
-      'Exercise programmes — especially those targeting balance and functional tasks — reduce fall rates in older adults by about 23% compared with non-exercise controls, across 108 trials and 23,407 participants.',
-    source: 'Cochrane Database of Systematic Reviews, 2019 — Sherrington et al.',
-  },
-  {
-    quote:
-      'Adding computerized cognitive training to strength-balance exercise significantly reduced dual-task gait costs, improved reaction time, executive function, and divided attention, and lowered fear of falling and fall rates compared with strength-balance training alone.',
-    source: 'BMC Geriatrics, 2014 — van het Reve & de Bruin',
-  },
-  {
-    quote:
-      'A 2021 network meta-analysis found that doing cognitive and physical training at the same time, rather than separately, was the most effective approach for improving overall cognition in older adults, and significantly better than physical exercise alone.',
-    source: 'Ageing Research Reviews, 2021 — Gavelin et al.',
-  },
-  {
-    quote:
-      'A 2025 systematic review and meta-analysis of 44 randomized trials involving 2,782 older adults found that dual-task exercise programmes significantly improved balance and functional mobility and reduced fall frequency compared with single-task or no exercise.',
-    source: 'European Geriatric Medicine, 2025 — Khan et al.',
-  },
-];
-
 // --- Mechanism cards ---
-
+//
+// The third card used to read "Direct head-to-head trials show that adding a
+// cognitive layer to an otherwise identical exercise program produces
+// significantly larger reductions in falls." That plural was not supportable.
+// One trial on this site shows that (V-TIME, 2016). The other head-to-head
+// trial we cite (van het Reve 2014) looked for exactly that effect and did not
+// find it, so citing "trials" as a body of agreeing evidence misrepresented our
+// own sources. The card now says what each trial actually found, which is a
+// more interesting and more defensible claim than the one it replaced.
 const MECHANISM = [
   {
     label: 'What it is',
-    body: 'Dual-task training means performing a cognitive exercise — number recall, pattern recognition, memory sequences — simultaneously with walking. It is targeted training of the specific brain-body coordination system that deteriorates with age and causes falls.',
+    body: 'Dual-task training means performing a cognitive exercise, such as number recall, pattern recognition, or memory sequences, at the same time as walking. It trains the specific brain and body coordination that everyday movement depends on, and that tends to weaken with age.',
   },
   {
     label: 'Why it works',
-    body: 'Repeated dual-task practice builds the neural pathways responsible for divided attention, gait automaticity, and executive function under load. Over 6–8 weeks, the brain learns to allocate attentional resources more efficiently — reducing the gait disruption that leads to falls in real-world environments.',
+    body: 'Repeated practice at doing both at once builds the capacity to divide attention, to keep walking automatic, and to keep thinking clearly under load. Over several weeks the brain gets better at allocating attention between the two, which is what reduces the gait disruption that leads to falls in real environments.',
   },
   {
-    label: 'Why exercise alone is not enough',
-    body: 'Standard exercise programs improve strength and balance in controlled settings but do not train the cognitive dimension of fall risk. Direct head-to-head trials show that adding a cognitive layer to an otherwise identical exercise program produces significantly larger reductions in falls — the physical movement is necessary but not sufficient on its own.',
+    label: 'What the head-to-head trials show, and where they disagree',
+    body: 'When researchers hold the physical exercise constant and add only a cognitive layer, the added layer reliably improves dual-task walking, divided attention, and gait initiation. Whether it also reduces falls beyond what the exercise alone achieves is less settled. One trial found a 42% lower fall rate from the cognitive layer alone. Another looked for the same effect and found that falls fell sharply in both groups, with no measurable difference between them.',
   },
 ];
 
 // --- How Stridemind applies it ---
 
 const APP_FEATURES = [
-  { label: 'Audio-first', detail: 'No screen interaction during sessions — eyes up, phone in pocket' },
-  { label: 'Structured protocols', detail: 'Each session targets a specific cognitive-motor demand' },
-  { label: 'Progressive difficulty', detail: 'Premium tracks increase dual-task load as you improve' },
-  { label: 'Designed for 55+', detail: 'Pacing, voice clarity, and session length built for the target population' },
+  { label: 'Audio-first', detail: 'No screen interaction during sessions, so your eyes stay up and your phone stays in your pocket' },
+  { label: 'Structured strides', detail: 'Each session targets a specific combination of thinking and movement demand' },
+  { label: 'Progressive difficulty', detail: 'Premium strides raise the mental load as you get more comfortable' },
+  { label: 'Designed for 55+', detail: 'Pacing, voice clarity, and session length built for the people who will use it' },
 ];
 
 // --- Main component ---
@@ -132,7 +119,12 @@ export default function ScienceContent() {
   return (
     <div className="pt-24">
 
-      {/* Hero */}
+      {/* Hero
+          The old H1 was "The science behind Stridemind", which only answers a
+          question someone asks once they already know the product exists. The
+          page's real job is to answer the question people actually ask about
+          the method, so the H1 is now that question and the product comes
+          second. */}
       <section className="bg-white py-20 px-6 border-b border-gray-100">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
@@ -144,12 +136,24 @@ export default function ScienceContent() {
               Peer-Reviewed Evidence
             </span>
             <h1 className="font-display text-5xl sm:text-6xl text-gray-900 mb-6 leading-tight">
-              The science behind Stridemind
+              Does dual-task training actually prevent falls?
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Stridemind is built on one of the most replicated findings in geriatric medicine:
-              dual-task walking training reduces fall risk and improves cognition in adults 55+.
-              Here is the evidence.
+              Walking while giving your mind something to do is one of the more replicated
+              ideas in fall prevention research. This page sets out what the trials found,
+              how strong each finding is, and where the evidence runs out. Stridemind is
+              built on this method, and every figure below is quoted with the studies it
+              came from.
+            </p>
+            <p className="text-sm text-gray-500 mt-6">
+              Every citation on this page was last checked against the original papers on{' '}
+              {new Date(`${EVIDENCE_LAST_VERIFIED}T00:00:00Z`).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                timeZone: 'UTC',
+              })}
+              .
             </p>
           </motion.div>
         </div>
@@ -177,11 +181,16 @@ export default function ScienceContent() {
               The Problem
             </span>
             <h2 className="font-display text-4xl sm:text-5xl text-white mb-6 leading-tight">
-              Falls are the leading cause of injury death in adults 65+.
+              Falls are the leading cause of injury death in adults 65 and older.
             </h2>
+            {/* The cost figure was "$50 billion" here for a year. That is the
+                2015 number. CDC now puts the annual health care cost of
+                non-fatal older adult falls at $80 billion. */}
             <p className="text-xl text-gray-400 leading-relaxed mb-8">
-              1 in 4 older adults falls every year. The annual medical cost in the US exceeds $50 billion.
-              They are not accidents — they are the predictable result of undertrained brain-body coordination.
+              About 1 in 4 older adults reports falling each year, which is more than 14 million
+              people. The annual health care cost of non-fatal falls in the United States is
+              around $80 billion. Falls are not simply accidents. They are the predictable
+              result of coordination between brain and body that has not been trained.
             </p>
           </motion.div>
           <motion.div
@@ -193,11 +202,13 @@ export default function ScienceContent() {
           >
             <p className="text-gray-300 text-lg leading-relaxed">
               The root cause is{' '}
-              <strong className="text-white">cognitive-motor interference</strong> — when your brain
-              struggles to simultaneously manage physical movement and mental tasks, gait becomes unstable.
-              This &ldquo;stops walking when talking&rdquo; effect is a measurable, well-documented predictor
-              of fall risk in older adults.
+              <strong className="text-white">cognitive-motor interference</strong>, which is what
+              happens when your brain struggles to manage movement and thinking at the same time
+              and your walking becomes less stable. This is the well-documented effect of people
+              stopping walking when they start talking, and it is a measurable predictor of who
+              will fall.
             </p>
+            <p className="text-sm text-gray-500 italic mt-4">{CDC_FALLS.reference}</p>
           </motion.div>
         </div>
       </section>
@@ -241,7 +252,12 @@ export default function ScienceContent() {
         </div>
       </section>
 
-      {/* Citations */}
+      {/* Citations
+          Each card now carries the finding and the exact basis for it in the
+          same block. Separating a claim from the study size, the confidence
+          interval, and the caveats is how this page previously ended up
+          quoting a pooled result beside the wrong denominator, and it is also
+          what makes a passage unusable to anything trying to verify it. */}
       <section className="bg-brand-muted py-20 px-6 border-b border-brand-light">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -257,6 +273,10 @@ export default function ScienceContent() {
             <h2 className="font-display text-4xl text-gray-900 leading-tight">
               What the peer-reviewed literature says
             </h2>
+            <p className="text-lg text-gray-600 leading-relaxed mt-4">
+              Each finding below is followed by exactly what it rests on, including how many
+              studies and how many people, so you can weigh it yourself.
+            </p>
           </motion.div>
 
           <motion.div
@@ -266,21 +286,32 @@ export default function ScienceContent() {
             viewport={{ once: true }}
             className="space-y-5"
           >
-            {CITATIONS.map((c) => (
+            {ALL_CITATIONS.map((c) => (
               <motion.div
-                key={c.source}
+                key={c.id}
                 variants={fadeUp}
                 className="bg-white rounded-2xl p-7 border-l-4 border-brand shadow-sm"
               >
-                <p className="text-gray-700 text-lg leading-relaxed mb-3">&ldquo;{c.quote}&rdquo;</p>
-                <p className="text-sm text-gray-500 italic">{c.source}</p>
+                <p className="text-gray-800 text-lg leading-relaxed mb-4 font-medium">{c.finding}</p>
+                <p className="text-gray-600 text-base leading-relaxed mb-4">{c.basis}</p>
+                <p className="text-sm text-gray-500 italic">
+                  {c.authors} {c.journal}, {c.year}.{' '}
+                  <a
+                    href={c.url}
+                    className="text-brand underline underline-offset-2 hover:text-brand-dark not-italic"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Read the source
+                  </a>
+                </p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* V-TIME — same walk, different outcome */}
+      {/* V-TIME */}
       <section className="bg-gray-900 py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -294,13 +325,13 @@ export default function ScienceContent() {
               Head-to-Head Evidence
             </span>
             <h2 className="font-display text-4xl sm:text-5xl text-white mb-5 leading-tight">
-              Same walk. Dramatically different outcome.
+              The same walk, with a very different outcome.
             </h2>
             <p className="text-xl text-gray-400 leading-relaxed">
-              In a landmark trial published in <em>The Lancet</em>, researchers split 302 high-risk
-              older adults into two groups. Both walked on a treadmill for 45 minutes, three times
-              a week, for six weeks. One group walked alone. The other walked while navigating
-              cognitive challenges — obstacles, path choices, distractors.
+              In a trial published in <em>The Lancet</em>, researchers split 302 older adults at
+              high risk of falling into two groups. Both walked on a treadmill for 45 minutes,
+              three times a week, for six weeks. One group simply walked. The other walked while
+              handling cognitive challenges, including obstacles, path choices, and distractions.
             </p>
           </motion.div>
 
@@ -309,13 +340,13 @@ export default function ScienceContent() {
               {
                 label: 'Treadmill only',
                 stat: 'No significant reduction',
-                detail: 'Fall rate: 10.7 → 8.3 falls per 6 months (not statistically significant)',
+                detail: 'Falls went from 10.7 to 8.3 per six months, a change that was not statistically significant.',
                 muted: true,
               },
               {
-                label: 'Treadmill + cognitive challenges',
+                label: 'Treadmill with cognitive challenges',
                 stat: '42% fewer falls',
-                detail: 'Fall rate dropped significantly vs treadmill alone (IRR 0.58, 95% CI 0.36–0.96)',
+                detail: 'Falls went from 11.9 to 6.0 per six months. Incident rate ratio 0.58, 95% CI 0.36 to 0.96.',
                 muted: false,
               },
             ].map((item) => (
@@ -346,18 +377,28 @@ export default function ScienceContent() {
             className="bg-white/5 border border-white/10 rounded-2xl p-7"
           >
             <p className="text-gray-300 text-lg leading-relaxed">
-              The two groups did the same physical exercise for the same duration. The only
-              difference was the cognitive layer. That layer produced a{' '}
-              <strong className="text-white">42% lower fall rate</strong> over the following six months.
+              Both groups did the same physical exercise for the same length of time. The only
+              difference was the cognitive layer, and that layer went with a{' '}
+              <strong className="text-white">42% lower fall rate</strong> over the following six
+              months. This is the single clearest result behind the whole approach, and it is
+              worth saying that it is one trial. The section below sets out where other trials
+              have disagreed.
             </p>
             <p className="text-sm text-gray-400 italic mt-4">
-              Mirelman et al., The Lancet, 2016 — V-TIME trial (302 participants, 5 centres)
+              {VTIME_2016.authors} {VTIME_2016.journal}, {VTIME_2016.year}. V-TIME trial, 302
+              participants across five centres.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Fear of falling */}
+      {/* Where the evidence is weaker.
+          NEW SECTION (2026-08-22). The page previously presented only findings
+          that supported the product. That is both a credibility problem with
+          the physical therapists this page is partly written for, and a
+          practical one: a page that states its own limits gives a reader, and
+          an answer engine, something specific to trust. Nothing here is
+          hypothetical. Every limit named is one of our own cited papers. */}
       <section className="bg-white py-20 px-6 border-b border-gray-100">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -367,17 +408,16 @@ export default function ScienceContent() {
             transition={{ duration: 0.55 }}
             className="mb-10"
           >
-            <span className="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-5">
-              Beyond the Physical
+            <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full mb-5">
+              Where the Evidence Is Weaker
             </span>
             <h2 className="font-display text-4xl sm:text-5xl text-gray-900 mb-5 leading-tight">
-              Training also reduces fear of falling.
+              What this research does not show.
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              After a first fall, many older adults develop a persistent fear of falling that leads
-              to reduced activity, social withdrawal, and accelerated physical decline — sometimes
-              more damaging than the fall itself. Randomized trials show dual-task training directly
-              addresses this.
+              The case for dual-task training is genuinely good, and it is not uniform. These are
+              the limits in the same studies quoted above, stated plainly, because you should be
+              able to judge the method rather than take our word for it.
             </p>
           </motion.div>
 
@@ -390,21 +430,80 @@ export default function ScienceContent() {
           >
             {[
               {
-                finding: 'In 95 community-dwelling older adults with concern about falling, 12 weekly sessions of dual-task balance training significantly reduced Falls Efficacy Scale scores (FES-I) and increased step length and gait confidence compared with controls.',
-                source: 'Wollesen et al., BMC Geriatrics, 2017',
+                heading: 'The balance evidence is much stronger than the falls evidence.',
+                body: 'In the 2025 meta-analysis, balance and mobility were measured across most of the 44 trials. Fall frequency was measured in only 6 of them, and all 6 relied on participants recalling their own falls, which the authors flag as a source of error. Improved balance is well established. Fewer falls is the more cautious claim.',
               },
               {
-                finding: 'In a multicenter trial of 481 older adults at fall risk, combined motor and cognitive training reduced FES-I fear-of-falling scores from 32.0 to 29.7 immediately after the intervention (p < 0.001), with some persistence at 3-month follow-up. Motor-only training produced a smaller but significant reduction; cognitive-only training did not.',
-                source: 'Barban et al. (I-DONT-FALL trial), Brain Sciences, 2017',
+                heading: 'Adding a cognitive layer does not always reduce falls on its own.',
+                body: 'The V-TIME trial found that it did. A separate trial of 182 adults averaging 81 years old set out to test the same idea and found that falls dropped sharply in both groups, with no measurable difference between them. What the cognitive layer clearly did add there was better dual-task walking, better gait initiation, and better divided attention.',
+                source: VAN_HET_REVE_2014,
+              },
+              {
+                heading: 'Training does not fully resolve a fear of falling.',
+                body: 'Combined movement and thinking training reduced fear-of-falling scores more than either component alone in a trial of 481 older adults. In another trial, 12 weeks of dual-task training lengthened stride but left a cautious walking pattern in place among people already worried about falling, and those authors concluded that the worry needs to be addressed directly as well.',
+                source: WOLLESEN_2017,
+              },
+              {
+                heading: 'The benefits depend on continuing.',
+                body: 'In the 481-person trial, fear-of-falling scores improved over three months of training and had drifted back within three months of stopping. This is the ordinary pattern for exercise of any kind, and it is the reason this is framed as a habit rather than a course of treatment with an end date.',
+                source: BARBAN_2017,
               },
             ].map((item) => (
               <motion.div
-                key={item.source}
+                key={item.heading}
                 variants={fadeUp}
-                className="bg-brand-muted rounded-2xl p-7 border border-brand-light"
+                className="bg-gray-50 rounded-2xl p-7 border border-gray-200"
               >
-                <p className="text-gray-700 text-base leading-relaxed mb-3">{item.finding}</p>
-                <p className="text-sm text-gray-500 italic">{item.source}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2 leading-snug">{item.heading}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.body}</p>
+                {item.source && (
+                  <p className="text-sm text-gray-500 italic mt-3">
+                    {item.source.authors} {item.source.journal}, {item.source.year}.
+                  </p>
+                )}
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Questions and answers.
+          Rendered always-open rather than as an accordion. Collapsed answers
+          are the single most common way a page's best content becomes
+          invisible to crawlers and screen readers, and there is no reason to
+          hide a reference section behind a click. */}
+      <section id="questions" className="bg-brand-muted py-20 px-6 border-b border-brand-light">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+            className="mb-10"
+          >
+            <span className="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-5">
+              Common Questions
+            </span>
+            <h2 className="font-display text-4xl text-gray-900 leading-tight">
+              Questions people ask about dual-task training
+            </h2>
+          </motion.div>
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="space-y-4"
+          >
+            {SCIENCE_QA.map((item) => (
+              <motion.div
+                key={item.q}
+                variants={fadeUp}
+                className="bg-white rounded-2xl p-7 border border-brand-light shadow-sm"
+              >
+                <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug">{item.q}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.a}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -425,13 +524,13 @@ export default function ScienceContent() {
               How Stridemind Applies This
             </span>
             <h2 className="font-display text-4xl text-gray-900 mb-5 leading-tight">
-              A practical implementation of the clinical evidence
+              A practical version of the training used in the trials
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Stridemind translates the dual-task training protocol into an audio-first iOS app that
-              requires no equipment and fits into everyday walks. Sessions are 5–15 minutes.
-              Cognitive challenges are delivered through your earphones so you keep your phone in
-              your pocket and eyes ahead.
+              Stridemind turns dual-task training into an audio-guided iPhone app that needs no
+              equipment and fits into a walk you were going to take anyway. Sessions run 5 to 15
+              minutes. The cognitive challenges come through your earphones, so your phone stays
+              in your pocket and your eyes stay on the path.
             </p>
           </motion.div>
 
@@ -467,7 +566,7 @@ export default function ScienceContent() {
         >
           <h2 className="font-display text-3xl text-gray-900 mb-4">Ready to try it?</h2>
           <p className="text-gray-600 mb-7">
-            Free to start. No equipment. Works on any walk.
+            Free to start. No equipment. It works on any walk.
           </p>
           <a
             href="https://apps.apple.com/app/id6761288997"
@@ -481,17 +580,17 @@ export default function ScienceContent() {
         </motion.div>
       </section>
 
-      {/* Founder note — honest, unobtrusive */}
+      {/* Founder note */}
       <section className="bg-gray-50 py-14 px-6 border-t border-gray-200">
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">About this project</p>
           <p className="text-gray-600 text-base leading-relaxed">
             Stridemind was built by an independent developer who came across the clinical research
             on dual-task walking and could not find a practical, accessible app that applied it.
-            The evidence was clear and replicable across dozens of trials. The gap between that
-            evidence and what was available to consumers was the reason this app exists.
+            The evidence was clear and replicated across dozens of trials. The gap between that
+            evidence and what was available to ordinary people was the reason this app exists.
             Stridemind is not a medical device. It applies a well-evidenced training method in a
-            wellness context, for adults who want to stay active and reduce their risk of falling
+            wellness setting, for adults who want to stay active and reduce their risk of falling
             as they age.
           </p>
         </div>

@@ -44,17 +44,24 @@ const breadcrumbJsonLd = {
   ],
 };
 
-// Figures restate the verified citations recorded on /science; do not
-// strengthen or restate them from memory.
+// Figures restate the verified citations recorded in lib/citations.ts; do not
+// strengthen them, and do not restate them from memory.
+//
+// The first stat used to read "23%" sourced to "108 trials, 23,407
+// participants". Both numbers were real and they did not belong together: the
+// 108 trials are the whole Cochrane review, while the 23% is pooled from 59 of
+// them. The figure below is the balance-and-functional-exercise result with its
+// own denominator, which is both correct and the closer analogue to what this
+// page is describing.
 const EVIDENCE = [
   {
-    stat: '23%',
-    label: 'Fewer falls from exercise programmes that challenge balance',
-    source: 'Cochrane review of 108 trials, 23,407 participants (Sherrington et al., 2019)',
+    stat: '24%',
+    label: 'Fewer falls from exercise programmes built around balance and everyday movement',
+    source: 'Cochrane review, 39 studies with 7,920 participants (Sherrington et al., 2019)',
   },
   {
     stat: '44',
-    label: 'Studies in the 2025 meta-analysis finding dual-task training improves balance and mobility and reduces falls',
+    label: 'Trials in the 2025 meta-analysis finding dual-task training improves balance and mobility',
     source: 'European Geriatric Medicine, 2025 (2,782 older adults)',
   },
   {

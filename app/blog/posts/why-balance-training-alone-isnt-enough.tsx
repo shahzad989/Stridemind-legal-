@@ -21,11 +21,12 @@ function Content() {
       <H2>Balance training earns its reputation</H2>
       <P>
         Let&rsquo;s start with what standard exercise gets right. A 2019 Cochrane review, one of
-        the most trusted forms of medical evidence, looked at 108 trials with more than 23,000
-        older adults. It found that exercise programs, especially those built around balance and
-        functional movements, reduced the rate of falls by roughly 23 percent compared with not
-        exercising. If you already do tai chi, strength work, or balance classes, that habit is
-        paying you back. Nothing in this article suggests stopping.
+        the most trusted forms of medical evidence, pulled together 108 trials of exercise for
+        fall prevention. Looking specifically at programs built around balance and everyday
+        functional movement, it found they reduced the rate of falls by about 24 percent compared
+        with not exercising, a figure pooled from 39 studies with 7,920 participants. If you
+        already do tai chi, strength work, or balance classes, that habit is paying you back.
+        Nothing in this article suggests stopping.
       </P>
 
       <H2>But falls rarely wait for your full attention</H2>
@@ -113,10 +114,10 @@ function Content() {
 
       <Sources
         items={[
-          'Sherrington C, et al. Exercise for preventing falls in older people living in the community. Cochrane Database of Systematic Reviews, 2019.',
-          'Khan A, et al. A Systematic Review Exploring the Theories Underlying the Improvement of Balance and Reduction in Falls Following Dual-Task Training among Older Adults. International Journal of Environmental Research and Public Health, 2022, 19, 16890.',
+          'Sherrington C, et al. Exercise for preventing falls in older people living in the community. Cochrane Database of Systematic Reviews, 2019. Balance and functional exercise: rate ratio 0.76 (39 studies, 7,920 participants).',
+          'Khan MJ, et al. A Systematic Review Exploring the Theories Underlying the Improvement of Balance and Reduction in Falls Following Dual-Task Training among Older Adults. International Journal of Environmental Research and Public Health, 2022, 19, 16890.',
           'Mirelman A, et al. Addition of a non-immersive virtual reality component to treadmill training to reduce fall risk in older adults (V-TIME): a randomised controlled trial. The Lancet, 2016.',
-          'Khan A, et al. Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression. European Geriatric Medicine, 2025.',
+          'Khan MJ, et al. Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression. European Geriatric Medicine, 2025.',
         ]}
       />
     </>
@@ -129,7 +130,7 @@ export const post: BlogPost = {
   description:
     'Balance exercises help, but most falls happen while your attention is divided. Here is the research case for adding a thinking task to your walk.',
   datePublished: '2026-07-13',
-  dateModified: '2026-07-13',
+  dateModified: '2026-08-22',
   readingMinutes: 6,
   Content,
 };
