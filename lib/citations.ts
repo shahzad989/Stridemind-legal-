@@ -261,20 +261,27 @@ export const BARBAN_2017: Citation = {
     'Barban F, et al. Reducing Fall Risk with Combined Motor and Cognitive Training in Elderly Fallers (I-DONT-FALL). Brain Sciences, 2017. 481 older adults at risk of falling.',
 };
 
-// THE CORRECTION (2026-08-22): the site previously said this trial "significantly
-// reduced Falls Efficacy Scale scores (FES-I) and increased step length and gait
-// confidence" in "95 community-dwelling older adults with concern about falling."
-// Three things were wrong. The trial enrolled older adults BOTH with and without
-// concern about falling, not only those with it. Its reported outcome was step
-// length under single-task and dual-task walking, not FES-I, and no
-// fear-of-falling result appears in the paper's abstract. And its conclusion
-// points the other way: the authors write that additional treatment, such as
-// cognitive behavioural therapy, "should be considered" to address concern about
-// falling, because the cautious gait pattern persisted.
+// READ THE FULL TEXT FOR THIS ONE, NOT THE ABSTRACT. The published abstract
+// reports only the step-length result and says nothing about fear of falling,
+// which makes it easy to conclude, wrongly, that the trial found no
+// fear-of-falling effect. It did. The result is in the body: "The FES-I
+// decreased in people with CoF who had the intervention compared to the control
+// group, and remained unchanged in the no CoF group" (time x group x concern
+// interaction, p = 0.038). Table 2 gives 23.7 to 21.8 in the trained group with
+// concern about falling, against 23.8 to 23.7 in the matched controls.
 //
-// This citation therefore no longer appears under a fear-of-falling heading
-// anywhere on the site. It is good evidence for gait, and it is honest evidence
-// that dual-task training alone does not resolve fear of falling.
+// THE CORRECTION (2026-08-22): what was actually wrong with the site's old
+// summary was narrower than it first appeared. It described the whole sample as
+// older adults "with concern about falling" when the trial deliberately enrolled
+// people both with and without it, and split its findings along exactly that
+// line. And it credited the trial with increasing "gait confidence", which is
+// not something the trial measured; it measured step length and gait line.
+//
+// The subgroup split is the interesting part and worth keeping: the people who
+// arrived worried got the fear-of-falling benefit, and the people who did not
+// arrive worried got the improvement in thinking while walking. Neither group
+// got both. The authors still recommend addressing worry about falling directly
+// as well, because a cautious walking pattern persisted.
 export const WOLLESEN_2017: Citation = {
   id: 'wollesen-2017',
   title: 'Does dual task training improve walking performance of older adults with concern of falling?',
@@ -286,11 +293,11 @@ export const WOLLESEN_2017: Citation = {
   url: 'https://pubmed.ncbi.nlm.nih.gov/28893187/',
   verifiedOn: '2026-08-22',
   finding:
-    'Twelve weeks of dual-task training lengthened participants’ stride both when walking normally and when walking while thinking, whether or not they were worried about falling.',
+    'Twelve weeks of dual-task training lengthened participants’ stride, and among those who began the trial worried about falling, it significantly reduced that worry.',
   basis:
-    '95 independent-living older adults, average age 71.5, training once a week for 12 weeks against a non-training control group. Walking while thinking also improved, but only among those who were not already worried about falling. The authors concluded that worry about falling needs to be addressed directly as well, since a cautious walking pattern remained.',
+    '95 independent-living older adults, average age 71.5, training for 12 weeks against a non-training control group. Step length improved whether or not people were worried about falling. The benefits then split: fear-of-falling scores fell from 23.7 to 21.8 among those who started out worried, against almost no change in the matched control group, while thinking-while-walking improved only among those who were not worried to begin with.',
   reference:
-    'Wollesen B, Schulz S, Seydell L, Delbaere K. Does dual task training improve walking performance of older adults with concern of falling? BMC Geriatrics, 2017. 95 older adults.',
+    'Wollesen B, Schulz S, Seydell L, Delbaere K. Does dual task training improve walking performance of older adults with concern of falling? BMC Geriatrics, 2017. 95 older adults, with and without concern about falling.',
 };
 
 // CDC figures, refreshed 2026-08-22. The site carried "$50 billion", which is

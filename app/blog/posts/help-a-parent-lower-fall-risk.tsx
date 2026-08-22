@@ -114,7 +114,7 @@ function Content() {
           'Sherrington C, et al. Exercise for preventing falls in older people living in the community. Cochrane Database of Systematic Reviews, 2019. Balance and functional exercise: rate ratio 0.76 (39 studies, 7,920 participants).',
           'Khan MJ, et al. Effectiveness of dual-task exercise in improving balance and preventing falls among older adults: systematic review with meta-analysis and meta-regression. European Geriatric Medicine, 2025.',
           'Barban F, et al. (I-DONT-FALL trial). Brain Sciences, 2017. Combined motor and cognitive training reduced fear-of-falling (FES-I) scores in 481 older adults at fall risk.',
-          'Wollesen B, Schulz S, Seydell L, Delbaere K. Does dual task training improve walking performance of older adults with concern of falling? BMC Geriatrics, 2017. Twelve weeks of dual-task training lengthened stride in 95 older adults, with and without concern about falling.',
+          'Wollesen B, Schulz S, Seydell L, Delbaere K. Does dual task training improve walking performance of older adults with concern of falling? BMC Geriatrics, 2017. In 95 older adults, dual-task training lengthened stride overall, and reduced fear-of-falling scores specifically among those who began the trial worried about falling.',
         ]}
       />
     </>

@@ -439,8 +439,8 @@ export default function ScienceContent() {
                 source: VAN_HET_REVE_2014,
               },
               {
-                heading: 'Training does not fully resolve a fear of falling.',
-                body: 'Combined movement and thinking training reduced fear-of-falling scores more than either component alone in a trial of 481 older adults. In another trial, 12 weeks of dual-task training lengthened stride but left a cautious walking pattern in place among people already worried about falling, and those authors concluded that the worry needs to be addressed directly as well.',
+                heading: 'Not everyone gets the same benefit from the same training.',
+                body: 'A trial of 95 older adults deliberately enrolled people both with and without a worry about falling, and the results split along that line. Those who arrived worried saw that worry ease. Those who did not arrive worried saw their thinking-while-walking improve instead. Neither group got both, and the authors still recommended addressing a fear of falling directly, because a cautious walking pattern persisted.',
                 source: WOLLESEN_2017,
               },
               {
