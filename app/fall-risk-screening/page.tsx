@@ -27,7 +27,7 @@ import { EGM_2025, VTIME_2016 } from '@/lib/citations';
 export const metadata: Metadata = {
   title: 'What Is a Fall Risk Screening? The Tests and What the Scores Mean | Stridemind',
   description:
-    'Fall risk screening uses short physical tests like the Timed Up and Go. Here is what each one measures, what a dual-task version adds, and what the results can and cannot tell you.',
+    'Fall risk screening uses short tests like the Timed Up and Go. What each measures, what a dual-task version adds, and what the results can and cannot tell you.',
   alternates: { canonical: 'https://stridemind.app/fall-risk-screening' },
   openGraph: {
     title: 'What Is a Fall Risk Screening? The Tests and What the Scores Mean',

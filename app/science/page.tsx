@@ -10,7 +10,7 @@ import { ALL_CITATIONS, EVIDENCE_LAST_VERIFIED } from '@/lib/citations';
 export const metadata: Metadata = {
   title: 'Does Dual-Task Training Prevent Falls? What 44 Trials Found | Stridemind',
   description:
-    'A 2025 meta-analysis of 44 randomised trials found dual-task training improves balance and mobility in older adults. Here is the evidence, the effect sizes, and where it runs out.',
+    'A 2025 meta-analysis of 44 trials found dual-task training improves balance and mobility in older adults. The evidence, the effect sizes, and where it runs out.',
   alternates: { canonical: 'https://stridemind.app/science' },
   openGraph: {
     title: 'Does Dual-Task Training Prevent Falls? What 44 Trials Found',

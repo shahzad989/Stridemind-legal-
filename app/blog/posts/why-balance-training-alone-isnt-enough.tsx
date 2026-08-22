@@ -109,7 +109,9 @@ function Content() {
         job while you walk, with your phone in your pocket and your eyes on the path. If you are
         new to the concept, our plain-English guide to{' '}
         <TextLink href="/blog/what-is-dual-task-training">what dual-task training is</TextLink> is a
-        good place to start.
+        good place to start. If you want to know how a clinician would measure the gap this
+        article describes, see{' '}
+        <TextLink href="/fall-risk-screening">what happens in a fall risk screening</TextLink>.
       </P>
 
       <Sources

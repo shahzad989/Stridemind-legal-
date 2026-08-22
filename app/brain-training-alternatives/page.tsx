@@ -26,7 +26,7 @@ import { EGM_2025, GAVELIN_2021, VTIME_2016 } from '@/lib/citations';
 export const metadata: Metadata = {
   title: 'Do Brain Training Apps Actually Work? A Look at the Alternatives | Stridemind',
   description:
-    'Brain training games reliably improve the game. Whether that carries into daily life is the real question. Here is what the research says, and what changes when you train while moving.',
+    'Brain training games reliably improve the game. Whether that carries into daily life is the real question. Here is the research, and what changes when you move.',
   alternates: { canonical: 'https://stridemind.app/brain-training-alternatives' },
   openGraph: {
     title: 'Do Brain Training Apps Actually Work? A Look at the Alternatives',

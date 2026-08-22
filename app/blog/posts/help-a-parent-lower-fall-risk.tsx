@@ -36,6 +36,13 @@ function Content() {
         mobility and reduced how often people fell. We explain the method in plain language in{' '}
         <TextLink href="/blog/what-is-dual-task-training">What Is Dual-Task Training?</TextLink>
       </P>
+      <P>
+        If you are trying to get a parent to raise this at their next appointment, it helps to
+        know what they will be asked to do. We walk through{' '}
+        <TextLink href="/fall-risk-screening">what happens in a fall risk screening</TextLink>,
+        the simple walking and balance tests involved, and what a poor result does and does not
+        mean.
+      </P>
 
       <H2>Why &ldquo;just be careful&rdquo; backfires</H2>
       <P>

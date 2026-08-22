@@ -246,7 +246,15 @@ export default function ForFamiliesPage() {
                 One honest note. Stridemind is a wellness app, not a medical device. If your
                 parent has a diagnosed balance condition or a recent fall behind them, the right
                 first step is a conversation with their physician or physical therapist. Many
-                people use Stridemind alongside that care.
+                people use Stridemind alongside that care. If it helps to know what that
+                appointment involves, we explain{' '}
+                <Link
+                  href="/fall-risk-screening"
+                  className="text-brand underline underline-offset-2 hover:text-brand-dark"
+                >
+                  what happens in a fall risk screening
+                </Link>{' '}
+                and what the results mean.
               </p>
             </div>
           </div>

@@ -102,6 +102,12 @@ function Content() {
         <TextLink href="/science">science page</TextLink> walks through every study mentioned
         here.
       </P>
+      <P>
+        If any of the causes above sound familiar and you are wondering what a doctor would
+        actually do about it, we explain{' '}
+        <TextLink href="/fall-risk-screening">what happens in a fall risk screening</TextLink>,
+        including the walking and balance tests you would be given and what the results mean.
+      </P>
 
       <H2>Where Stridemind fits in</H2>
       <P>

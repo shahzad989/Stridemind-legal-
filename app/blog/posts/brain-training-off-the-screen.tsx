@@ -88,6 +88,11 @@ function Content() {
         into something you can do on an ordinary Tuesday.
       </P>
       <P>
+        If you are weighing this against a brain training subscription you already pay for, we set
+        out the comparison directly, including the transfer criticism and what we do not claim, in{' '}
+        <TextLink href="/brain-training-alternatives">do brain training apps actually work</TextLink>.
+      </P>
+      <P>
         If you are new to the idea, start with our{' '}
         <TextLink href="/blog/what-is-dual-task-training">plain-English guide to dual-task training</TextLink>,
         or go straight to the evidence on our <TextLink href="/science">science page</TextLink>. When
