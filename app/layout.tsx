@@ -7,6 +7,13 @@ import StickyCTA from '@/components/StickyCTA';
 import MotionProvider from '@/components/MotionProvider';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Script from 'next/script';
+
+// GA4 measurement ID (property created 2026-08-22). Loaded via next/script
+// instead of a raw <script> tag in <head> (Google's default snippet) because
+// Next.js's Script component defers/optimizes third-party scripts and is
+// already the pattern used here for Vercel Analytics/Speed Insights.
+const GA_MEASUREMENT_ID = 'G-620ZLVL5P2';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -170,6 +177,18 @@ export default function RootLayout({
         <StickyCTA />
         <Analytics debug={process.env.NODE_ENV !== 'production'} />
         <SpeedInsights />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
