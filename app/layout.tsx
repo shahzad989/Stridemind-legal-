@@ -181,6 +181,17 @@ export default function RootLayout({
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
         />
+        {/* Google's "Preferred Sources" widget (2026-08 feature). As of
+            2026-08-22 stridemind.app returns "No results" in
+            google.com/preferences/source, so this button won't do anything
+            for readers yet. Shipped anyway: it's inert until Google surfaces
+            the domain there, which today's sitemap resubmission and indexing
+            requests are aimed at, and there's no cost to having it ready. */}
+        <Script
+          async
+          src="https://news.google.com/swg/js/v1/publisher.js"
+          strategy="afterInteractive"
+        />
         <Script id="ga4-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];

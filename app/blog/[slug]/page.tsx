@@ -116,6 +116,13 @@ export default async function BlogPostPage({ params }: Props) {
             <h1 className="font-display text-4xl sm:text-5xl text-gray-900 leading-tight">
               {post.title}
             </h1>
+            {/* Google's "Add to Preferred Sources" widget, loaded in
+                app/layout.tsx. Inert until stridemind.app is listed in
+                Google's source preferences tool; see that file for why it's
+                shipped ahead of eligibility anyway. */}
+            <div className="mt-6">
+              <div {...{ 'google-add-preferred-source-btn': '', 'data-theme': 'light' }} />
+            </div>
           </div>
         </header>
 

@@ -147,8 +147,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col items-center gap-6">
+          {/* Google's "Add to Preferred Sources" widget. Inert until Google
+              lists stridemind.app in its source preferences tool (see
+              app/layout.tsx), but the button itself is harmless either way. */}
+          <div {...{ 'google-add-preferred-source-btn': '', 'data-theme': 'dark' }} />
+          <p className="text-gray-400 text-sm text-center">
             © {year} Stridemind: Fall Prevention. All rights reserved. Not a medical device. For wellness purposes only.
           </p>
         </div>
