@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="dtc-title dtc-desc">
+  <title id="dtc-title">What dual-task cost looks like</title>
+  <desc id="dtc-desc">Illustration of two walking tracks. The first, walking with full attention on walking, shows evenly spaced steps. The second, walking while doing a mental task, shows the same steps hesitating and bunching together at the point where attention splits, which is what researchers call dual-task cost.</desc>
+
+  <rect width="1200" height="675" fill="#ffffff"/>
+
+  <text x="600" y="72" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#111827">What dual-task cost looks like</text>
+  <text x="600" y="110" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280">The gap between walking with your full attention, and walking while your mind is busy</text>
+
+  <!-- Track 1: undivided attention -->
+  <text x="90" y="220" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#166534">Walking, undivided attention</text>
+  <line x1="90" y1="260" x2="1110" y2="260" stroke="#E5E7EB" stroke-width="3"/>
+  <g fill="#166534">
+    <circle cx="150" cy="260" r="12"/>
+    <circle cx="290" cy="260" r="12"/>
+    <circle cx="430" cy="260" r="12"/>
+    <circle cx="570" cy="260" r="12"/>
+    <circle cx="710" cy="260" r="12"/>
+    <circle cx="850" cy="260" r="12"/>
+    <circle cx="990" cy="260" r="12"/>
+  </g>
+  <text x="90" y="300" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#9CA3AF">Even, regular steps</text>
+
+  <!-- Track 2: divided attention -->
+  <text x="90" y="400" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#B45309">Walking, plus a mental task</text>
+  <line x1="90" y1="440" x2="1110" y2="440" stroke="#E5E7EB" stroke-width="3"/>
+  <g fill="#B45309">
+    <circle cx="150" cy="440" r="12"/>
+    <circle cx="290" cy="440" r="12"/>
+    <circle cx="410" cy="440" r="12"/>
+    <!-- the gap: attention splits here -->
+    <circle cx="620" cy="440" r="12"/>
+    <circle cx="740" cy="440" r="12"/>
+    <circle cx="860" cy="440" r="12"/>
+    <circle cx="990" cy="440" r="12"/>
+  </g>
+
+  <!-- Callout pointing at the wide gap -->
+  <line x1="515" y1="440" x2="515" y2="510" stroke="#B45309" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M 515 440 l -8 -14 h 16 z" fill="#B45309"/>
+  <rect x="290" y="516" width="450" height="86" rx="12" fill="#FFFBEB" stroke="#FDE68A"/>
+  <text x="315" y="544" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#92400E">This gap is dual-task cost</text>
+  <text x="315" y="568" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#92400E">
+    <tspan x="315" dy="0">The moment stride slows or hesitates because attention</tspan>
+    <tspan x="315" dy="20">has to split between walking and thinking.</tspan>
+  </text>
+
+  <text x="600" y="650" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#9CA3AF">
+    Conceptual illustration, not data from a specific trial. For the clinical evidence and its exact figures, see stridemind.app/science
+  </text>
+</svg>

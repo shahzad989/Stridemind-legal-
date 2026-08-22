@@ -236,6 +236,21 @@ export default function ScienceContent() {
             </h2>
           </motion.div>
 
+          <figure className="mb-10">
+            <img
+              src="/images/dual-task-cost-diagram.svg"
+              alt="Diagram comparing two walking tracks: evenly spaced steps when walking with full attention, versus steps that hesitate and bunch together at one point when a mental task is added, illustrating dual-task cost."
+              width={1200}
+              height={675}
+              loading="lazy"
+              className="w-full h-auto rounded-2xl border border-gray-100"
+            />
+            <figcaption className="text-sm text-gray-500 mt-3 text-center">
+              Dual-task cost is the drop in walking performance, most often a slowed or hesitant
+              stride, that shows up when attention has to split between walking and a mental task.
+            </figcaption>
+          </figure>
+
           <motion.div
             variants={container}
             initial="hidden"

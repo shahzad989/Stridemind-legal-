@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="tug-title tug-desc">
+  <title id="tug-title">The Timed Up and Go test, step by step</title>
+  <desc id="tug-desc">Six steps of the Timed Up and Go test: start seated, stand up, walk about 10 feet, turn around, walk back, and sit down, all timed. CDC guidance flags 12 seconds or longer as a sign of increased fall risk for community-dwelling adults 65 and older.</desc>
+
+  <rect width="1200" height="675" fill="#ffffff"/>
+
+  <text x="600" y="66" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111827">The Timed Up and Go test</text>
+  <text x="600" y="100" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#6B7280">Six steps, one stopwatch</text>
+
+  <!-- 6 step nodes with connecting arrows -->
+  <!-- step positions -->
+  <!-- node template: circle icon + label below -->
+
+  <!-- connecting line -->
+  <line x1="140" y1="260" x2="1060" y2="260" stroke="#D1D5DB" stroke-width="3" stroke-dasharray="2 10"/>
+
+  <!-- Step 1: Seated -->
+  <g transform="translate(140,260)">
+    <circle r="46" fill="#F0FDF4" stroke="#166534" stroke-width="3"/>
+    <!-- chair + seated figure, simplified -->
+    <rect x="-18" y="-6" width="36" height="6" fill="#166534"/>
+    <line x1="14" y1="0" x2="14" y2="26" stroke="#166534" stroke-width="4"/>
+    <circle cx="0" cy="-22" r="8" fill="#166534"/>
+    <line x1="0" y1="-14" x2="0" y2="0" stroke="#166534" stroke-width="4"/>
+    <text x="0" y="90" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827">1. Start seated</text>
+  </g>
+
+  <!-- Step 2: Stand -->
+  <g transform="translate(324,260)">
+    <circle r="46" fill="#F0FDF4" stroke="#166534" stroke-width="3"/>
+    <circle cx="0" cy="-26" r="8" fill="#166534"/>
+    <line x1="0" y1="-18" x2="0" y2="14" stroke="#166534" stroke-width="4"/>
+    <line x1="0" y1="14" x2="-10" y2="30" stroke="#166534" stroke-width="4"/>
+    <line x1="0" y1="14" x2="10" y2="30" stroke="#166534" stroke-width="4"/>
+    <text x="0" y="90" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827">2. Stand up</text>
+  </g>
+
+  <!-- Step 3: Walk 10 feet -->
+  <g transform="translate(508,260)">
+    <circle r="46" fill="#F0FDF4" stroke="#166534" stroke-width="3"/>
+    <circle cx="-6" cy="-26" r="8" fill="#166534"/>
+    <line x1="-6" y1="-18" x2="0" y2="10" stroke="#166534" stroke-width="4"/>
+    <line x1="0" y1="10" x2="-14" y2="28" stroke="#166534" stroke-width="4"/>
+    <line x1="0" y1="10" x2="16" y2="24" stroke="#166534" stroke-width="4"/>
+    <text x="0" y="90" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827">3. Walk ~10 feet</text>
+  </g>
+
+  <!-- Step 4: Turn -->
+  <g transform="translate(692,260)">
+    <circle r="46" fill="#F0FDF4" stroke="#166534" stroke-width="3"/>
+    <path d="M -16 -8 A 18 18 0 1 1 -16 10" fill="none" stroke="#166534" stroke-width="4"/>
+    <path d="M -20 4 L -16 10 L -9 3" fill="none" stroke="#166534" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="90" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827">4. Turn around</text>
+  </g>
+
+  <!-- Step 5: Walk back -->
+  <g transform="translate(876,260)">
+    <circle r="46" fill="#F0FDF4" stroke="#166534" stroke-width="3"/>
+    <circle cx="6" cy="-26" r="8" fill="#166534"/>
+    <line x1="6" y1="-18" x2="0" y2="10" stroke="#166534" stroke-width="4"/>
+    <line x1="0" y1="10" x2="14" y2="28" stroke="#166534" stroke-width="4"/>
+    <line x1="0" y1="10" x2="-16" y2="24" stroke="#166534" stroke-width="4"/>
+    <text x="0" y="90" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827">5. Walk back</text>
+  </g>
+
+  <!-- Step 6: Sit -->
+  <g transform="translate(1060,260)">
+    <circle r="46" fill="#F0FDF4" stroke="#166534" stroke-width="3"/>
+    <rect x="-18" y="-6" width="36" height="6" fill="#166534"/>
+    <line x1="-14" y1="0" x2="-14" y2="26" stroke="#166534" stroke-width="4"/>
+    <circle cx="0" cy="-22" r="8" fill="#166534"/>
+    <line x1="0" y1="-14" x2="0" y2="0" stroke="#166534" stroke-width="4"/>
+    <text x="0" y="90" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827">6. Sit back down</text>
+  </g>
+
+  <!-- Arrowheads along the connecting line -->
+  <g fill="#D1D5DB">
+    <path d="M 230 260 l -10 -6 v 12 z"/>
+    <path d="M 414 260 l -10 -6 v 12 z"/>
+    <path d="M 598 260 l -10 -6 v 12 z"/>
+    <path d="M 782 260 l -10 -6 v 12 z"/>
+    <path d="M 966 260 l -10 -6 v 12 z"/>
+  </g>
+
+  <!-- Threshold callout -->
+  <rect x="220" y="460" width="760" height="110" rx="14" fill="#FEF2F2" stroke="#FECACA"/>
+  <text x="600" y="500" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#991B1B">12 seconds or longer</text>
+  <text x="600" y="528" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#991B1B">
+    <tspan x="600" dy="0">CDC guidance flags this as an increased risk of falling for</tspan>
+    <tspan x="600" dy="22">community-dwelling adults aged 65 and over.</tspan>
+  </text>
+
+  <text x="600" y="640" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#9CA3AF">
+    The test predicts risk. It does not diagnose. See stridemind.app/fall-risk-screening for what a result can and cannot tell you.
+  </text>
+</svg>

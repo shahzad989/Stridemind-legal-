@@ -221,6 +221,21 @@ export default function FallRiskScreeningPage() {
               equipment you would not find in an ordinary clinic room.
             </p>
 
+            <figure className="mb-10">
+              <img
+                src="/images/timed-up-and-go-diagram.svg"
+                alt="Diagram of the six steps of the Timed Up and Go test: start seated, stand up, walk about 10 feet, turn around, walk back, and sit down. CDC guidance flags 12 seconds or longer as an increased fall risk for adults 65 and older."
+                width={1200}
+                height={675}
+                loading="lazy"
+                className="w-full h-auto rounded-2xl border border-gray-100"
+              />
+              <figcaption className="text-sm text-gray-500 mt-3 text-center">
+                The Timed Up and Go, the most common of the tests below, timed from a seated start
+                to a seated finish.
+              </figcaption>
+            </figure>
+
             <div className="space-y-5">
               {TESTS.map((test) => (
                 <div
