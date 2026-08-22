@@ -7,11 +7,13 @@ import { POSTS, sortedPosts } from './blog/posts';
 // information and erodes trust in the sitemap. Bump the matching constant
 // when a page's content meaningfully changes.
 const HOME_UPDATED = '2026-07-17'; // monthly check-in section added
-const SCIENCE_UPDATED = '2026-06-15'; // citation verification pass
+const SCIENCE_UPDATED = '2026-08-22'; // citation re-verification pass, four figures corrected
 const LEGAL_UPDATED = '2026-06-11'; // privacy policy sensor-data disclosure
-const FAMILIES_UPDATED = '2026-07-17'; // page launched
+const FAMILIES_UPDATED = '2026-08-22'; // Cochrane figure corrected
 const ABOUT_UPDATED = '2026-07-17'; // page launched
 const SUPPORT_UPDATED = '2026-07-17'; // page launched
+const SCREENING_UPDATED = '2026-08-22'; // page launched
+const ALTERNATIVES_UPDATED = '2026-08-22'; // page launched
 
 function utc(date: string): Date {
   return new Date(`${date}T00:00:00Z`);
@@ -37,6 +39,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://stridemind.app/for-families',
       lastModified: utc(FAMILIES_UPDATED),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    // Both of these answer a whole question cluster on one page rather than
+    // being split into thin per-question pages, which is the shape that
+    // actually gets retrieved.
+    {
+      url: 'https://stridemind.app/fall-risk-screening',
+      lastModified: utc(SCREENING_UPDATED),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://stridemind.app/brain-training-alternatives',
+      lastModified: utc(ALTERNATIVES_UPDATED),
       changeFrequency: 'monthly',
       priority: 0.8,
     },

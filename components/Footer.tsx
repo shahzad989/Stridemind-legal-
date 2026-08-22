@@ -56,6 +56,22 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
+                    href="/fall-risk-screening"
+                    className="text-gray-400 hover:text-white transition-colors text-base"
+                  >
+                    Fall Risk Screening
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/brain-training-alternatives"
+                    className="text-gray-400 hover:text-white transition-colors text-base"
+                  >
+                    Brain Training Alternatives
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/blog"
                     className="text-gray-400 hover:text-white transition-colors text-base"
                   >

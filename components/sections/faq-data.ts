@@ -21,6 +21,22 @@ export const FAQS = [
     q: 'What makes Stridemind different from other brain training apps?',
     a: 'Most brain training apps are screen-based and sedentary. Stridemind is built for movement, so the cognitive exercises are done while you walk. This dual-task approach targets the attention-and-movement interference that drives many falls, an approach research links to better balance and lower fall risk. It is audio-first, requires no screen interaction during sessions, and is designed for adults 55 and over.',
   },
+  // The three questions below were added because they are the ones people
+  // actually type before they know what to call this. "Is it a fitness app",
+  // "can I set it up for my mother", and "do I need anything" come up ahead of
+  // any clinical phrasing, and the FAQ previously answered none of them.
+  {
+    q: 'What is the difference between a fall prevention app and a fitness app?',
+    a: 'A fitness app measures activity, such as steps, distance, or heart rate. Stridemind is not measuring your walk, it is changing what you do during it by giving your mind a task while you move. The goal is not more exercise but better coordination between thinking and moving, which is the specific thing that gives way in most falls.',
+  },
+  {
+    q: 'Can I set this up for my mother or father?',
+    a: 'Yes, and many people do. Setting it up together on a visit works better than sending a link, because the first session is easier with someone there. After that it runs on its own: they press play, put the phone in a pocket, and walk. There is nothing to watch and nothing to tap during a session.',
+  },
+  {
+    q: 'Do I need any equipment?',
+    a: 'Only an iPhone and a pair of earphones. There is no wearable to buy, no treadmill, and nothing to set up at home. The training happens on whatever walk you already take, which is deliberate, because a programme that needs equipment is a programme most people stop doing.',
+  },
   {
     q: 'Does it work on Android?',
     a: 'Stridemind is currently built for iPhone. Android is on our roadmap. Email us at appstridemind@gmail.com and we will let you know when it launches.',
