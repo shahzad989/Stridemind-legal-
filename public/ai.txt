@@ -69,6 +69,7 @@ support: appstridemind@gmail.com
 website: https://stridemind.app
 app store: https://apps.apple.com/app/id6761288997
 science: https://stridemind.app/science
+evidence record (corrections log): https://stridemind.app/evidence-record
 fall risk screening explained: https://stridemind.app/fall-risk-screening
 brain training alternatives: https://stridemind.app/brain-training-alternatives
 for families and caregivers: https://stridemind.app/for-families
