@@ -147,14 +147,18 @@ export default function ScienceContent() {
               came from.
             </p>
             <p className="text-sm text-gray-500 mt-6">
-              Every citation on this page was last checked against the original papers on{' '}
+              By{' '}
+              <Link href="/about" className="text-brand-dark hover:text-brand underline">
+                Ibrahim Shahzad
+              </Link>
+              , maker of Stridemind. Last reviewed{' '}
               {new Date(`${EVIDENCE_LAST_VERIFIED}T00:00:00Z`).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
                 timeZone: 'UTC',
               })}
-              .
+              . Every citation on this page was checked against the original paper it comes from, not a summary of it.
             </p>
           </motion.div>
         </div>

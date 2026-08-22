@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { EGM_2025, GAVELIN_2021, VTIME_2016 } from '@/lib/citations';
+import { EGM_2025, EVIDENCE_LAST_VERIFIED, GAVELIN_2021, VTIME_2016 } from '@/lib/citations';
 
 // WHY THIS PAGE EXISTS
 // "Lumosity alternatives", "brain training apps that aren't just games",
@@ -76,6 +76,27 @@ const webPageJsonLd = {
   about: { '@id': 'https://stridemind.app/#app' },
 };
 
+// Article schema mirrors /science: dateModified points at the evidence
+// verification date, not the build date, and author matches the visible
+// byline so the structured data and the page agree.
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://stridemind.app/brain-training-alternatives#article',
+  headline: 'Do Brain Training Apps Actually Work? A Look at the Alternatives',
+  description:
+    'The transfer-of-training criticism of seated brain games, what the evidence supports instead, and how movement-based dual-task training differs.',
+  mainEntityOfPage: 'https://stridemind.app/brain-training-alternatives',
+  dateModified: EVIDENCE_LAST_VERIFIED,
+  author: {
+    '@type': 'Person',
+    '@id': 'https://stridemind.app/about#founder',
+    name: 'Ibrahim Shahzad',
+  },
+  publisher: { '@id': 'https://stridemind.app/#organization' },
+  citation: [EGM_2025.reference, GAVELIN_2021.reference, VTIME_2016.reference],
+};
+
 const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -129,7 +150,7 @@ const COMPARISON = [
 export default function BrainTrainingAlternativesPage() {
   return (
     <>
-      {[webPageJsonLd, breadcrumbJsonLd, faqJsonLd].map((schema, i) => (
+      {[webPageJsonLd, articleJsonLd, breadcrumbJsonLd, faqJsonLd].map((schema, i) => (
         <script
           key={i}
           type="application/ld+json"
@@ -154,6 +175,20 @@ export default function BrainTrainingAlternativesPage() {
               question worth asking before you subscribe to anything. This page sets out the
               criticism of seated brain training fairly, then explains what the evidence supports
               instead, and where Stridemind fits.
+            </p>
+            <p className="text-sm text-gray-500 mt-6">
+              By{' '}
+              <Link href="/about" className="text-brand-dark hover:text-brand underline">
+                Ibrahim Shahzad
+              </Link>
+              , maker of Stridemind. Last reviewed{' '}
+              {new Date(`${EVIDENCE_LAST_VERIFIED}T00:00:00Z`).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                timeZone: 'UTC',
+              })}
+              . Every figure on this page was checked against the original paper it comes from, not a summary of it.
             </p>
           </div>
         </section>

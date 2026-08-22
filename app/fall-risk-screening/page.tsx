@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { EGM_2025, VTIME_2016 } from '@/lib/citations';
+import { EGM_2025, EVIDENCE_LAST_VERIFIED, VTIME_2016 } from '@/lib/citations';
 
 // WHY THIS PAGE EXISTS
 // "What is a dual-task gait assessment", "fall risk screening test", "timed up
@@ -80,6 +80,27 @@ const webPageJsonLd = {
   isPartOf: { '@id': 'https://stridemind.app/#website' },
 };
 
+// Article schema mirrors /science: dateModified points at the evidence
+// verification date, not the build date, and author matches the visible
+// byline so the structured data and the page agree.
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://stridemind.app/fall-risk-screening#article',
+  headline: 'What Is a Fall Risk Screening? The Tests and What the Scores Mean',
+  description:
+    'A plain-language guide to fall risk screening for older adults: the Timed Up and Go, the chair stand, the balance test, the dual-task gait assessment, and what the results mean.',
+  mainEntityOfPage: 'https://stridemind.app/fall-risk-screening',
+  dateModified: EVIDENCE_LAST_VERIFIED,
+  author: {
+    '@type': 'Person',
+    '@id': 'https://stridemind.app/about#founder',
+    name: 'Ibrahim Shahzad',
+  },
+  publisher: { '@id': 'https://stridemind.app/#organization' },
+  citation: [EGM_2025.reference, VTIME_2016.reference],
+};
+
 const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -129,7 +150,7 @@ const TESTS = [
 export default function FallRiskScreeningPage() {
   return (
     <>
-      {[webPageJsonLd, breadcrumbJsonLd, faqJsonLd].map((schema, i) => (
+      {[webPageJsonLd, articleJsonLd, breadcrumbJsonLd, faqJsonLd].map((schema, i) => (
         <script
           key={i}
           type="application/ld+json"
@@ -153,6 +174,20 @@ export default function FallRiskScreeningPage() {
               minutes, needs nothing more than a chair and a stopwatch, and is done by a doctor,
               nurse, or physical therapist. This page explains what each test measures, what a
               dual-task version adds, and what the result can and cannot tell you.
+            </p>
+            <p className="text-sm text-gray-500 mt-6">
+              By{' '}
+              <Link href="/about" className="text-brand-dark hover:text-brand underline">
+                Ibrahim Shahzad
+              </Link>
+              , maker of Stridemind. Last reviewed{' '}
+              {new Date(`${EVIDENCE_LAST_VERIFIED}T00:00:00Z`).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                timeZone: 'UTC',
+              })}
+              . Every figure on this page was checked against the original paper it comes from, not a summary of it.
             </p>
           </div>
         </section>
