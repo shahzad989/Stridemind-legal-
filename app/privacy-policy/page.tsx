@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <LegalLayout title="Privacy Policy" lastUpdated="June 11, 2026">
+    <LegalLayout title="Privacy Policy" lastUpdated="August 22, 2026">
       <p className="text-lg text-gray-700 leading-relaxed mb-10">
         Stridemind (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;the app&rdquo;) is a cognitive training app built
         for active adults. This policy explains what data we collect, how we use it, and your
@@ -52,8 +52,14 @@ export default function PrivacyPolicy() {
             <strong>Subscription status:</strong> whether you have an active premium subscription,
             managed through RevenueCat.
           </li>
+          <li>
+            <strong>Website analytics:</strong> if you visit stridemind.app in a web browser, we use
+            Google Analytics to see general information about that visit, such as which pages were
+            viewed, how you arrived at the site, and your approximate location, device, and browser.
+            This applies only to browsing our website, not to your account or your use of the app.
+          </li>
         </ul>
-        <p>We do not collect your location. We do not sell your data, and we do not use it for advertising.</p>
+        <p>We do not collect precise location data. We do not sell your data, and we do not use it for advertising.</p>
       </LegalSection>
 
       <LegalSection title="How We Use Your Data">
@@ -105,7 +111,28 @@ export default function PrivacyPolicy() {
             <strong>Apple</strong> — payment processing for in-app subscriptions is handled entirely
             by Apple. We never see your payment details.
           </li>
+          <li>
+            <strong>Google Analytics</strong> — website analytics for stridemind.app. Helps us
+            understand how visitors use our website. This service is not used inside the app itself.{' '}
+            <a href="https://policies.google.com/privacy" className="text-brand-dark hover:text-brand underline" target="_blank" rel="noopener noreferrer">
+              Google Privacy Policy
+            </a>
+          </li>
         </ul>
+      </LegalSection>
+
+      <LegalSection title="Cookies">
+        <p>
+          Our website (stridemind.app) uses cookies through Google Analytics to distinguish visitors
+          and measure how the site is used. These cookies do not identify you by name and are not
+          used for advertising. You can block or delete cookies through your browser settings, or opt
+          out of Google Analytics specifically using the{' '}
+          <a href="https://tools.google.com/dlpage/gaoptout" className="text-brand-dark hover:text-brand underline" target="_blank" rel="noopener noreferrer">
+            Google Analytics Opt-out Browser Add-on
+          </a>
+          . The mobile app does not use cookies; it stores data locally on your device and through the
+          services listed above.
+        </p>
       </LegalSection>
 
       <LegalSection title="International Data Transfers">
