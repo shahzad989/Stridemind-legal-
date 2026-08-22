@@ -14,6 +14,7 @@ const ABOUT_UPDATED = '2026-07-17'; // page launched
 const SUPPORT_UPDATED = '2026-07-17'; // page launched
 const SCREENING_UPDATED = '2026-08-22'; // page launched
 const ALTERNATIVES_UPDATED = '2026-08-22'; // page launched
+const EVIDENCE_RECORD_UPDATED = '2026-08-22'; // page launched
 
 function utc(date: string): Date {
   return new Date(`${date}T00:00:00Z`);
@@ -56,6 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: utc(ALTERNATIVES_UPDATED),
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: 'https://stridemind.app/evidence-record',
+      lastModified: utc(EVIDENCE_RECORD_UPDATED),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
       url: 'https://stridemind.app/about',

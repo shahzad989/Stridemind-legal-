@@ -313,6 +313,13 @@ export default function ScienceContent() {
               </motion.div>
             ))}
           </motion.div>
+          <p className="text-center text-gray-500 mt-8">
+            Every correction made to a claim on this page is logged, dated, with the exact figures, on{' '}
+            <Link href="/evidence-record" className="text-brand-dark hover:text-brand underline">
+              the evidence record
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
