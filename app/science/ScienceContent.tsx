@@ -137,8 +137,8 @@ export default function ScienceContent() {
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
               Walking while giving your mind something to do is one of the more replicated
-              ideas in fall prevention research. This page sets out what the trials found,
-              how strong each finding is, and where the evidence runs out. Stridemind is
+              ideas in fall prevention research. This page sets out what the trials found
+              and how strong each finding is. Stridemind is
               built on this method, and every figure below is quoted with the studies it
               came from.
             </p>
