@@ -5,12 +5,8 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import {
   ALL_CITATIONS,
-  BARBAN_2017,
   CDC_FALLS,
-  EVIDENCE_LAST_VERIFIED,
-  VAN_HET_REVE_2014,
   VTIME_2016,
-  WOLLESEN_2017,
 } from '@/lib/citations';
 import { SCIENCE_QA } from './qa';
 
@@ -145,20 +141,6 @@ export default function ScienceContent() {
               how strong each finding is, and where the evidence runs out. Stridemind is
               built on this method, and every figure below is quoted with the studies it
               came from.
-            </p>
-            <p className="text-sm text-gray-500 mt-6">
-              By{' '}
-              <Link href="/about" className="text-brand-dark hover:text-brand underline">
-                Ibrahim Shahzad
-              </Link>
-              , maker of Stridemind. Last reviewed{' '}
-              {new Date(`${EVIDENCE_LAST_VERIFIED}T00:00:00Z`).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                timeZone: 'UTC',
-              })}
-              . Every citation on this page was checked against the original paper it comes from, not a summary of it.
             </p>
           </motion.div>
         </div>
@@ -415,81 +397,6 @@ export default function ScienceContent() {
               {VTIME_2016.authors} {VTIME_2016.journal}, {VTIME_2016.year}. V-TIME trial, 302
               participants across five centres.
             </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Where the evidence is weaker.
-          NEW SECTION (2026-08-22). The page previously presented only findings
-          that supported the product. That is both a credibility problem with
-          the physical therapists this page is partly written for, and a
-          practical one: a page that states its own limits gives a reader, and
-          an answer engine, something specific to trust. Nothing here is
-          hypothetical. Every limit named is one of our own cited papers. */}
-      <section className="bg-white py-20 px-6 border-b border-gray-100">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55 }}
-            className="mb-10"
-          >
-            <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full mb-5">
-              Where the Evidence Is Weaker
-            </span>
-            <h2 className="font-display text-4xl sm:text-5xl text-gray-900 mb-5 leading-tight">
-              What this research does not show.
-            </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              The case for dual-task training is genuinely good, and it is not uniform. These are
-              the limits in the same studies quoted above, stated plainly, because you should be
-              able to judge the method rather than take our word for it.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="space-y-5"
-          >
-            {[
-              {
-                heading: 'The balance evidence is much stronger than the falls evidence.',
-                body: 'In the 2025 meta-analysis, balance and mobility were measured across most of the 44 trials. Fall frequency was measured in only 6 of them, and all 6 relied on participants recalling their own falls, which the authors flag as a source of error. Improved balance is well established. Fewer falls is the more cautious claim.',
-              },
-              {
-                heading: 'Adding a cognitive layer does not always reduce falls on its own.',
-                body: 'The V-TIME trial found that it did. A separate trial of 182 adults averaging 81 years old set out to test the same idea and found that falls dropped sharply in both groups, with no measurable difference between them. What the cognitive layer clearly did add there was better dual-task walking, better gait initiation, and better divided attention.',
-                source: VAN_HET_REVE_2014,
-              },
-              {
-                heading: 'Not everyone gets the same benefit from the same training.',
-                body: 'A trial of 95 older adults deliberately enrolled people both with and without a worry about falling, and the results split along that line. Those who arrived worried saw that worry ease. Those who did not arrive worried saw their thinking-while-walking improve instead. Neither group got both, and the authors still recommended addressing a fear of falling directly, because a cautious walking pattern persisted.',
-                source: WOLLESEN_2017,
-              },
-              {
-                heading: 'The benefits depend on continuing.',
-                body: 'In the 481-person trial, fear-of-falling scores improved over three months of training and had drifted back within three months of stopping. This is the ordinary pattern for exercise of any kind, and it is the reason this is framed as a habit rather than a course of treatment with an end date.',
-                source: BARBAN_2017,
-              },
-            ].map((item) => (
-              <motion.div
-                key={item.heading}
-                variants={fadeUp}
-                className="bg-gray-50 rounded-2xl p-7 border border-gray-200"
-              >
-                <h3 className="text-lg font-bold text-gray-900 mb-2 leading-snug">{item.heading}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.body}</p>
-                {item.source && (
-                  <p className="text-sm text-gray-500 italic mt-3">
-                    {item.source.authors} {item.source.journal}, {item.source.year}.
-                  </p>
-                )}
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </section>
