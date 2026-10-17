@@ -176,20 +176,6 @@ export default function BrainTrainingAlternativesPage() {
               criticism of seated brain training fairly, then explains what the evidence supports
               instead, and where Stridemind fits.
             </p>
-            <p className="text-sm text-gray-500 mt-6">
-              By{' '}
-              <Link href="/about" className="text-brand-dark hover:text-brand underline">
-                Ibrahim Shahzad
-              </Link>
-              , maker of Stridemind. Last reviewed{' '}
-              {new Date(`${EVIDENCE_LAST_VERIFIED}T00:00:00Z`).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                timeZone: 'UTC',
-              })}
-              . Every figure on this page was checked against the original paper it comes from, not a summary of it.
-            </p>
           </div>
         </section>
 

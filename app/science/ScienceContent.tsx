@@ -489,54 +489,6 @@ export default function ScienceContent() {
         </div>
       </section>
 
-      {/* Related reading.
-          Contextual in-body links, not another footer row. Footer links are
-          sitewide boilerplate and get discounted accordingly; a link inside the
-          text, with anchor text that says what is on the other side of it, is
-          the one that carries weight and the one a reader actually follows. */}
-      <section className="bg-white py-16 px-6 border-b border-gray-100">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-display text-3xl text-gray-900 mb-6 leading-tight">
-            Related reading
-          </h2>
-          <div className="space-y-4">
-            <p className="text-lg text-gray-700 leading-relaxed">
-              If a clinician has raised fall risk with you, or you want to know how this is
-              measured rather than trained, read{' '}
-              <Link
-                href="/fall-risk-screening"
-                className="text-brand underline underline-offset-2 hover:text-brand-dark"
-              >
-                what happens in a fall risk screening
-              </Link>
-              , which covers the Timed Up and Go, the dual-task version of it, and what the
-              results can and cannot tell you.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              If you are comparing this against a seated brain training app, we take the
-              transfer-of-training criticism head on in{' '}
-              <Link
-                href="/brain-training-alternatives"
-                className="text-brand underline underline-offset-2 hover:text-brand-dark"
-              >
-                do brain training apps actually work
-              </Link>
-              .
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              If you are reading this on behalf of a parent rather than for yourself,{' '}
-              <Link
-                href="/for-families"
-                className="text-brand underline underline-offset-2 hover:text-brand-dark"
-              >
-                our guide for families
-              </Link>{' '}
-              covers how to raise it without it landing as a warning.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="bg-brand-muted py-16 px-6 border-b border-brand-light">
         <motion.div
@@ -560,22 +512,6 @@ export default function ScienceContent() {
             Download on the App Store
           </a>
         </motion.div>
-      </section>
-
-      {/* Founder note */}
-      <section className="bg-gray-50 py-14 px-6 border-t border-gray-200">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">About this project</p>
-          <p className="text-gray-600 text-base leading-relaxed">
-            Stridemind was built by an independent developer who came across the clinical research
-            on dual-task walking and could not find a practical, accessible app that applied it.
-            The evidence was clear and replicated across dozens of trials. The gap between that
-            evidence and what was available to ordinary people was the reason this app exists.
-            Stridemind is not a medical device. It applies a well-evidenced training method in a
-            wellness setting, for adults who want to stay active and reduce their risk of falling
-            as they age.
-          </p>
-        </div>
       </section>
 
     </div>

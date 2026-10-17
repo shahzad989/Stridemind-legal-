@@ -146,17 +146,6 @@ export default function Pricing() {
           </motion.div>
         </div>
 
-        {/* The no-trial framing is honest and deliberate: there is no trial to forget about. */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55, delay: 0.25 }}
-          className="text-center text-gray-500 text-base mt-10 max-w-2xl mx-auto leading-relaxed"
-        >
-          There is no free trial and nothing to remember to cancel. You train with the free
-          strides for as long as you like, and you subscribe only if you want more.
-        </motion.p>
       </div>
     </section>
   );
