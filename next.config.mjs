@@ -40,6 +40,13 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
+  // The evidence record page was removed (2026-10-17, owner decision: fixing the
+  // claims is what matters, a public corrections log is not needed). It had been
+  // indexed and listed in the sitemap, so a permanent redirect to /science keeps
+  // old links and search results from landing on a 404.
+  async redirects() {
+    return [{ source: '/evidence-record', destination: '/science', permanent: true }];
+  },
   async headers() {
     return [
       {
