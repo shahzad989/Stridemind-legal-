@@ -236,6 +236,53 @@ export const IJERPH_2022: Citation = {
     'Khan MJ, et al. A Systematic Review Exploring the Theories Underlying the Improvement of Balance and Reduction in Falls Following Dual-Task Training among Older Adults. International Journal of Environmental Research and Public Health, 2022, 19, 16890.',
 };
 
+// Added 2026-10-17 after reading the FULL TEXT (the abstract alone is not safe;
+// see the checklist). Two traps in the abstract, both resolved here:
+//
+// 1. DENOMINATORS. The abstract's "fourteen studies with 691 participants" is
+//    the size of the whole review, not of either pooled estimate. The Results
+//    section shows each estimate rests on far fewer: the comparison with other
+//    training used 9 studies (a 4-session study was dropped as an inadequate
+//    dose) and the comparison with no training used 4 (one 5-session study and
+//    one study the authors rated high risk of bias were dropped). Never quote
+//    14 or 691 next to either effect size.
+//
+// 2. THE HEADLINE NUMBER IS THE WEAKER ONE TO LEAN ON. The no-training estimate
+//    (SMD -0.691) had very high heterogeneity (I2 78.7%) and Egger's test
+//    flagged possible publication bias (p = 0.012). Dropping the single study
+//    with the largest effect gives SMD -0.430 (95% CI -0.692 to -0.167,
+//    I2 0%, no bias signal), which is the sturdier figure and the one the
+//    basis text leads with. The paper prints these as negative numbers and
+//    its text reads them as favouring dual-task training; the basis states
+//    them as positive advantages so a reader is not left to decode the sign.
+//
+// The advantage over other training is small and fragile: the lower CI bound is
+// -0.016, I2 was 57.7%, and the authors' own power analysis gave only 66% under
+// random effects. At study level, 5 of 9 found no difference, 3 favoured
+// dual-task training and 1 favoured the comparison. Say "slightly better", never
+// "better". Also: balance was mostly the Timed Up and Go, only one study
+// followed people after training ended, and the authors did not separate
+// thinking-plus-movement from movement-plus-movement training (only two studies
+// were the latter). Its value to the site is that every participant was a
+// community-dwelling older adult who could walk, which is who Stridemind is for.
+export const ERCAN_YILDIZ_2024: Citation = {
+  id: 'ercan-yildiz-2024',
+  title: 'Effect of dual-task training on balance in older adults: A systematic review and meta-analysis',
+  authors: 'Ercan Yildiz S, Fidan O, Gulsen C, Colak E, Genc GA',
+  journal: 'Archives of Gerontology and Geriatrics',
+  year: '2024',
+  doi: '10.1016/j.archger.2024.105368',
+  pmid: '38364709',
+  url: 'https://pubmed.ncbi.nlm.nih.gov/38364709/',
+  verifiedOn: '2026-10-17',
+  finding:
+    'In healthy older adults who could walk independently, dual-task training improved balance more than no training, and slightly more than other kinds of exercise.',
+  basis:
+    'Against no training, 4 randomised trials: standardised mean difference 0.43 in favour of dual-task training, 95% CI 0.17 to 0.69, after removing the single study with the largest effect (with it included the figure is 0.69, but the results were then inconsistent and possibly affected by publication bias). Against other exercise such as balance, strength or gait training, 9 trials: 0.23, 95% CI 0.02 to 0.44, a small edge, with 5 of the 9 trials finding no difference. The full review covered 14 trials and 691 participants. Balance was mostly measured with the Timed Up and Go, and only one trial followed people after training ended.',
+  reference:
+    'Ercan Yildiz S, et al. Effect of dual-task training on balance in older adults: A systematic review and meta-analysis. Archives of Gerontology and Geriatrics, 2024, 121, 105368. Versus no training: 4 trials; versus other exercise: 9 trials.',
+};
+
 // THE CORRECTION (2026-08-22): the site previously credited this trial with
 // "some persistence at 3-month follow-up." The group-level effect did remain
 // significant at follow-up, but the mixed-training arm's own scores drifted back
@@ -317,6 +364,7 @@ export const CDC_FALLS = {
 export const ALL_CITATIONS: Citation[] = [
   EGM_2025,
   IJERPH_2022,
+  ERCAN_YILDIZ_2024,
   COCHRANE_2019,
   VTIME_2016,
   VAN_HET_REVE_2014,
