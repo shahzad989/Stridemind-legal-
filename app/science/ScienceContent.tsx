@@ -4,9 +4,18 @@ import { motion, useInView, type Variants } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import {
-  ALL_CITATIONS,
+  BARBAN_2017,
+  CAZZOLLI_2026,
   CDC_FALLS,
+  COCHRANE_2019,
+  EGM_2025,
+  ERCAN_YILDIZ_2024,
+  GAVELIN_2021,
+  IJERPH_2022,
+  VAN_HET_REVE_2014,
   VTIME_2016,
+  WOLLESEN_2017,
+  type Citation,
 } from '@/lib/citations';
 import { SCIENCE_QA } from './qa';
 
@@ -109,6 +118,81 @@ const APP_FEATURES = [
   { label: 'Progressive difficulty', detail: 'Strides raise the mental load as you get more comfortable' },
   { label: 'Designed for 55+', detail: 'Pacing, voice clarity, and session length built for the people who will use it' },
 ];
+
+// --- Citation groups ---
+
+// WHY GROUPED AND FOLDED (2026-10-17): the page grew to ten equal-weight cards,
+// which read as a wall. Two groups mirror the argument the page makes (falls
+// and balance first, thinking skills second), and only the strongest cards in
+// each stay open. The folded cards are still in the HTML, only hidden, so
+// nothing is removed for search engines or for anyone who opens the fold.
+// `visible` order is deliberate: broadest, most relevant-to-healthy-walkers
+// evidence first. Add new citations to a group here AND to ALL_CITATIONS in
+// lib/citations.ts, which still drives the structured data.
+const CITATION_GROUPS: { heading: string; intro: string; visible: Citation[]; folded: Citation[] }[] = [
+  {
+    heading: 'Falls and balance',
+    intro: 'Whether training like this keeps people steadier on their feet.',
+    visible: [COCHRANE_2019, EGM_2025, ERCAN_YILDIZ_2024],
+    folded: [VTIME_2016, IJERPH_2022],
+  },
+  {
+    heading: 'Thinking skills and confidence',
+    intro: 'What adding a thinking task does for the mind, and for worry about falling.',
+    visible: [CAZZOLLI_2026, GAVELIN_2021],
+    folded: [VAN_HET_REVE_2014, BARBAN_2017, WOLLESEN_2017],
+  },
+];
+
+function CitationCard({ c }: { c: Citation }) {
+  return (
+    <div className="bg-white rounded-2xl p-7 border-l-4 border-brand shadow-sm">
+      <p className="text-gray-800 text-lg leading-relaxed mb-4 font-medium">{c.finding}</p>
+      <p className="text-gray-600 text-base leading-relaxed mb-4">{c.basis}</p>
+      <p className="text-sm text-gray-500 italic">
+        {c.authors} {c.journal}, {c.year}.{' '}
+        <a
+          href={c.url}
+          className="text-brand underline underline-offset-2 hover:text-brand-dark not-italic"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read the source
+        </a>
+      </p>
+    </div>
+  );
+}
+
+function CitationGroup({ group }: { group: (typeof CITATION_GROUPS)[number] }) {
+  const [open, setOpen] = useState(false);
+  const foldedId = `folded-${group.heading.toLowerCase().replace(/[^a-z]+/g, '-')}`;
+  return (
+    <div>
+      <h3 className="font-display text-2xl text-gray-900">{group.heading}</h3>
+      <p className="text-gray-600 mt-1 mb-5">{group.intro}</p>
+      <div className="space-y-5">
+        {group.visible.map((c) => (
+          <CitationCard key={c.id} c={c} />
+        ))}
+      </div>
+      <div id={foldedId} hidden={!open} className="space-y-5 mt-5">
+        {group.folded.map((c) => (
+          <CitationCard key={c.id} c={c} />
+        ))}
+      </div>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls={foldedId}
+        className="mt-5 text-sm font-semibold text-brand-dark hover:text-brand underline underline-offset-2"
+      >
+        {open ? 'Show fewer studies' : `Show ${group.folded.length} more studies`}
+      </button>
+    </div>
+  );
+}
 
 // --- Main component ---
 
@@ -281,35 +365,11 @@ export default function ScienceContent() {
             </p>
           </motion.div>
 
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="space-y-5"
-          >
-            {ALL_CITATIONS.map((c) => (
-              <motion.div
-                key={c.id}
-                variants={fadeUp}
-                className="bg-white rounded-2xl p-7 border-l-4 border-brand shadow-sm"
-              >
-                <p className="text-gray-800 text-lg leading-relaxed mb-4 font-medium">{c.finding}</p>
-                <p className="text-gray-600 text-base leading-relaxed mb-4">{c.basis}</p>
-                <p className="text-sm text-gray-500 italic">
-                  {c.authors} {c.journal}, {c.year}.{' '}
-                  <a
-                    href={c.url}
-                    className="text-brand underline underline-offset-2 hover:text-brand-dark not-italic"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Read the source
-                  </a>
-                </p>
-              </motion.div>
+          <div className="space-y-14">
+            {CITATION_GROUPS.map((g) => (
+              <CitationGroup key={g.heading} group={g} />
             ))}
-          </motion.div>
+          </div>
           <p className="text-center text-gray-500 mt-8">
             Every correction made to a claim on this page is logged, dated, with the exact figures, on{' '}
             <Link href="/evidence-record" className="text-brand-dark hover:text-brand underline">
