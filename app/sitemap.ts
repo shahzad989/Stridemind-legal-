@@ -7,7 +7,7 @@ import { POSTS, sortedPosts } from './blog/posts';
 // information and erodes trust in the sitemap. Bump the matching constant
 // when a page's content meaningfully changes.
 const HOME_UPDATED = '2026-07-17'; // monthly check-in section added
-const SCIENCE_UPDATED = '2026-10-17'; // added Ercan Yildiz 2024 balance meta-analysis
+const SCIENCE_UPDATED = '2026-10-17'; // added Ercan Yildiz 2024 and Cazzolli 2026 meta-analyses
 const LEGAL_UPDATED = '2026-06-11'; // privacy policy sensor-data disclosure
 const FAMILIES_UPDATED = '2026-08-22'; // Cochrane figure corrected
 const ABOUT_UPDATED = '2026-07-17'; // page launched

@@ -205,6 +205,66 @@ export const GAVELIN_2021: Citation = {
     'Gavelin HM, et al. Combined physical and cognitive training for older adults with and without cognitive impairment: a systematic review and network meta-analysis of randomized controlled trials. Ageing Research Reviews, 2021.',
 };
 
+// Added 2026-10-17 after reading the FULL TEXT (PDF supplied by the owner), not
+// the abstract. This is the paper that fills the thinking-evidence gap for
+// HEALTHY older adults (every trial excluded chronic and neurological
+// conditions), which Gavelin 2021 above does not: Gavelin mixes in people with
+// cognitive impairment. Read these limits before quoting it anywhere:
+//
+// 1. IT IS A RANKING, NOT A PROVEN ORDER. Combined thinking-and-movement
+//    training (the paper's "CMDT") has the top P-score (0.886) and the largest
+//    effect against no intervention, SMD 0.71. But the authors state that
+//    "differences between exercise types were not statistically significant"
+//    and that a P-score is not a claim of "best". The only significant
+//    head-to-head win is CMDT over physical exercise alone: 0.33, 95% CI 0.05 to
+//    0.61, p = 0.0198. CMDT over thinking-only training is 0.29, CI -0.01 to
+//    0.59, p = 0.058: a trend, not a result. Never write "the most effective
+//    approach"; write that it ranked highest and that every kind of training
+//    helped.
+//
+// 2. THE ABSTRACT OVERSTATES ONE THING. It says dual-task approaches "whether
+//    technology-supported or not, outperformed traditional physical training".
+//    The body shows that is significant for non-technology CMDT (p = 0.0198) but
+//    only a trend for technology-based CMDT versus physical training (0.25, CI
+//    -0.02 to 0.52, p = 0.066). Cite the body.
+//
+// 3. 0.71 IS A NETWORK ESTIMATE. It blends direct and indirect evidence. The
+//    direct CMDT-versus-control comparisons alone give 0.51 (95% CI 0.16 to
+//    0.86), and the authors warn that the more indirect a comparison, the less
+//    it can be trusted. The basis text states both. The 87 studies are the
+//    whole network (107 pairwise comparisons: 77 two-arm and 10 three-arm
+//    trials); the paper does not give the number of trials behind the 0.71, so
+//    never attach 87 to it.
+//
+// 4. WHAT "DUAL-TASK" MEANS HERE IS BROAD. It includes exergames, dance and tai
+//    chi, delivered with or without technology, and "general" as well as
+//    "specific" tasks. It is not limited to walking while thinking. Say
+//    "training that combines thinking and movement", not "walking and thinking".
+//
+// 5. THE OUTCOME IS COGNITION ONLY, about 80% executive function and 20% other
+//    domains, and falls, balance and gait were excluded. This paper says nothing
+//    about falls. Heterogeneity was high (I2 77.6% before random effects), pre
+//    to post correlation was assumed (0.5), only English papers were included,
+//    and the authors found no moderating effect of age, frequency or risk of
+//    bias. Publication-bias testing (Egger) showed no asymmetry.
+export const CAZZOLLI_2026: Citation = {
+  id: 'cazzolli-2026',
+  title: 'Optimizing cognitive functions in healthy older adults: a network meta-analysis of dual- and single-task interventions',
+  authors: 'Cazzolli B, Chirico A, Stefanelli F, Zacchilli M, Cavicchiolo E, Alivernini F, Lucidi F',
+  journal: 'GeroScience',
+  year: '2026',
+  doi: '10.1007/s11357-025-02091-w',
+  pmid: '41580580',
+  url: 'https://pubmed.ncbi.nlm.nih.gov/41580580/',
+  verifiedOn: '2026-10-17',
+  finding:
+    'In healthy adults aged 65 and older, training that combined thinking and movement at the same time ranked highest for improving thinking skills, and every kind of training helped compared with doing nothing.',
+  basis:
+    'Network meta-analysis of 87 randomised trials in healthy adults aged 65 and older, with thinking skills as the outcome (about 80% executive function). Combined thinking-and-movement training ranked highest against no intervention, standardised mean difference 0.71, 95% CI 0.45 to 0.97, a moderate effect; direct comparisons alone gave 0.51, 95% CI 0.16 to 0.86. All six training types beat no training, with effects from 0.38 to 0.71. Combined training was significantly better than physical exercise alone (0.33, 95% CI 0.05 to 0.61), but its edge over thinking-only training was not statistically significant (0.29, 95% CI -0.01 to 0.59), so the ranking is a tendency, not a proven order. Results varied considerably between trials, and the combined training included exergames, dance and tai chi as well as walking-based programmes.',
+  reference:
+    'Cazzolli B, et al. Optimizing cognitive functions in healthy older adults: a network meta-analysis of dual- and single-task interventions. GeroScience, 2026. 87 randomised trials, healthy adults aged 65 and older.',
+};
+
 // NOTE ON THE NUMBERS (do not "fix" these): this paper's abstract says 26 of 30
 // studies reported improved balance, while its Results section says
 // "Twenty-three (76.6%) of the 30 included studies reported improvement in
@@ -369,6 +429,7 @@ export const ALL_CITATIONS: Citation[] = [
   VTIME_2016,
   VAN_HET_REVE_2014,
   GAVELIN_2021,
+  CAZZOLLI_2026,
   BARBAN_2017,
   WOLLESEN_2017,
 ];
