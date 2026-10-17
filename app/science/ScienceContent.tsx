@@ -106,6 +106,7 @@ const MECHANISM = [
 const APP_FEATURES = [
   { label: 'Audio-first', detail: 'No screen interaction during sessions, so your eyes stay up and your phone stays in your pocket' },
   { label: 'Structured strides', detail: 'Each session targets a specific combination of thinking and movement demand' },
+  { label: 'Progressive difficulty', detail: 'Strides raise the mental load as you get more comfortable' },
   { label: 'Designed for 55+', detail: 'Pacing, voice clarity, and session length built for the people who will use it' },
 ];
 
