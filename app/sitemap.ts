@@ -8,7 +8,8 @@ import { POSTS, sortedPosts } from './blog/posts';
 // when a page's content meaningfully changes.
 const HOME_UPDATED = '2026-07-17'; // monthly check-in section added
 const SCIENCE_UPDATED = '2026-10-17'; // added Ercan Yildiz 2024 and Cazzolli 2026 meta-analyses
-const LEGAL_UPDATED = '2026-06-11'; // privacy policy sensor-data disclosure
+const LEGAL_UPDATED = '2026-11-01'; // privacy policy: Google Play, PostHog, Sentry, account deletion
+const DELETE_ACCOUNT_UPDATED = '2026-11-01'; // page launched for the Google Play listing
 const FAMILIES_UPDATED = '2026-08-22'; // Cochrane figure corrected
 const ABOUT_UPDATED = '2026-07-17'; // page launched
 const SUPPORT_UPDATED = '2026-07-17'; // page launched
@@ -86,6 +87,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://stridemind.app/privacy-policy',
       lastModified: utc(LEGAL_UPDATED),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: 'https://stridemind.app/delete-account',
+      lastModified: utc(DELETE_ACCOUNT_UPDATED),
       changeFrequency: 'yearly',
       priority: 0.3,
     },

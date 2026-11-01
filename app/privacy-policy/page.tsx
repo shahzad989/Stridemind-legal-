@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import LegalLayout, { LegalSection } from '@/components/LegalLayout';
 
 export const metadata: Metadata = {
@@ -7,9 +8,17 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://stridemind.app/privacy-policy' },
 };
 
+// 2026-11-01 update, made for the Google Play listing: Play reviewers compare
+// this page with the Data safety form, so it now names everything the app
+// really sends out. PostHog (usage events, keyed by the Supabase user id) and
+// Sentry (crashes, a 10% masked session replay, and in-app feedback delivery,
+// sendDefaultPii false) had been running in the app without being listed here.
+// Google Play joins Apple as a payment processor, and the deletion steps link
+// to /delete-account, which Play requires. Mirror any change here into the
+// legacy privacy-policy.html at the repo root: GitHub Pages still serves it.
 export default function PrivacyPolicy() {
   return (
-    <LegalLayout title="Privacy Policy" lastUpdated="August 22, 2026">
+    <LegalLayout title="Privacy Policy" lastUpdated="November 1, 2026">
       <p className="text-lg text-gray-700 leading-relaxed mb-10">
         Stridemind (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;the app&rdquo;) is a cognitive training app built
         for active adults. This policy explains what data we collect, how we use it, and your
@@ -30,7 +39,9 @@ export default function PrivacyPolicy() {
       <LegalSection title="What We Collect">
         <ul className="list-disc pl-6 space-y-2">
           <li>
-            <strong>Account information:</strong> your name and email address when you create an account.
+            <strong>Account information:</strong> your name and email address when you create an
+            account. If you sign in with Apple or Google, we receive your name and email address
+            from them instead of a password.
           </li>
           <li>
             <strong>Usage data:</strong> the training sessions you complete, their duration, your
@@ -53,6 +64,19 @@ export default function PrivacyPolicy() {
             managed through RevenueCat.
           </li>
           <li>
+            <strong>Feedback you send:</strong> if you use Share Feedback in the app, we store your
+            message, the topic you chose, your app version, and your phone&apos;s system version, so
+            we can read it and fix what you describe.
+          </li>
+          <li>
+            <strong>App usage and crash data:</strong> we record which screens you open and which
+            buttons you tap, which walks you start and finish, and the details of any crash or
+            error, including your phone model and system version. For a small share of app
+            sessions, the crash service also keeps a short screen recording with all text and
+            images hidden, so we can see where something went wrong. This data is linked to a
+            random account number, not to your name or email address.
+          </li>
+          <li>
             <strong>Website analytics:</strong> if you visit stridemind.app in a web browser, we use
             Google Analytics to see general information about that visit, such as which pages were
             viewed, how you arrived at the site, and your approximate location, device, and browser.
@@ -68,6 +92,7 @@ export default function PrivacyPolicy() {
           <li>To calculate your weekly training progress toward your goal.</li>
           <li>To show how your check-in results change over time on your Progress screen.</li>
           <li>To manage your account and subscription status.</li>
+          <li>To find and fix problems, and to learn which parts of the app people use.</li>
           <li>
             To send optional reminders through local notifications on your device (only if you
             enable them). These notifications are generated locally and do not transmit any data
@@ -88,31 +113,54 @@ export default function PrivacyPolicy() {
       <LegalSection title="Third-Party Services">
         <ul className="list-disc pl-6 space-y-2">
           <li>
-            <strong>Supabase</strong> — database and authentication. Your account data and session
+            <strong>Supabase</strong>: database and authentication. Your account data and session
             history are stored here.{' '}
             <a href="https://supabase.com/privacy" className="text-brand-dark hover:text-brand underline" target="_blank" rel="noopener noreferrer">
               Supabase Privacy Policy
             </a>
           </li>
           <li>
-            <strong>RevenueCat</strong> — subscription management. Purchase and entitlement data is
+            <strong>RevenueCat</strong>: subscription management. Purchase and entitlement data is
             processed here.{' '}
             <a href="https://www.revenuecat.com/privacy" className="text-brand-dark hover:text-brand underline" target="_blank" rel="noopener noreferrer">
               RevenueCat Privacy Policy
             </a>
           </li>
           <li>
-            <strong>Expo</strong> — app development platform used to build and deliver the app.{' '}
+            <strong>Expo</strong>: app development platform used to build and deliver the app.{' '}
             <a href="https://expo.dev/privacy" className="text-brand-dark hover:text-brand underline" target="_blank" rel="noopener noreferrer">
               Expo Privacy Policy
             </a>
           </li>
           <li>
-            <strong>Apple</strong> — payment processing for in-app subscriptions is handled entirely
-            by Apple. We never see your payment details.
+            <strong>PostHog</strong>: app usage analytics. Records which screens and features are
+            used, linked to a random account number.{' '}
+            <a href="https://posthog.com/privacy" className="text-brand-dark hover:text-brand underline" target="_blank" rel="noopener noreferrer">
+              PostHog Privacy Policy
+            </a>
           </li>
           <li>
-            <strong>Google Analytics</strong> — website analytics for stridemind.app. Helps us
+            <strong>Sentry</strong>: crash and error reporting, and delivery of the feedback you send
+            from the app. It is not sent your name or email address.{' '}
+            <a href="https://sentry.io/privacy/" className="text-brand-dark hover:text-brand underline" target="_blank" rel="noopener noreferrer">
+              Sentry Privacy Policy
+            </a>
+          </li>
+          <li>
+            <strong>Apple and Google</strong>: payment processing for in-app subscriptions is handled
+            entirely by the store you bought from, the Apple App Store or Google Play. We never see
+            your payment details.{' '}
+            <a href="https://policies.google.com/privacy" className="text-brand-dark hover:text-brand underline" target="_blank" rel="noopener noreferrer">
+              Google Privacy Policy
+            </a>
+          </li>
+          <li>
+            <strong>Sign in with Apple and Google Sign-In</strong>: optional ways to create an
+            account. If you use one, Apple or Google tells us your name and email address and
+            confirms it is you.
+          </li>
+          <li>
+            <strong>Google Analytics</strong>: website analytics for stridemind.app. Helps us
             understand how visitors use our website. This service is not used inside the app itself.{' '}
             <a href="https://policies.google.com/privacy" className="text-brand-dark hover:text-brand underline" target="_blank" rel="noopener noreferrer">
               Google Privacy Policy
@@ -152,6 +200,14 @@ export default function PrivacyPolicy() {
         <p>
           Your data is retained for as long as your account is active. If you delete your account,
           your personal data is deleted within 30 days.
+        </p>
+        <p>
+          You can delete your account yourself in the app under Settings, then Account, then
+          Delete Account, or ask us by email. Our{' '}
+          <Link href="/delete-account" className="text-brand-dark hover:text-brand underline">
+            account deletion page
+          </Link>{' '}
+          gives the steps and explains what is removed and what is kept.
         </p>
       </LegalSection>
 
