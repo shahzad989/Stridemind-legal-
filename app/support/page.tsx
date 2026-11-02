@@ -52,7 +52,7 @@ const COMMON_PROBLEMS = [
   },
   {
     title: 'A task did not arrive when I expected it',
-    body: 'A task waits while you are standing still or while your audio is paused, so it never plays when you are not walking and listening. It starts as soon as you are moving and your audio is playing again. You can change how often tasks arrive in Settings, under Your own audio.',
+    body: 'A task waits while you are standing still or while your audio is paused, so it never plays when you are not walking and listening. It starts as soon as you are moving and your audio is playing again. If you stop in the middle of a task, the task ends and your audio comes back. You can change how often tasks arrive in Settings, under Your own audio.',
   },
   {
     title: 'I forgot my password',
