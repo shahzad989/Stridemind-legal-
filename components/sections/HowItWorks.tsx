@@ -26,7 +26,7 @@ const STEPS = [
     number: '03',
     title: 'Think along as you walk',
     description:
-      'Each stride gives your mind something to do while you move. It might be counting patterns, quick arithmetic, or recalling what you just noticed, all set over calm natural sound.',
+      'A calm voice gives your mind something to do while you move, like counting backwards or naming words. You can hear it every few minutes between your own podcast or music, or choose a guided stride set over calm natural sound.',
   },
 ];
 

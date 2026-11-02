@@ -92,7 +92,7 @@ const INTRO_STEPS = [
 const WHAT_THEY_GET = [
   {
     title: 'As easy as a podcast',
-    body: 'They press play, put the phone in a pocket, and walk. There is no screen to watch during a session and nothing to configure. If they can play a podcast, they can use Stridemind.',
+    body: 'They press play, put the phone in a pocket, and walk. There is no screen to watch during a session and nothing to configure. If they can play a podcast, they can use Stridemind. They can even keep listening to their own podcast, audiobook or music, and Stridemind will pause it or lower it for a short thinking task every few minutes.',
   },
   {
     title: 'Free to start, nothing to cancel',

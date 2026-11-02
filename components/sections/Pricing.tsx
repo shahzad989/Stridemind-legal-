@@ -12,17 +12,22 @@ import { motion } from 'framer-motion';
 // - Prices match StrideMind.storekit in the app repo ($9.99/mo, $79.99/yr).
 //   If App Store pricing changes, this file must change with it.
 // - The app calls sessions "strides", never "protocols".
+// - One walk with your own audio is free, and it needs no account. Every walk
+//   after that is Premium (owner, 2026-10-30).
 
 const FREE_FEATURES = [
   { text: 'A set of strides to train with', included: true },
+  { text: 'Your first walk with your own podcast, audiobook or music', included: true },
   { text: 'The monthly check-in and your whole Progress screen', included: true },
   { text: 'Weekly goal, streaks, and session history', included: true },
+  { text: 'Every walk with your own audio', included: false },
   { text: 'The full stride library', included: false },
   { text: 'New programs added every month', included: false },
 ];
 
 const PREMIUM_FEATURES = [
   { text: 'Everything in Free', included: true },
+  { text: 'Every walk with your own podcast, audiobook or music', included: true },
   { text: 'The full stride library, across every intensity', included: true },
   { text: 'New programs added every month, so the training never repeats itself', included: true },
 ];

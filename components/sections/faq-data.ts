@@ -21,6 +21,25 @@ export const FAQS = [
     q: 'What makes Stridemind different from other brain training apps?',
     a: 'Most brain training apps are screen-based and sedentary. Stridemind is built for movement, so the cognitive exercises are done while you walk. This dual-task approach targets the attention-and-movement interference that drives many falls, an approach research links to better balance and lower fall risk. It is audio-first, requires no screen interaction during sessions, and is designed for adults 55 and over.',
   },
+  // The four own-audio questions are limited to what the device tests showed
+  // (docs/own-audio-walks-plan.md in the app repo). Only Apple Podcasts and
+  // Spotify are tested, so never write "any app" until more have been.
+  {
+    q: 'Can I listen to my own podcast, audiobook or music on my walk?',
+    a: 'Yes. You start your audio in the app you already use, and every few minutes Stridemind pauses it or lowers it for a short thinking task of about a minute. Then your audio comes back by itself. You can choose how often tasks arrive, and a task waits if you have stopped walking. Your first walk like this is free, and you do not need an account to try it.',
+  },
+  {
+    q: 'Which listening apps work with Stridemind?',
+    a: 'We have tested Apple Podcasts and Spotify, and podcasts in both pause and come back by themselves. Other apps should behave the same way, but each app decides for itself what happens after a pause, and we have not tested them all yet. If your audio does not come back after a task, pressing play in your listening app will bring it back.',
+  },
+  {
+    q: 'Does Stridemind pause my music too?',
+    a: 'Your music gets quieter during a task instead of stopping, and it returns to its usual volume afterward. Podcasts and audiobooks pause completely, because your iPhone treats spoken audio and music differently.',
+  },
+  {
+    q: 'Can Stridemind see what I am listening to?',
+    a: 'No. Stridemind can only tell whether something is playing, so it knows when to wait for you. It cannot tell which show, book or song it is, or which app is playing it.',
+  },
   // The three questions below were added because they are the ones people
   // actually type before they know what to call this. "Is it a fitness app",
   // "can I set it up for my mother", and "do I need anything" come up ahead of
@@ -43,11 +62,11 @@ export const FAQS = [
   },
   {
     q: 'Do I need wifi or data during my walk?',
-    a: 'Yes. Stridemind streams audio during your session, so you need a data connection or wifi on your walk. Make sure you have signal before heading out.',
+    a: 'For a guided stride, yes. Strides stream their audio, so you need a data connection or wifi on your walk. For a walk with your own audio, Stridemind only needs a connection when you start, because the tasks are saved on your phone first. Your listening app may still need its own connection.',
   },
   {
     q: 'How long are the sessions?',
-    a: 'Sessions range from 5 to 15 minutes, short enough to fit into any walk. The stride ends on its own, and you can keep walking as long as you like afterward. Most people aim for a few sessions per week.',
+    a: 'Strides range from 5 to 15 minutes, short enough to fit into any walk. A stride ends on its own, and you can keep walking as long as you like afterward. A walk with your own audio lasts until you end it. Most people aim for a few sessions per week.',
   },
   {
     q: 'How long until I see results?',
@@ -59,7 +78,7 @@ export const FAQS = [
   },
   {
     q: "What's the difference between free and premium?",
-    a: 'Free gives you a set of strides to train with, plus the monthly check-in, your Progress screen, your history, and your weekly goal. Premium unlocks the full stride library and the new programs added every month, for $9.99 per month or $79.99 per year. There is no free trial, so nothing starts billing without you choosing it.',
+    a: 'Free gives you a set of strides to train with and your first walk with your own audio, plus the monthly check-in, your Progress screen, your history, and your weekly goal. Premium unlocks every walk with your own audio, the full stride library, and the new programs added every month, for $9.99 per month or $79.99 per year. There is no free trial, so nothing starts billing without you choosing it.',
   },
   {
     q: 'Is it safe if I have a balance condition or have had a fall?',

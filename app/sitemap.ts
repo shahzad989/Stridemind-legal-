@@ -6,13 +6,13 @@ import { POSTS, sortedPosts } from './blog/posts';
 // page had just changed; a signal that is always "today" carries no
 // information and erodes trust in the sitemap. Bump the matching constant
 // when a page's content meaningfully changes.
-const HOME_UPDATED = '2026-07-17'; // monthly check-in section added
+const HOME_UPDATED = '2026-11-02'; // own-audio walks now lead the page
 const SCIENCE_UPDATED = '2026-10-17'; // added Ercan Yildiz 2024 and Cazzolli 2026 meta-analyses
 const LEGAL_UPDATED = '2026-11-01'; // privacy policy: Google Play, PostHog, Sentry, account deletion
 const DELETE_ACCOUNT_UPDATED = '2026-11-01'; // page launched for the Google Play listing
-const FAMILIES_UPDATED = '2026-08-22'; // Cochrane figure corrected
+const FAMILIES_UPDATED = '2026-11-02'; // own-audio walks mentioned
 const ABOUT_UPDATED = '2026-07-17'; // page launched
-const SUPPORT_UPDATED = '2026-07-17'; // page launched
+const SUPPORT_UPDATED = '2026-11-02'; // own-audio troubleshooting added
 const SCREENING_UPDATED = '2026-08-22'; // page launched
 const ALTERNATIVES_UPDATED = '2026-08-22'; // page launched
 

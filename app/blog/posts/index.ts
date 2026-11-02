@@ -1,4 +1,5 @@
 import type { BlogPost } from './shared';
+import { post as whyNotAudiobook } from './why-not-just-an-audiobook';
 import { post as whyOlderAdultsFall } from './why-do-older-adults-fall';
 import { post as helpAParent } from './help-a-parent-lower-fall-risk';
 import { post as balanceTraining } from './why-balance-training-alone-isnt-enough';
@@ -9,6 +10,7 @@ import { post as brainTraining } from './brain-training-off-the-screen';
 // index page sorts by datePublished first), so future posts can be appended
 // anywhere.
 export const POSTS: BlogPost[] = [
+  whyNotAudiobook,
   whyOlderAdultsFall,
   helpAParent,
   balanceTraining,

@@ -39,6 +39,21 @@ const COMMON_PROBLEMS = [
     title: 'The audio stops or stutters on my walk',
     body: 'Strides stream their audio, so you need a data connection or wifi during your session. If your walking route has weak signal in places, the audio can pause until the connection returns. Checking that you have signal before you head out is the most reliable fix.',
   },
+  // The own-audio entries follow the device tests: spoken audio pauses, music
+  // is lowered, a task waits while the walker is stopped or their audio is
+  // paused, and each listening app decides for itself whether to resume.
+  {
+    title: 'My podcast or audiobook did not come back after a task',
+    body: 'Your listening app decides for itself when to start playing again, and it usually takes a second or two. If it stays quiet, press play in your listening app or on your earbuds. We have tested Apple Podcasts and Spotify. If another app keeps doing this, please email us and tell us which app it is, so we can look into it.',
+  },
+  {
+    title: 'My music did not pause during a task',
+    body: 'That is how it is meant to work. Your iPhone lets Stridemind pause spoken audio, but music can only be made quieter, so it plays softly under the task and returns to its usual volume afterward.',
+  },
+  {
+    title: 'A task did not arrive when I expected it',
+    body: 'A task waits while you are standing still or while your audio is paused, so it never plays when you are not walking and listening. It starts as soon as you are moving and your audio is playing again. You can change how often tasks arrive in Settings, under Your own audio.',
+  },
   {
     title: 'I forgot my password',
     body: 'On the sign-in screen, use the password reset option and we will email you a link to choose a new one. The email goes to the address you signed up with, and it is worth checking your spam folder if it does not arrive within a few minutes.',

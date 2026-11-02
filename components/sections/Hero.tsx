@@ -2,20 +2,26 @@
 // framer-motion version server-rendered everything at opacity 0, hiding the
 // headline until the JS bundle hydrated. The entrance animation now lives in
 // globals.css (.animate-fade-up), which paints and animates before any JS.
+import ListeningRibbon from '@/components/ListeningRibbon';
+
 const AppleIcon = () => (
   <svg className="w-8 h-8 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
   </svg>
 );
 
-// The mockup is a hand-built copy of the app's real Cockpit screen
-// (app/cockpit.tsx in the app repo): dark background, track title header, cue
-// line, live steps and distance, scrubber with elapsed/remaining, and round
-// playback controls. The previous version embedded a raw screenshot of an
-// empty account (0 minutes, 0% goal, 0 day streak, "Notes" back-chip in the
-// status bar), which made the app itself look unused; keep this hand-built and
-// keep it truthful if the Cockpit changes.
+// The mockup is a hand-built copy of the app's real own-audio walk screen
+// (app/own-audio.tsx in the app repo): dark background, a ring filling toward
+// the next task, the walker's audio as a ribbon, and one quiet button. It leads
+// here because own-audio walks are the lead message (owner, 2026-11-02). It
+// replaced a copy of the stride player, which before that replaced a raw
+// screenshot of an empty account that made the app look unused. Keep it
+// hand-built, and keep it truthful if the walk screen changes.
 function PhoneMockup() {
+  const size = 168;
+  const stroke = 5;
+  const r = (size - stroke) / 2;
+  const c = 2 * Math.PI * r;
   return (
     <div className="relative flex items-center justify-center">
       <div
@@ -32,66 +38,52 @@ function PhoneMockup() {
         {/* Notch */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 w-28 h-7 rounded-b-2xl bg-black" />
 
-        {/* Header: back, title, menu */}
+        {/* Header: back, title */}
         <div className="flex items-center justify-between px-4 pt-12">
           <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
-          <p className="text-white text-sm font-semibold">The Calibration Walk</p>
-          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="5" r="1.8" />
-            <circle cx="12" cy="12" r="1.8" />
-            <circle cx="12" cy="19" r="1.8" />
-          </svg>
+          <p className="text-white text-sm font-semibold">Your Own Audio</p>
+          <div className="w-5 h-5" />
         </div>
 
-        {/* Cue line */}
-        <p className="text-cockpit-muted text-xs text-center mt-10 px-6">
-          Walk at a steady, comfortable pace
+        {/* Ring filling toward the next task */}
+        <div className="relative mx-auto mt-9" style={{ width: size, height: size }}>
+          <svg width={size} height={size} className="absolute inset-0" aria-hidden="true">
+            <circle cx={size / 2} cy={size / 2} r={r} stroke="rgba(255,255,255,0.10)" strokeWidth={stroke} fill="none" />
+            <circle
+              cx={size / 2}
+              cy={size / 2}
+              r={r}
+              stroke="#8FC27E"
+              strokeWidth={stroke}
+              fill="none"
+              strokeLinecap="round"
+              strokeDasharray={`${c} ${c}`}
+              strokeDashoffset={c * 0.72}
+              transform={`rotate(-90 ${size / 2} ${size / 2})`}
+            />
+          </svg>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <p className="text-white text-4xl font-bold leading-none tabular-nums">2:10</p>
+            <p className="text-cockpit-muted text-[11px] mt-2">until the next task</p>
+          </div>
+        </div>
+
+        <p className="text-white text-[13px] leading-snug text-center mt-7 px-7">
+          Your audio is playing. You can put your phone away now.
         </p>
 
-        {/* Live activity cluster */}
-        <div className="flex items-center justify-center gap-6 mt-10">
-          <div className="text-center">
-            <p className="text-white text-3xl font-bold leading-none">1,248</p>
-            <p className="text-cockpit-muted text-[11px] mt-1.5">steps</p>
-          </div>
-          <div className="w-px h-9 bg-white/15" />
-          <div className="text-center">
-            <p className="text-white text-3xl font-bold leading-none">964</p>
-            <p className="text-cockpit-muted text-[11px] mt-1.5">meters</p>
-          </div>
+        <div className="mt-6">
+          <ListeningRibbon barColor="rgba(143,168,200,0.45)" barsPerRun={7} height={44} />
         </div>
+        <p className="text-cockpit-muted text-[11px] text-center mt-2 px-6">
+          You have walked 9 minutes and heard 2 tasks.
+        </p>
 
-        {/* Scrubber */}
-        <div className="mt-auto px-6">
-          <div className="relative h-1 rounded-full bg-white/20">
-            <div className="absolute left-0 top-0 h-1 w-3/5 rounded-full bg-sage" />
-            <div className="absolute top-1/2 left-[60%] -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-sage" />
-          </div>
-          <div className="flex justify-between mt-2">
-            <span className="text-cockpit-muted text-[11px]">12:04</span>
-            <span className="text-cockpit-muted text-[11px]">-7:56</span>
-          </div>
-        </div>
-
-        {/* Playback controls: skip back, pause, skip forward */}
-        <div className="flex items-center justify-center gap-7 mt-5 mb-8">
-          <div className="w-11 h-11 rounded-full border border-white/25 flex items-center justify-center">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 11a9 9 0 1 1 3 6.7" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 6v5h5" />
-            </svg>
-          </div>
-          <div className="w-[68px] h-[68px] rounded-full bg-sage flex items-center justify-center gap-1.5 shadow-lg">
-            <span className="w-1.5 h-6 rounded-full bg-white" />
-            <span className="w-1.5 h-6 rounded-full bg-white" />
-          </div>
-          <div className="w-11 h-11 rounded-full border border-white/25 flex items-center justify-center">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 11a9 9 0 1 0-3 6.7" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 6v5h-5" />
-            </svg>
+        <div className="mt-auto px-6 mb-8">
+          <div className="h-11 rounded-full border border-white/25 flex items-center justify-center">
+            <span className="text-white text-sm font-semibold">End the walk</span>
           </div>
         </div>
 
@@ -143,8 +135,8 @@ export default function Hero() {
               {/* A complete sentence, per design/voice.md; the line break keeps
                   hero scale without resorting to fragment copy. */}
               <h1 className="font-display text-5xl sm:text-6xl text-gray-900 leading-[1.1] tracking-tight mb-6">
-                Train your body and your mind<br />
-                <span style={{ color: '#166534' }}>on the same walk.</span>
+                Walk with your own podcast,<br />
+                <span style={{ color: '#166534' }}>and train your mind along the way.</span>
               </h1>
             </FadeUp>
 
@@ -152,9 +144,10 @@ export default function Hero() {
               {/* hero-description is a marker class referenced by the speakable
                   schema selector in app/page.tsx; keep them in sync. */}
               <p className="hero-description text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
-                Put in your earbuds and walk, and Stridemind keeps your mind working the whole
-                way. A short monthly check-in shows your progress. Built on peer-reviewed
-                dual-task research and made for adults 55 and over.
+                Listen to your own podcast, audiobook or music as you walk. Every few minutes,
+                Stridemind pauses it or lowers it for a short thinking task, and then your audio
+                comes back by itself. A short monthly check-in shows your progress. Built on
+                peer-reviewed dual-task research and made for adults 55 and over.
               </p>
             </FadeUp>
 
@@ -175,7 +168,7 @@ export default function Hero() {
 
             <FadeUp delay={0.4}>
               <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-base text-gray-500">
-                {['The first strides are free', 'No equipment beyond earbuds', 'Made for iPhone'].map((item) => (
+                {['Your first walk like this is free', 'No equipment beyond earbuds', 'Made for iPhone'].map((item) => (
                   <span key={item} className="flex items-center gap-2">
                     <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="#166534" strokeWidth={3} viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />

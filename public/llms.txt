@@ -8,6 +8,10 @@ Stridemind is an iOS app built on dual-task walking training, designed to help r
 
 Stridemind is built for adults aged 55 and older who want to stay sharp, move confidently, and reduce their risk of falls. It is particularly suited for active agers, older adults in fall prevention programs, and anyone looking to maintain cognitive health through movement-based training.
 
+## Walking With Your Own Audio
+
+Stridemind lets people walk with their own podcast, audiobook or music, played in the app they already use. Every few minutes it pauses spoken audio, or lowers music, for a spoken thinking task of about a minute. The audio then comes back by itself. Tasks are not scored and nothing needs tapping. It has been tested with Apple Podcasts and Spotify; other apps decide for themselves what happens after a pause. Stridemind can tell whether something is playing, but not what it is. The first walk of this kind is free and needs no account; every walk after it is part of Premium. We know of no study testing tasks spread through a walk in this way, so the research below applies to dual-task training as a method.
+
 ## The Science
 
 Dual-task walking training — performing a cognitive task while walking — is one of the most studied interventions for fall prevention and cognitive health in older adults.
@@ -28,11 +32,11 @@ Learn more, including where the evidence is weaker: https://stridemind.app/scien
 - Platform: iOS only (iPhone)
 - Category: Health & Fitness
 - Pricing:
-  - Free to download, with a set of free strides plus the monthly check-in, progress tracking, history, and weekly goal
-  - Premium (full stride library + new monthly programs): $9.99/month or $79.99/year (save ~33%)
+  - Free to download, with a set of free strides, the first walk with your own audio, the monthly check-in, progress tracking, history, and weekly goal
+  - Premium (every walk with your own audio + full stride library + new monthly programs): $9.99/month or $79.99/year (save ~33%)
   - No free trial; nothing starts billing without the user choosing it
 - Language: English
-- Requires: iPhone running iOS 16 or later
+- Requires: iPhone running iOS 15.1 or later
 
 ## Who Built This
 
@@ -54,6 +58,7 @@ of falling as they age.
 - About (https://stridemind.app/about): Who builds Stridemind (founder: Ibrahim Shahzad), why it exists, and the claim-discipline rules the site follows.
 - Support (https://stridemind.app/support): Getting started, how to cancel the subscription (through the user's Apple ID), refunds via Apple, and fixes for common problems.
 - Blog (https://stridemind.app/blog): Plain-language articles on dual-task training, balance, and healthy aging, each with cited sources:
+  - Why Not Just Listen to an Audiobook on Your Walk? (https://stridemind.app/blog/why-not-just-an-audiobook)
   - Why Do Older Adults Fall? The Causes, Explained in Plain English (https://stridemind.app/blog/why-do-older-adults-fall)
   - How to Help a Parent Lower Their Risk of Falling, Without Taking Over (https://stridemind.app/blog/help-a-parent-lower-fall-risk)
   - Why Balance Training Alone Isn't Enough (https://stridemind.app/blog/why-balance-training-alone-isnt-enough)

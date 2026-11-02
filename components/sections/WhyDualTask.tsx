@@ -9,6 +9,7 @@ const ROWS = [
   { label: 'Built on clinically studied dual-task training', walking: false, brainGames: false, stridemind: true },
   { label: 'Cognitive training',              walking: false, brainGames: true,  stridemind: true },
   { label: 'Works during real-world movement',walking: true,  brainGames: false, stridemind: true },
+  { label: 'Lets you keep your own podcast or music', walking: true, brainGames: false, stridemind: true },
   { label: 'No screen time during session',   walking: true,  brainGames: false, stridemind: true },
   { label: 'Trains brain-body coordination',  walking: false, brainGames: false, stridemind: true },
   { label: 'Grounded in fall-prevention research', walking: null,  brainGames: false, stridemind: true },

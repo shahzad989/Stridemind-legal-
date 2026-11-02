@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
+import OwnAudio from '@/components/sections/OwnAudio';
 import HowItWorks from '@/components/sections/HowItWorks';
 import WhyDualTask from '@/components/sections/WhyDualTask';
 import TheScience from '@/components/sections/TheScience';
@@ -102,8 +103,8 @@ const howToSchema = {
     {
       '@type': 'HowToStep',
       position: 2,
-      name: 'Open Stridemind and select a stride',
-      text: 'Launch the Stridemind app on your iPhone, browse the stride library, and choose a session that matches your current intensity level. Put your earphones in before you head out.',
+      name: 'Open Stridemind and choose your walk',
+      text: 'Launch the Stridemind app on your iPhone. You can start a walk with your own podcast, audiobook or music, or choose a guided stride that matches your current intensity level. Put your earphones in before you head out.',
     },
     {
       '@type': 'HowToStep',
@@ -140,6 +141,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <Hero />
+      <OwnAudio />
       <HowItWorks />
       <WhyDualTask />
       <TheScience />

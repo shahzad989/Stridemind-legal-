@@ -111,7 +111,7 @@ const jsonLd = {
       author: { '@id': 'https://stridemind.app/#organization' },
       installUrl: 'https://apps.apple.com/app/id6761288997',
       description:
-        'Stridemind uses dual-task walking training, combining audio-guided cognitive exercises with physical movement, to support balance and cognition in adults 55+. Backed by a 2025 meta-analysis of 44 studies with 2,782 participants.',
+        'Stridemind uses dual-task walking training, combining audio-guided cognitive exercises with physical movement, to support balance and cognition in adults 55+. Users can walk with their own podcast, audiobook or music, which pauses or lowers every few minutes for a short thinking task. Backed by a 2025 meta-analysis of 44 studies with 2,782 participants.',
       // The download itself is free (freemium with a premium subscription), so
       // a price-0 offer leads; the paid offers mirror StrideMind.storekit and
       // Pricing.tsx and must change in the same breath as App Store pricing.
