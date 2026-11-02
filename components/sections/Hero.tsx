@@ -12,8 +12,9 @@ const AppleIcon = () => (
 
 // The mockup is a hand-built copy of the app's real own-audio walk screen
 // (app/own-audio.tsx in the app repo): dark background, a ring filling toward
-// the next task, the walker's audio as a ribbon, and one quiet button. It leads
-// here because own-audio walks are the lead message (owner, 2026-11-02). It
+// the next task, the walker's audio as a ribbon, and one quiet button. WHY the
+// headline beside it doesn't mention this walk (owner, 2026-11-02): it's a
+// feature, not the headline, and the section below the hero explains it. It
 // replaced a copy of the stride player, which before that replaced a raw
 // screenshot of an empty account that made the app look unused. Keep it
 // hand-built, and keep it truthful if the walk screen changes.
@@ -135,8 +136,8 @@ export default function Hero() {
               {/* A complete sentence, per design/voice.md; the line break keeps
                   hero scale without resorting to fragment copy. */}
               <h1 className="font-display text-5xl sm:text-6xl text-gray-900 leading-[1.1] tracking-tight mb-6">
-                Walk with your own podcast,<br />
-                <span style={{ color: '#166534' }}>and train your mind along the way.</span>
+                Train your body and your mind<br />
+                <span style={{ color: '#166534' }}>on the same walk.</span>
               </h1>
             </FadeUp>
 
@@ -144,10 +145,9 @@ export default function Hero() {
               {/* hero-description is a marker class referenced by the speakable
                   schema selector in app/page.tsx; keep them in sync. */}
               <p className="hero-description text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
-                Listen to your own podcast, audiobook or music as you walk. Every few minutes,
-                Stridemind pauses it or lowers it for a short thinking task, and then your audio
-                comes back by itself. A short monthly check-in shows your progress. Built on
-                peer-reviewed dual-task research and made for adults 55 and over.
+                Put in your earbuds and walk, and Stridemind keeps your mind working the whole
+                way. A short monthly check-in shows your progress. Built on peer-reviewed
+                dual-task research and made for adults 55 and over.
               </p>
             </FadeUp>
 
@@ -168,7 +168,7 @@ export default function Hero() {
 
             <FadeUp delay={0.4}>
               <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-base text-gray-500">
-                {['Your first walk like this is free', 'No equipment beyond earbuds', 'Made for iPhone'].map((item) => (
+                {['The first strides are free', 'No equipment beyond earbuds', 'Made for iPhone'].map((item) => (
                   <span key={item} className="flex items-center gap-2">
                     <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="#166534" strokeWidth={3} viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
