@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 // legacy privacy-policy.html at the repo root: GitHub Pages still serves it.
 export default function PrivacyPolicy() {
   return (
-    <LegalLayout title="Privacy Policy" lastUpdated="November 1, 2026">
+    <LegalLayout title="Privacy Policy" lastUpdated="November 20, 2026">
       <p className="text-lg text-gray-700 leading-relaxed mb-10">
         Stridemind (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;the app&rdquo;) is a cognitive training app built
         for active adults. This policy explains what data we collect, how we use it, and your
@@ -58,6 +58,13 @@ export default function PrivacyPolicy() {
             running, to confirm you were walking and to measure your walking pace. A summary, such
             as steps per minute, may be stored with your check-in results. The app does not read
             motion data outside of an active session or check-in.
+          </li>
+          <li>
+            <strong>Answers to the setup questions:</strong> when you first open the app, you can
+            answer a few optional questions, such as what you would like to work on, how often and
+            when you usually walk, and how you heard about Stridemind. Your answers set your
+            reminder time and weekly goal, and they are recorded with your app usage data. A first
+            name you give there stays on your phone until you create an account.
           </li>
           <li>
             <strong>Subscription status:</strong> whether you have an active premium subscription,
